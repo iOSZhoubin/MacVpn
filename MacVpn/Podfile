@@ -1,0 +1,7 @@
+target 'MacVpn' do
+
+pod 'AFNetworking'
+
+pod 'MJExtension'
+
+end
