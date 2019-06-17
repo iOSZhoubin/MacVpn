@@ -8,31 +8,38 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FirstWindowController">
             <connections>
+                <outlet property="customerView" destination="KeK-93-bhD" id="Atx-oh-rNz"/>
+                <outlet property="internetVc" destination="Oid-KB-BuH" id="B3r-sL-zQ0"/>
+                <outlet property="messageVc" destination="ddQ-rs-Tfx" id="uya-gm-ohr"/>
+                <outlet property="resourcesVc" destination="iKP-x5-TBI" id="hHX-Lz-T6A"/>
+                <outlet property="userVc" destination="RWa-uS-Gp5" id="Ayb-em-mfQ"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="F0z-JX-Cv5">
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="575" height="391"/>
+            <rect key="contentRect" x="196" y="240" width="900" height="700"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <value key="minSize" type="size" width="900" height="700"/>
+            <value key="maxSize" type="size" width="900" height="700"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="575" height="391"/>
+                <rect key="frame" x="0.0" y="0.0" width="900" height="700"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <visualEffectView blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="nF9-72-TIB">
-                        <rect key="frame" x="0.0" y="0.0" width="90" height="391"/>
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="700"/>
                         <subviews>
                             <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="RiG-H2-RC6">
-                                <rect key="frame" x="0.0" y="0.0" width="90" height="391"/>
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="700"/>
                                 <view key="contentView" id="gWq-SI-KyX">
-                                    <rect key="frame" x="1" y="1" width="88" height="389"/>
+                                    <rect key="frame" x="1" y="1" width="88" height="698"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="VqW-bs-az6">
-                                            <rect key="frame" x="20" y="301" width="48" height="48"/>
+                                            <rect key="frame" x="20" y="610" width="48" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="48" id="8cz-G5-BSP"/>
                                                 <constraint firstAttribute="width" constant="48" id="KvP-rJ-948"/>
@@ -43,7 +50,7 @@
                                             </buttonCell>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yAr-Nz-aKR">
-                                            <rect key="frame" x="-6" y="243" width="100" height="32"/>
+                                            <rect key="frame" x="-6" y="552" width="100" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Ogx-Ku-bhU"/>
                                             </constraints>
@@ -51,9 +58,12 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="internetAction:" target="-2" id="hy8-Ts-Fvp"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3QQ-PQ-HEw">
-                                            <rect key="frame" x="-6" y="212" width="100" height="32"/>
+                                            <rect key="frame" x="-6" y="521" width="100" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="K6x-VL-Uok"/>
                                             </constraints>
@@ -61,9 +71,12 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="resourcesAction:" target="-2" id="4FN-Bu-X8j"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UeL-k5-vti">
-                                            <rect key="frame" x="-6" y="181" width="100" height="32"/>
+                                            <rect key="frame" x="-6" y="490" width="100" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="T0v-b7-Ioe"/>
                                             </constraints>
@@ -71,9 +84,12 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="messageAction:" target="-2" id="ztj-lA-Toh"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-ow-Ccp">
-                                            <rect key="frame" x="-6" y="150" width="100" height="32"/>
+                                            <rect key="frame" x="-6" y="459" width="100" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="tMb-rJ-e8u"/>
                                             </constraints>
@@ -81,6 +97,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="userAction:" target="-2" id="kla-XC-bIh"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -113,18 +132,62 @@
                             <constraint firstItem="RiG-H2-RC6" firstAttribute="leading" secondItem="nF9-72-TIB" secondAttribute="leading" id="x09-Kj-pZk"/>
                         </constraints>
                     </visualEffectView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="KeK-93-bhD">
+                        <rect key="frame" x="90" y="0.0" width="810" height="700"/>
+                        <subviews>
+                            <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Y4q-Yr-7Ql">
+                                <rect key="frame" x="0.0" y="0.0" width="810" height="700"/>
+                                <view key="contentView" id="Kv5-wy-YVF">
+                                    <rect key="frame" x="1" y="1" width="808" height="698"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="fillColor" red="0.94117647058823528" green="0.94117647058823528" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Y4q-Yr-7Ql" secondAttribute="bottom" id="CrX-sr-Wxj"/>
+                            <constraint firstItem="Y4q-Yr-7Ql" firstAttribute="top" secondItem="KeK-93-bhD" secondAttribute="top" id="F95-fE-wYa"/>
+                            <constraint firstItem="Y4q-Yr-7Ql" firstAttribute="leading" secondItem="KeK-93-bhD" secondAttribute="leading" id="ikb-Zb-F8R"/>
+                            <constraint firstAttribute="trailing" secondItem="Y4q-Yr-7Ql" secondAttribute="trailing" id="meI-SV-C8a"/>
+                        </constraints>
+                    </customView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="KeK-93-bhD" secondAttribute="bottom" id="DQ7-oV-PHA"/>
+                    <constraint firstItem="KeK-93-bhD" firstAttribute="leading" secondItem="nF9-72-TIB" secondAttribute="trailing" id="FdQ-bG-KVm"/>
                     <constraint firstAttribute="bottom" secondItem="nF9-72-TIB" secondAttribute="bottom" id="O9q-mY-XOb"/>
+                    <constraint firstAttribute="trailing" secondItem="KeK-93-bhD" secondAttribute="trailing" id="T7F-PL-bp5"/>
                     <constraint firstItem="nF9-72-TIB" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="U7O-fV-cBi"/>
                     <constraint firstItem="nF9-72-TIB" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="mdR-Y3-p0u"/>
+                    <constraint firstItem="KeK-93-bhD" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="oaG-iJ-AD3"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-33.5" y="148.5"/>
+            <point key="canvasLocation" x="-322" y="223"/>
         </window>
+        <viewController title="网络连接" id="Oid-KB-BuH" customClass="InternetViewController">
+            <connections>
+                <outlet property="view" destination="Kv5-wy-YVF" id="99i-Xb-0Ul"/>
+            </connections>
+        </viewController>
+        <viewController title="资源列表" id="iKP-x5-TBI" customClass="ResourcesViewController">
+            <connections>
+                <outlet property="view" destination="Kv5-wy-YVF" id="9LJ-oP-V9H"/>
+            </connections>
+        </viewController>
+        <viewController title="消息中心" id="ddQ-rs-Tfx" customClass="MessageViewController">
+            <connections>
+                <outlet property="view" destination="Kv5-wy-YVF" id="szu-tR-ARa"/>
+            </connections>
+        </viewController>
+        <viewController title="个人中心" id="RWa-uS-Gp5" customClass="UserViewController">
+            <connections>
+                <outlet property="view" destination="Kv5-wy-YVF" id="eIz-bB-Lbm"/>
+            </connections>
+        </viewController>
     </objects>
     <resources>
         <image name="icon" width="29" height="29"/>

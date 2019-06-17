@@ -17,9 +17,6 @@
 #define PrefixPch_pch
 
 #define AppstoreID @"liuyax@163.com"
-//屏幕宽高
-#define kWidth  [NSScreen mainScreen].bounds.size.width
-#define kHeight [NSScreen mainScreen].bounds.size.height
 
 //设置颜色
 #define ColorA(r, g, b, a) [NSColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
