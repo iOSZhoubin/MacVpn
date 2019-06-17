@@ -7,9 +7,11 @@
 //
 
 #import "FirstWindowController.h"
+#import "InternetViewController.h"
 
 @interface FirstWindowController ()
 
+@property (strong,nonatomic) InternetViewController *internerVc;
 
 @end
 
@@ -18,7 +20,10 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    self.internerVc = [[InternetViewController alloc]initWithNibName:@"InternetViewController" bundle:nil];
+    
+    [self.window setContentView:self.internerVc.view];
+    
 }
 
 @end

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3900F1A722B743DA00600020 /* InternetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1A522B743DA00600020 /* InternetViewController.m */; };
+		3900F1A822B743DA00600020 /* InternetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3900F1A622B743DA00600020 /* InternetViewController.xib */; };
+		3900F1AC22B743EC00600020 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1AA22B743EC00600020 /* MessageViewController.m */; };
+		3900F1AD22B743EC00600020 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3900F1AB22B743EC00600020 /* MessageViewController.xib */; };
+		3900F1B122B743FE00600020 /* ResourcesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1AF22B743FE00600020 /* ResourcesViewController.m */; };
+		3900F1B222B743FE00600020 /* ResourcesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3900F1B022B743FE00600020 /* ResourcesViewController.xib */; };
+		3900F1B622B7440C00600020 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1B422B7440C00600020 /* UserViewController.m */; };
+		3900F1B722B7440C00600020 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3900F1B522B7440C00600020 /* UserViewController.xib */; };
+		3900F1C422B745D100600020 /* JumpPublicAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1BC22B745D100600020 /* JumpPublicAction.m */; };
+		3900F1C522B745D100600020 /* SecurityNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1BD22B745D100600020 /* SecurityNSString.m */; };
+		3900F1C622B745D100600020 /* JumpKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1C122B745D100600020 /* JumpKeyChain.m */; };
+		3900F1C722B745D100600020 /* AFNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1C222B745D100600020 /* AFNHelper.m */; };
 		398AE9E922B37B6B00684BD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 398AE9E822B37B6B00684BD0 /* AppDelegate.m */; };
 		398AE9EC22B37B6B00684BD0 /* MacVpn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 398AE9EA22B37B6B00684BD0 /* MacVpn.xcdatamodeld */; };
 		398AE9EE22B37B6D00684BD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 398AE9ED22B37B6D00684BD0 /* Assets.xcassets */; };
@@ -23,6 +35,28 @@
 
 /* Begin PBXFileReference section */
 		2A560913B593120A3A7661B9 /* libPods-MacVpn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacVpn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3900F1A422B743DA00600020 /* InternetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternetViewController.h; sourceTree = "<group>"; };
+		3900F1A522B743DA00600020 /* InternetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternetViewController.m; sourceTree = "<group>"; };
+		3900F1A622B743DA00600020 /* InternetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InternetViewController.xib; sourceTree = "<group>"; };
+		3900F1A922B743EC00600020 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		3900F1AA22B743EC00600020 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		3900F1AB22B743EC00600020 /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		3900F1AE22B743FE00600020 /* ResourcesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourcesViewController.h; sourceTree = "<group>"; };
+		3900F1AF22B743FE00600020 /* ResourcesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResourcesViewController.m; sourceTree = "<group>"; };
+		3900F1B022B743FE00600020 /* ResourcesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResourcesViewController.xib; sourceTree = "<group>"; };
+		3900F1B322B7440C00600020 /* UserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		3900F1B422B7440C00600020 /* UserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		3900F1B522B7440C00600020 /* UserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		3900F1B822B7443200600020 /* PrefixPch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixPch.pch; sourceTree = "<group>"; };
+		3900F1BA22B744D300600020 /* InterfaceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceHeader.h; sourceTree = "<group>"; };
+		3900F1BC22B745D100600020 /* JumpPublicAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpPublicAction.m; sourceTree = "<group>"; };
+		3900F1BD22B745D100600020 /* SecurityNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityNSString.m; sourceTree = "<group>"; };
+		3900F1BE22B745D100600020 /* AFNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNHelper.h; sourceTree = "<group>"; };
+		3900F1BF22B745D100600020 /* JumpPublicAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpPublicAction.h; sourceTree = "<group>"; };
+		3900F1C022B745D100600020 /* JumpKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpKeyChain.h; sourceTree = "<group>"; };
+		3900F1C122B745D100600020 /* JumpKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpKeyChain.m; sourceTree = "<group>"; };
+		3900F1C222B745D100600020 /* AFNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNHelper.m; sourceTree = "<group>"; };
+		3900F1C322B745D100600020 /* SecurityNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityNSString.h; sourceTree = "<group>"; };
 		398AE9E422B37B6B00684BD0 /* MacVpn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacVpn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		398AE9E722B37B6B00684BD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		398AE9E822B37B6B00684BD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -57,6 +91,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3900F1A022B743B300600020 /* Message(消息中心) */ = {
+			isa = PBXGroup;
+			children = (
+				3900F1A922B743EC00600020 /* MessageViewController.h */,
+				3900F1AA22B743EC00600020 /* MessageViewController.m */,
+				3900F1AB22B743EC00600020 /* MessageViewController.xib */,
+			);
+			path = "Message(消息中心)";
+			sourceTree = "<group>";
+		};
+		3900F1A122B743B300600020 /* Resources(资源列表) */ = {
+			isa = PBXGroup;
+			children = (
+				3900F1AE22B743FE00600020 /* ResourcesViewController.h */,
+				3900F1AF22B743FE00600020 /* ResourcesViewController.m */,
+				3900F1B022B743FE00600020 /* ResourcesViewController.xib */,
+			);
+			path = "Resources(资源列表)";
+			sourceTree = "<group>";
+		};
+		3900F1A222B743B300600020 /* User(个人中心) */ = {
+			isa = PBXGroup;
+			children = (
+				3900F1B322B7440C00600020 /* UserViewController.h */,
+				3900F1B422B7440C00600020 /* UserViewController.m */,
+				3900F1B522B7440C00600020 /* UserViewController.xib */,
+			);
+			path = "User(个人中心)";
+			sourceTree = "<group>";
+		};
+		3900F1A322B743B800600020 /* Internet(网络连接) */ = {
+			isa = PBXGroup;
+			children = (
+				3900F1A422B743DA00600020 /* InternetViewController.h */,
+				3900F1A522B743DA00600020 /* InternetViewController.m */,
+				3900F1A622B743DA00600020 /* InternetViewController.xib */,
+			);
+			path = "Internet(网络连接)";
+			sourceTree = "<group>";
+		};
+		3900F1BB22B7459300600020 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				3900F1BE22B745D100600020 /* AFNHelper.h */,
+				3900F1C222B745D100600020 /* AFNHelper.m */,
+				3900F1C022B745D100600020 /* JumpKeyChain.h */,
+				3900F1C122B745D100600020 /* JumpKeyChain.m */,
+				3900F1BF22B745D100600020 /* JumpPublicAction.h */,
+				3900F1BC22B745D100600020 /* JumpPublicAction.m */,
+				3900F1C322B745D100600020 /* SecurityNSString.h */,
+				3900F1BD22B745D100600020 /* SecurityNSString.m */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
 		398AE9DB22B37B6A00684BD0 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +167,7 @@
 		398AE9E622B37B6B00684BD0 /* MacVpn */ = {
 			isa = PBXGroup;
 			children = (
+				3900F1BB22B7459300600020 /* Public */,
 				398AEA0A22B37F6700684BD0 /* Class */,
 				398AE9E722B37B6B00684BD0 /* AppDelegate.h */,
 				398AE9E822B37B6B00684BD0 /* AppDelegate.m */,
@@ -87,6 +177,8 @@
 				398AE9F322B37B6D00684BD0 /* main.m */,
 				398AE9F522B37B6D00684BD0 /* MacVpn.entitlements */,
 				398AE9EA22B37B6B00684BD0 /* MacVpn.xcdatamodeld */,
+				3900F1BA22B744D300600020 /* InterfaceHeader.h */,
+				3900F1B822B7443200600020 /* PrefixPch.pch */,
 			);
 			path = MacVpn;
 			sourceTree = "<group>";
@@ -95,6 +187,10 @@
 			isa = PBXGroup;
 			children = (
 				398AEA0B22B37F6700684BD0 /* FirstPage(首页) */,
+				3900F1A322B743B800600020 /* Internet(网络连接) */,
+				3900F1A022B743B300600020 /* Message(消息中心) */,
+				3900F1A122B743B300600020 /* Resources(资源列表) */,
+				3900F1A222B743B300600020 /* User(个人中心) */,
 				398AEA0F22B37F6700684BD0 /* Login(登录) */,
 			);
 			path = Class;
@@ -204,9 +300,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				398AEA1922B37F6700684BD0 /* loginViewController.xib in Resources */,
+				3900F1B722B7440C00600020 /* UserViewController.xib in Resources */,
+				3900F1A822B743DA00600020 /* InternetViewController.xib in Resources */,
 				398AE9EE22B37B6D00684BD0 /* Assets.xcassets in Resources */,
+				3900F1AD22B743EC00600020 /* MessageViewController.xib in Resources */,
 				398AE9F122B37B6D00684BD0 /* MainMenu.xib in Resources */,
 				398AEA1722B37F6700684BD0 /* FirstWindowController.xib in Resources */,
+				3900F1B222B743FE00600020 /* ResourcesViewController.xib in Resources */,
 				398AEA1B22B37F6700684BD0 /* MainWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,11 +344,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				398AEA1A22B37F6700684BD0 /* MainWindowController.m in Sources */,
+				3900F1C522B745D100600020 /* SecurityNSString.m in Sources */,
+				3900F1B622B7440C00600020 /* UserViewController.m in Sources */,
+				3900F1C722B745D100600020 /* AFNHelper.m in Sources */,
 				398AE9EC22B37B6B00684BD0 /* MacVpn.xcdatamodeld in Sources */,
 				398AEA1822B37F6700684BD0 /* loginViewController.m in Sources */,
+				3900F1C622B745D100600020 /* JumpKeyChain.m in Sources */,
+				3900F1C422B745D100600020 /* JumpPublicAction.m in Sources */,
 				398AE9F422B37B6D00684BD0 /* main.m in Sources */,
 				398AEA1622B37F6700684BD0 /* FirstWindowController.m in Sources */,
 				398AE9E922B37B6B00684BD0 /* AppDelegate.m in Sources */,
+				3900F1B122B743FE00600020 /* ResourcesViewController.m in Sources */,
+				3900F1AC22B743EC00600020 /* MessageViewController.m in Sources */,
+				3900F1A722B743DA00600020 /* InternetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +493,7 @@
 				CODE_SIGN_ENTITLEMENTS = MacVpn/MacVpn.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MacVpn/PrefixPch.pch";
 				INFOPLIST_FILE = MacVpn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -404,6 +513,7 @@
 				CODE_SIGN_ENTITLEMENTS = MacVpn/MacVpn.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MacVpn/PrefixPch.pch";
 				INFOPLIST_FILE = MacVpn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,0 +1,55 @@
+//
+//  PrefixPch.pch
+//  MacVpn
+//
+//  Created by jumpapp1 on 2019/6/17.
+//  Copyright © 2019年 zb. All rights reserved.
+//
+
+#import "InterfaceHeader.h"
+#import "AppDelegate.h"
+#import <MJExtension/MJExtension.h>
+#import "SecurityNSString.h"
+#import "AFNHelper.h"
+#import "JumpKeyChain.h"
+
+#ifndef PrefixPch_pch
+#define PrefixPch_pch
+
+#define AppstoreID @"liuyax@163.com"
+//屏幕宽高
+#define kWidth  [NSScreen mainScreen].bounds.size.width
+#define kHeight [NSScreen mainScreen].bounds.size.height
+
+//设置颜色
+#define ColorA(r, g, b, a) [NSColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
+#define RGB(r, g, b) ColorA((r), (g), (b), 255)
+
+//公共颜色
+#define BackGroundColor RGB(247,247,247)
+#define CustomerBlue RGB(0,122,255)
+#define CustomerRed RGB(252, 74, 74)
+#define CustomerPlacehodel RGB(153, 153, 153)
+#define CustomerYellow RGB(255, 180, 1)
+
+//打印
+#ifdef DEBUG
+#define JumpLog(...) NSLog(__VA_ARGS__)
+#else
+#define JumpLog(...)
+#endif
+
+//通知
+#define KNotification [NSNotificationCenter defaultCenter]
+
+//强弱引用
+#define L2CWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define L2CStrongSelf(type) __strong typeof(type) type = weak##type;
+
+//使得nil为@""
+#define SafeString(string) [SecurityNSString safeStr:string]
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixPch_pch */
