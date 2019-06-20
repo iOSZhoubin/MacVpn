@@ -141,7 +141,7 @@
                                         <constraint firstItem="VjO-a6-0iA" firstAttribute="centerX" secondItem="gWq-SI-KyX" secondAttribute="centerX" id="y0C-rV-fUB"/>
                                     </constraints>
                                 </view>
-                                <color key="borderColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <color key="borderColor" red="0.71343315972222221" green="0.84313725490196079" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="fillColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                             </box>
                         </subviews>
