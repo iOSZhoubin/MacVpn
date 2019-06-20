@@ -10,13 +10,16 @@
 
 @interface ResourcesViewController ()
 
+@property (weak) IBOutlet NSTableView *tableView;
+
 @end
 
 @implementation ResourcesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    
+    
 }
 
 @end

@@ -19,7 +19,7 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="F0z-JX-Cv5">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="900" height="700"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
@@ -50,7 +50,7 @@
                                             </buttonCell>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yAr-Nz-aKR">
-                                            <rect key="frame" x="-6" y="552" width="100" height="32"/>
+                                            <rect key="frame" x="-1" y="552" width="90" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Ogx-Ku-bhU"/>
                                             </constraints>
@@ -63,7 +63,7 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3QQ-PQ-HEw">
-                                            <rect key="frame" x="-6" y="521" width="100" height="32"/>
+                                            <rect key="frame" x="-1" y="521" width="90" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="K6x-VL-Uok"/>
                                             </constraints>
@@ -76,7 +76,7 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UeL-k5-vti">
-                                            <rect key="frame" x="-6" y="490" width="100" height="32"/>
+                                            <rect key="frame" x="-1" y="490" width="90" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="T0v-b7-Ioe"/>
                                             </constraints>
@@ -89,7 +89,7 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-ow-Ccp">
-                                            <rect key="frame" x="-6" y="459" width="100" height="32"/>
+                                            <rect key="frame" x="-1" y="459" width="90" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="tMb-rJ-e8u"/>
                                             </constraints>
@@ -103,20 +103,20 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="yAr-Nz-aKR" secondAttribute="trailing" id="7To-Hd-JBo"/>
-                                        <constraint firstAttribute="trailing" secondItem="3QQ-PQ-HEw" secondAttribute="trailing" id="AUU-od-WBK"/>
+                                        <constraint firstAttribute="trailing" secondItem="yAr-Nz-aKR" secondAttribute="trailing" constant="5" id="7To-Hd-JBo"/>
+                                        <constraint firstAttribute="trailing" secondItem="3QQ-PQ-HEw" secondAttribute="trailing" constant="5" id="AUU-od-WBK"/>
                                         <constraint firstItem="VqW-bs-az6" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" constant="20" id="H5Y-Fr-GsC"/>
                                         <constraint firstItem="UeL-k5-vti" firstAttribute="top" secondItem="3QQ-PQ-HEw" secondAttribute="bottom" constant="10" id="IC7-0k-SaR"/>
-                                        <constraint firstAttribute="trailing" secondItem="UeL-k5-vti" secondAttribute="trailing" id="KD6-xR-tgd"/>
-                                        <constraint firstItem="UeL-k5-vti" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" id="KTb-RK-0c8"/>
+                                        <constraint firstAttribute="trailing" secondItem="UeL-k5-vti" secondAttribute="trailing" constant="5" id="KD6-xR-tgd"/>
+                                        <constraint firstItem="UeL-k5-vti" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" constant="5" id="KTb-RK-0c8"/>
                                         <constraint firstAttribute="trailing" secondItem="VqW-bs-az6" secondAttribute="trailing" constant="20" id="RMI-Yk-1de"/>
-                                        <constraint firstItem="ghU-ow-Ccp" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" id="Xzi-3q-RoM"/>
+                                        <constraint firstItem="ghU-ow-Ccp" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" constant="5" id="Xzi-3q-RoM"/>
                                         <constraint firstItem="yAr-Nz-aKR" firstAttribute="top" secondItem="VqW-bs-az6" secondAttribute="bottom" constant="30" id="ZQv-FM-Kbm"/>
                                         <constraint firstItem="VqW-bs-az6" firstAttribute="top" secondItem="gWq-SI-KyX" secondAttribute="top" constant="40" id="a7r-VD-0Du"/>
-                                        <constraint firstAttribute="trailing" secondItem="ghU-ow-Ccp" secondAttribute="trailing" id="e34-tn-M0I"/>
-                                        <constraint firstItem="yAr-Nz-aKR" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" id="gpl-oT-If6"/>
+                                        <constraint firstAttribute="trailing" secondItem="ghU-ow-Ccp" secondAttribute="trailing" constant="5" id="e34-tn-M0I"/>
+                                        <constraint firstItem="yAr-Nz-aKR" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" constant="5" id="gpl-oT-If6"/>
                                         <constraint firstItem="ghU-ow-Ccp" firstAttribute="top" secondItem="UeL-k5-vti" secondAttribute="bottom" constant="10" id="kBH-u4-oIH"/>
-                                        <constraint firstItem="3QQ-PQ-HEw" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" id="kJe-dT-Hot"/>
+                                        <constraint firstItem="3QQ-PQ-HEw" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" constant="5" id="kJe-dT-Hot"/>
                                         <constraint firstItem="3QQ-PQ-HEw" firstAttribute="top" secondItem="yAr-Nz-aKR" secondAttribute="bottom" constant="10" id="pW9-Yp-sab"/>
                                     </constraints>
                                 </view>
@@ -142,7 +142,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="borderColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="fillColor" red="0.94117647058823528" green="0.94117647058823528" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="fillColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
                         </subviews>
                         <constraints>

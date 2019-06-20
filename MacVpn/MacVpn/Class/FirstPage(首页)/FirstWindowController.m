@@ -97,7 +97,7 @@
     
     [self.internetVc.view removeFromSuperview];
     [self.resourcesVc.view removeFromSuperview];
-    [self.userVc.view removeFromSuperview];
+    [self.messageVc.view removeFromSuperview];
 
     [self.window.contentView addSubview:self.userVc.view];
 }
