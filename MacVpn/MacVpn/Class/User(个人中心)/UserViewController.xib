@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="UserViewController">
             <connections>
+                <outlet property="customerView" destination="71U-iS-tEB" id="Zlc-q4-03G"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -28,55 +29,35 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="n1V-p7-OeH"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="个人信息" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QNI-U4-KP2">
+                                <buttonCell key="cell" type="push" title="功能介绍" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QNI-U4-KP2">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="introduce:" target="-2" id="WAX-GI-sot"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MJ8-E7-GEO">
                                 <rect key="frame" x="-1" y="510" width="90" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Qhj-pg-bVE"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="功能介绍" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4TR-gf-6c9">
+                                <buttonCell key="cell" type="push" title="关于我们" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4TR-gf-6c9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jhV-C9-YlK">
-                                <rect key="frame" x="-1" y="479" width="90" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Z2Y-82-jhv"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="意见反馈" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ON5-IC-BmV">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gRO-Qu-bY9">
-                                <rect key="frame" x="-1" y="448" width="90" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="qSp-sJ-cTr"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="关于我们" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uQO-u9-GqQ">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
+                                <connections>
+                                    <action selector="about:" target="-2" id="H7v-9h-eH5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="lHw-oG-0bo" firstAttribute="leading" secondItem="kx9-Jn-ar0" secondAttribute="leading" constant="5" id="5AE-wn-8zs"/>
-                            <constraint firstItem="gRO-Qu-bY9" firstAttribute="leading" secondItem="kx9-Jn-ar0" secondAttribute="leading" constant="5" id="5Zl-JK-TnT"/>
                             <constraint firstAttribute="trailing" secondItem="lHw-oG-0bo" secondAttribute="trailing" constant="5" id="HYM-uQ-cHC"/>
                             <constraint firstItem="lHw-oG-0bo" firstAttribute="top" secondItem="kx9-Jn-ar0" secondAttribute="top" constant="40" id="SKR-rT-nZc"/>
                             <constraint firstAttribute="trailing" secondItem="MJ8-E7-GEO" secondAttribute="trailing" constant="5" id="bWz-de-KaG"/>
-                            <constraint firstItem="jhV-C9-YlK" firstAttribute="leading" secondItem="kx9-Jn-ar0" secondAttribute="leading" constant="5" id="cr3-KM-r0y"/>
-                            <constraint firstAttribute="trailing" secondItem="jhV-C9-YlK" secondAttribute="trailing" constant="5" id="i9B-IJ-NRB"/>
                             <constraint firstItem="MJ8-E7-GEO" firstAttribute="leading" secondItem="kx9-Jn-ar0" secondAttribute="leading" constant="5" id="l0a-ve-xM9"/>
                             <constraint firstItem="MJ8-E7-GEO" firstAttribute="top" secondItem="lHw-oG-0bo" secondAttribute="bottom" constant="10" id="maT-B9-buo"/>
-                            <constraint firstAttribute="trailing" secondItem="gRO-Qu-bY9" secondAttribute="trailing" constant="5" id="n67-08-wC2"/>
-                            <constraint firstItem="gRO-Qu-bY9" firstAttribute="top" secondItem="jhV-C9-YlK" secondAttribute="bottom" constant="10" id="v0G-fk-U0T"/>
-                            <constraint firstItem="jhV-C9-YlK" firstAttribute="top" secondItem="MJ8-E7-GEO" secondAttribute="bottom" constant="10" id="yEd-vJ-Mhg"/>
                         </constraints>
                     </view>
                     <constraints>
@@ -85,11 +66,18 @@
                     <color key="borderColor" red="0.94117647058823528" green="0.94117647058823528" blue="1" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="fillColor" red="0.94117647058823528" green="0.94117647058823528" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </box>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="71U-iS-tEB">
+                    <rect key="frame" x="90" y="0.0" width="711" height="611"/>
+                </customView>
             </subviews>
             <constraints>
+                <constraint firstItem="71U-iS-tEB" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="Mhy-eJ-PAK"/>
+                <constraint firstAttribute="bottom" secondItem="71U-iS-tEB" secondAttribute="bottom" id="Nyh-hI-wQJ"/>
+                <constraint firstAttribute="trailing" secondItem="71U-iS-tEB" secondAttribute="trailing" id="aWU-BD-MSF"/>
                 <constraint firstItem="8Tl-kv-pak" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="eLk-CP-LAZ"/>
                 <constraint firstItem="8Tl-kv-pak" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="eqv-Ev-Xx4"/>
                 <constraint firstAttribute="bottom" secondItem="8Tl-kv-pak" secondAttribute="bottom" id="lrw-2f-Fm4"/>
+                <constraint firstItem="71U-iS-tEB" firstAttribute="leading" secondItem="8Tl-kv-pak" secondAttribute="trailing" id="pNR-4v-iH9"/>
             </constraints>
             <point key="canvasLocation" x="124.5" y="90.5"/>
         </customView>

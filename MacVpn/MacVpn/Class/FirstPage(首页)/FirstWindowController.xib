@@ -9,9 +9,13 @@
         <customObject id="-2" userLabel="File's Owner" customClass="FirstWindowController">
             <connections>
                 <outlet property="customerView" destination="KeK-93-bhD" id="Atx-oh-rNz"/>
+                <outlet property="interBtn" destination="VjO-a6-0iA" id="FNc-cl-z9l"/>
                 <outlet property="internetVc" destination="Oid-KB-BuH" id="B3r-sL-zQ0"/>
+                <outlet property="messageBtn" destination="bgj-ax-d5C" id="IN1-rP-ANg"/>
                 <outlet property="messageVc" destination="ddQ-rs-Tfx" id="uya-gm-ohr"/>
+                <outlet property="resourceBtn" destination="R7r-Lr-Rm7" id="5ek-Ex-LTg"/>
                 <outlet property="resourcesVc" destination="iKP-x5-TBI" id="hHX-Lz-T6A"/>
+                <outlet property="userBtn" destination="1Dk-bX-RZB" id="gQ5-gn-JVJ"/>
                 <outlet property="userVc" destination="RWa-uS-Gp5" id="Ayb-em-mfQ"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -49,75 +53,92 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yAr-Nz-aKR">
-                                            <rect key="frame" x="-1" y="552" width="90" height="32"/>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="QHG-n0-oov">
+                                            <rect key="frame" x="34" y="60" width="20" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="Ogx-Ku-bhU"/>
+                                                <constraint firstAttribute="width" constant="20" id="bld-vd-r0v"/>
+                                                <constraint firstAttribute="height" constant="20" id="hsP-Ar-UGd"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="push" title="网络连接" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dhf-an-OLl">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="alignRight" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="kWt-5I-U44">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="internetAction:" target="-2" id="hy8-Ts-Fvp"/>
+                                                <action selector="setAction:" target="-2" id="dpH-77-mGG"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3QQ-PQ-HEw">
-                                            <rect key="frame" x="-1" y="521" width="90" height="32"/>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="VjO-a6-0iA">
+                                            <rect key="frame" x="29" y="550" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="K6x-VL-Uok"/>
+                                                <constraint firstAttribute="height" constant="30" id="lxo-Br-8uW"/>
+                                                <constraint firstAttribute="width" constant="30" id="tRO-5I-fkL"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="push" title="资源列表" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wIc-BF-fmY">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="home1" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="O9n-GG-nHj">
+                                                <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="resourcesAction:" target="-2" id="4FN-Bu-X8j"/>
+                                                <action selector="internetAction:" target="-2" id="Eek-dQ-2RM"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UeL-k5-vti">
-                                            <rect key="frame" x="-1" y="490" width="90" height="32"/>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="R7r-Lr-Rm7">
+                                            <rect key="frame" x="29" y="495" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="T0v-b7-Ioe"/>
+                                                <constraint firstAttribute="width" constant="30" id="eAU-wJ-j5W"/>
+                                                <constraint firstAttribute="height" constant="30" id="ilK-oN-2JF"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="push" title="消息中心" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="paL-of-a4n">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="sources2" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="DEH-hy-OU2">
+                                                <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="messageAction:" target="-2" id="ztj-lA-Toh"/>
+                                                <action selector="resourcesAction:" target="-2" id="gHQ-mx-Tyz"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-ow-Ccp">
-                                            <rect key="frame" x="-1" y="459" width="90" height="32"/>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="bgj-ax-d5C">
+                                            <rect key="frame" x="29" y="440" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="tMb-rJ-e8u"/>
+                                                <constraint firstAttribute="height" constant="30" id="YBd-e5-VLk"/>
+                                                <constraint firstAttribute="width" constant="30" id="smB-Do-hxH"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="push" title="个人中心" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jQt-yl-fwh">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="message2" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="W8p-A9-TDV">
+                                                <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="userAction:" target="-2" id="kla-XC-bIh"/>
+                                                <action selector="messageAction:" target="-2" id="kFw-MG-GAN"/>
+                                            </connections>
+                                        </button>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="1Dk-bX-RZB">
+                                            <rect key="frame" x="29" y="385" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="jOa-Er-V9l"/>
+                                                <constraint firstAttribute="height" constant="30" id="qzm-sL-zzn"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="me2" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="mPM-63-cdC">
+                                                <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="userAction:" target="-2" id="qh6-y8-pgD"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="yAr-Nz-aKR" secondAttribute="trailing" constant="5" id="7To-Hd-JBo"/>
-                                        <constraint firstAttribute="trailing" secondItem="3QQ-PQ-HEw" secondAttribute="trailing" constant="5" id="AUU-od-WBK"/>
+                                        <constraint firstItem="VjO-a6-0iA" firstAttribute="centerX" secondItem="gWq-SI-KyX" secondAttribute="centerX" id="5iQ-Ds-S4f"/>
+                                        <constraint firstItem="bgj-ax-d5C" firstAttribute="top" secondItem="R7r-Lr-Rm7" secondAttribute="bottom" constant="25" id="Ewe-AH-4EV"/>
+                                        <constraint firstItem="1Dk-bX-RZB" firstAttribute="centerX" secondItem="gWq-SI-KyX" secondAttribute="centerX" id="F71-lv-8OZ"/>
                                         <constraint firstItem="VqW-bs-az6" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" constant="20" id="H5Y-Fr-GsC"/>
-                                        <constraint firstItem="UeL-k5-vti" firstAttribute="top" secondItem="3QQ-PQ-HEw" secondAttribute="bottom" constant="10" id="IC7-0k-SaR"/>
-                                        <constraint firstAttribute="trailing" secondItem="UeL-k5-vti" secondAttribute="trailing" constant="5" id="KD6-xR-tgd"/>
-                                        <constraint firstItem="UeL-k5-vti" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" constant="5" id="KTb-RK-0c8"/>
+                                        <constraint firstItem="bgj-ax-d5C" firstAttribute="centerX" secondItem="gWq-SI-KyX" secondAttribute="centerX" id="KqD-Qs-l9u"/>
+                                        <constraint firstItem="1Dk-bX-RZB" firstAttribute="top" secondItem="bgj-ax-d5C" secondAttribute="bottom" constant="25" id="LSp-1P-Rde"/>
                                         <constraint firstAttribute="trailing" secondItem="VqW-bs-az6" secondAttribute="trailing" constant="20" id="RMI-Yk-1de"/>
-                                        <constraint firstItem="ghU-ow-Ccp" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" constant="5" id="Xzi-3q-RoM"/>
-                                        <constraint firstItem="yAr-Nz-aKR" firstAttribute="top" secondItem="VqW-bs-az6" secondAttribute="bottom" constant="30" id="ZQv-FM-Kbm"/>
+                                        <constraint firstAttribute="bottom" secondItem="QHG-n0-oov" secondAttribute="bottom" constant="60" id="Tac-YX-226"/>
                                         <constraint firstItem="VqW-bs-az6" firstAttribute="top" secondItem="gWq-SI-KyX" secondAttribute="top" constant="40" id="a7r-VD-0Du"/>
-                                        <constraint firstAttribute="trailing" secondItem="ghU-ow-Ccp" secondAttribute="trailing" constant="5" id="e34-tn-M0I"/>
-                                        <constraint firstItem="yAr-Nz-aKR" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" constant="5" id="gpl-oT-If6"/>
-                                        <constraint firstItem="ghU-ow-Ccp" firstAttribute="top" secondItem="UeL-k5-vti" secondAttribute="bottom" constant="10" id="kBH-u4-oIH"/>
-                                        <constraint firstItem="3QQ-PQ-HEw" firstAttribute="leading" secondItem="gWq-SI-KyX" secondAttribute="leading" constant="5" id="kJe-dT-Hot"/>
-                                        <constraint firstItem="3QQ-PQ-HEw" firstAttribute="top" secondItem="yAr-Nz-aKR" secondAttribute="bottom" constant="10" id="pW9-Yp-sab"/>
+                                        <constraint firstItem="QHG-n0-oov" firstAttribute="centerX" secondItem="gWq-SI-KyX" secondAttribute="centerX" id="o0I-Hf-khU"/>
+                                        <constraint firstItem="R7r-Lr-Rm7" firstAttribute="top" secondItem="VjO-a6-0iA" secondAttribute="bottom" constant="25" id="pSi-df-31I"/>
+                                        <constraint firstItem="VjO-a6-0iA" firstAttribute="top" secondItem="VqW-bs-az6" secondAttribute="bottom" constant="30" id="ubE-Xn-iGG"/>
+                                        <constraint firstItem="R7r-Lr-Rm7" firstAttribute="centerX" secondItem="gWq-SI-KyX" secondAttribute="centerX" id="vyU-Sa-U3Z"/>
+                                        <constraint firstItem="VjO-a6-0iA" firstAttribute="centerX" secondItem="gWq-SI-KyX" secondAttribute="centerX" id="y0C-rV-fUB"/>
                                     </constraints>
                                 </view>
                                 <color key="borderColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
@@ -166,7 +187,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-322" y="223"/>
+            <point key="canvasLocation" x="-462" y="70"/>
         </window>
         <viewController title="网络连接" id="Oid-KB-BuH" customClass="InternetViewController">
             <connections>
@@ -190,6 +211,11 @@
         </viewController>
     </objects>
     <resources>
+        <image name="alignRight" width="17" height="13"/>
+        <image name="home1" width="36" height="36"/>
         <image name="icon" width="29" height="29"/>
+        <image name="me2" width="36" height="36"/>
+        <image name="message2" width="36" height="36"/>
+        <image name="sources2" width="36" height="36"/>
     </resources>
 </document>

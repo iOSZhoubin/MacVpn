@@ -11,8 +11,13 @@
 #import "ResourcesViewController.h"
 #import "MessageViewController.h"
 #import "UserViewController.h"
+#import "JumpMorealertViewController.h"
 
 @interface FirstWindowController ()
+@property (weak) IBOutlet NSButton *interBtn;
+@property (weak) IBOutlet NSButton *resourceBtn;
+@property (weak) IBOutlet NSButton *messageBtn;
+@property (weak) IBOutlet NSButton *userBtn;
 
 /** 网络连接 */
 @property (strong) IBOutlet InternetViewController *internetVc;
@@ -25,10 +30,46 @@
 
 @property (weak) IBOutlet NSView *customerView;
 
+//提示框
+@property(nonatomic,strong) NSPopover *firstPopover;
+//提示框
+@property(nonatomic,strong) JumpMorealertViewController *morealertVC;
+
 
 @end
 
 @implementation FirstWindowController
+
+
+- (NSPopover *)firstPopover
+{
+    if(!_firstPopover)
+    {
+        _firstPopover=[[NSPopover alloc]init];
+        
+        _firstPopover.appearance = [NSAppearance appearanceNamed:NSAppearanceNameAqua];
+        
+        _firstPopover.contentViewController = self.morealertVC;
+        
+        _firstPopover.behavior = NSPopoverBehaviorTransient;
+        
+        _firstPopover.contentSize = NSMakeSize(180, 150);
+        
+    }
+    return _firstPopover;
+}
+
+- (JumpMorealertViewController *)morealertVC
+{
+    if(!_morealertVC)
+    {
+        _morealertVC = [[JumpMorealertViewController alloc]init];
+        
+        _morealertVC.mainWc = self.window;
+    }
+    return _morealertVC;
+}
+
 
 - (void)windowDidLoad {
     [super windowDidLoad];
@@ -59,6 +100,12 @@
 
 - (IBAction)internetAction:(NSButton *)sender {
     
+    [sender setImage:[NSImage imageNamed:@"home1"]];
+    [self.resourceBtn setImage:[NSImage imageNamed:@"sources2"]];
+    [self.messageBtn setImage:[NSImage imageNamed:@"message2"]];
+    [self.userBtn setImage:[NSImage imageNamed:@"me2"]];
+
+    [self.internetVc.view removeFromSuperview];
     [self.resourcesVc.view removeFromSuperview];
     [self.messageVc.view removeFromSuperview];
     [self.userVc.view removeFromSuperview];
@@ -71,7 +118,13 @@
 
 - (IBAction)resourcesAction:(NSButton *)sender {
     
+    [sender setImage:[NSImage imageNamed:@"sources1"]];
+    [self.interBtn setImage:[NSImage imageNamed:@"home2"]];
+    [self.messageBtn setImage:[NSImage imageNamed:@"message2"]];
+    [self.userBtn setImage:[NSImage imageNamed:@"me2"]];
+    
     [self.internetVc.view removeFromSuperview];
+    [self.resourcesVc.view removeFromSuperview];
     [self.messageVc.view removeFromSuperview];
     [self.userVc.view removeFromSuperview];
 
@@ -83,8 +136,14 @@
 
 - (IBAction)messageAction:(NSButton *)sender {
     
+    [sender setImage:[NSImage imageNamed:@"message1"]];
+    [self.interBtn setImage:[NSImage imageNamed:@"home2"]];
+    [self.resourceBtn setImage:[NSImage imageNamed:@"sources2"]];
+    [self.userBtn setImage:[NSImage imageNamed:@"me2"]];
+    
     [self.internetVc.view removeFromSuperview];
     [self.resourcesVc.view removeFromSuperview];
+    [self.messageVc.view removeFromSuperview];
     [self.userVc.view removeFromSuperview];
     
 
@@ -95,13 +154,27 @@
 
 - (IBAction)userAction:(NSButton *)sender {
     
+    [sender setImage:[NSImage imageNamed:@"me1"]];
+    [self.interBtn setImage:[NSImage imageNamed:@"home2"]];
+    [self.resourceBtn setImage:[NSImage imageNamed:@"sources2"]];
+    [self.messageBtn setImage:[NSImage imageNamed:@"message2"]];
+    
     [self.internetVc.view removeFromSuperview];
     [self.resourcesVc.view removeFromSuperview];
     [self.messageVc.view removeFromSuperview];
+    [self.userVc.view removeFromSuperview];
 
     [self.window.contentView addSubview:self.userVc.view];
 }
 
+
+#pragma mark --- 更多
+
+- (IBAction)setAction:(NSButton *)sender {
+    
+    [self.firstPopover showRelativeToRect:sender.frame ofView:self.window.contentView preferredEdge:NSRectEdgeMaxX];
+
+}
 
 -(NSRect)returnvcFrame{
     
@@ -109,5 +182,6 @@
 
     return rect;
 }
+
 
 @end

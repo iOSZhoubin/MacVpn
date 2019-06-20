@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AboutUsViewController">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="563" height="464"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mt1-DQ-nVk">
+                    <rect key="frame" x="0.0" y="402" width="563" height="57"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="57" id="AYw-wX-T38"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tit_bg" id="eAc-8D-lOK"/>
+                </imageView>
+                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="mNZ-N4-AMY">
+                    <rect key="frame" x="57" y="82" width="450" height="300"/>
+                    <view key="contentView" id="cKj-7r-1OT">
+                        <rect key="frame" x="1" y="1" width="448" height="298"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uE4-HJ-d42">
+                                <rect key="frame" x="20" y="93" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="khT-Vv-SSl"/>
+                                    <constraint firstAttribute="height" constant="40" id="uXz-i7-r0C"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="web_icon" id="GMc-oZ-Y2v"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zin-Sc-2rJ">
+                                <rect key="frame" x="20" y="243" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="AIB-J7-i6s"/>
+                                    <constraint firstAttribute="height" constant="40" id="fGM-Pq-S30"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="phone_icon" id="vXt-Az-6gV"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G9W-5I-COI">
+                                <rect key="frame" x="20" y="193" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="j2o-HZ-zRr"/>
+                                    <constraint firstAttribute="height" constant="40" id="o3P-TW-w0a"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="mail_icon" id="MSk-hJ-67l"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c9J-Qi-T2t">
+                                <rect key="frame" x="20" y="143" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Lwh-L7-8NF"/>
+                                    <constraint firstAttribute="width" constant="40" id="mnO-NZ-id3"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="postal_code_icon" id="2Iv-HM-jUo"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Efp-bv-5AL">
+                                <rect key="frame" x="20" y="43" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="BAr-gQ-CGo"/>
+                                    <constraint firstAttribute="height" constant="40" id="RJB-zI-hmH"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="address_icon" id="gv6-WO-H9A"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aJc-En-wCc">
+                                <rect key="frame" x="66" y="254" width="44" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Sx1-fv-LNZ"/>
+                                    <constraint firstAttribute="width" constant="40" id="Zsy-lW-fyj"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="电话：" id="kic-X3-qR8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Byn-22-hqI">
+                                <rect key="frame" x="66" y="204" width="44" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="7gd-bL-SK2"/>
+                                    <constraint firstAttribute="height" constant="17" id="aVX-MK-Uph"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="邮箱：" id="KYd-gE-Ddc">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71o-eh-Ap4">
+                                <rect key="frame" x="66" y="154" width="44" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="BcQ-tV-zsH"/>
+                                    <constraint firstAttribute="height" constant="17" id="bGf-ck-8PX"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="邮编：" id="gvj-Yf-Pvd">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FbW-G1-zBY">
+                                <rect key="frame" x="66" y="104" width="44" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="GJW-tv-SfO"/>
+                                    <constraint firstAttribute="width" constant="40" id="xQ6-Gh-mzb"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="网站：" id="Ecm-Fy-qCG">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3qi-xs-X70">
+                                <rect key="frame" x="66" y="54" width="44" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="aDp-Xs-PHo"/>
+                                    <constraint firstAttribute="height" constant="17" id="phP-I9-P4A"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="地址：" id="oyR-6z-Spb">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c4R-Te-954">
+                                <rect key="frame" x="114" y="204" width="316" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="support@iump.net.cn" id="Dsy-ty-1tM">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZVx-5X-6gG">
+                                <rect key="frame" x="114" y="154" width="316" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="710075" id="Pmw-qE-4wc">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eq4-En-0lh">
+                                <rect key="frame" x="114" y="104" width="316" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="http://www.jump.net.cn" id="KVY-GG-MJ6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WBM-ga-H77">
+                                <rect key="frame" x="114" y="54" width="316" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="西安市高新技术产业开发区科技二路72号捷普大厦" id="oBF-fV-wYm">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3ZP-FC-iYw">
+                                <rect key="frame" x="114" y="254" width="316" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="H3M-5q-EBG"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="029-88333000、 800-840-9939" id="WCC-70-wNC">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="eq4-En-0lh" firstAttribute="centerY" secondItem="FbW-G1-zBY" secondAttribute="centerY" id="2mt-Oz-Xo5"/>
+                            <constraint firstItem="eq4-En-0lh" firstAttribute="height" secondItem="3ZP-FC-iYw" secondAttribute="height" id="AYB-ux-zsF"/>
+                            <constraint firstItem="3ZP-FC-iYw" firstAttribute="leading" secondItem="aJc-En-wCc" secondAttribute="trailing" constant="8" id="Ap1-Ep-u3U"/>
+                            <constraint firstItem="c9J-Qi-T2t" firstAttribute="leading" secondItem="cKj-7r-1OT" secondAttribute="leading" constant="20" id="Bkn-SP-kcf"/>
+                            <constraint firstItem="FbW-G1-zBY" firstAttribute="centerY" secondItem="uE4-HJ-d42" secondAttribute="centerY" id="CHk-8S-31G"/>
+                            <constraint firstItem="ZVx-5X-6gG" firstAttribute="centerY" secondItem="71o-eh-Ap4" secondAttribute="centerY" id="EVM-Kj-99M"/>
+                            <constraint firstItem="c4R-Te-954" firstAttribute="leading" secondItem="Byn-22-hqI" secondAttribute="trailing" constant="8" id="G5t-dD-kBi"/>
+                            <constraint firstItem="71o-eh-Ap4" firstAttribute="leading" secondItem="c9J-Qi-T2t" secondAttribute="trailing" constant="8" id="GGd-pJ-Uoj"/>
+                            <constraint firstAttribute="trailing" secondItem="3ZP-FC-iYw" secondAttribute="trailing" constant="20" id="I9Q-Ze-Xbj"/>
+                            <constraint firstItem="Byn-22-hqI" firstAttribute="leading" secondItem="G9W-5I-COI" secondAttribute="trailing" constant="8" id="K9d-cN-eWb"/>
+                            <constraint firstItem="FbW-G1-zBY" firstAttribute="leading" secondItem="uE4-HJ-d42" secondAttribute="trailing" constant="8" id="N3f-VQ-1Pe"/>
+                            <constraint firstItem="Zin-Sc-2rJ" firstAttribute="top" secondItem="cKj-7r-1OT" secondAttribute="top" constant="15" id="Nn2-mq-U4e"/>
+                            <constraint firstAttribute="trailing" secondItem="3ZP-FC-iYw" secondAttribute="trailing" constant="20" id="Oah-Lg-fri"/>
+                            <constraint firstItem="3qi-xs-X70" firstAttribute="leading" secondItem="Efp-bv-5AL" secondAttribute="trailing" constant="8" id="PBJ-6s-gaN"/>
+                            <constraint firstItem="ZVx-5X-6gG" firstAttribute="leading" secondItem="71o-eh-Ap4" secondAttribute="trailing" constant="8" id="PoX-es-SB7"/>
+                            <constraint firstItem="Efp-bv-5AL" firstAttribute="top" secondItem="uE4-HJ-d42" secondAttribute="bottom" constant="10" id="RCF-1k-u2x"/>
+                            <constraint firstItem="3qi-xs-X70" firstAttribute="centerY" secondItem="Efp-bv-5AL" secondAttribute="centerY" id="SXc-bo-3hb"/>
+                            <constraint firstAttribute="trailing" secondItem="ZVx-5X-6gG" secondAttribute="trailing" constant="20" id="Vbe-PY-QgP"/>
+                            <constraint firstItem="WBM-ga-H77" firstAttribute="leading" secondItem="3qi-xs-X70" secondAttribute="trailing" constant="8" id="Xje-Pd-YY9"/>
+                            <constraint firstAttribute="trailing" secondItem="c4R-Te-954" secondAttribute="trailing" constant="20" id="Yff-04-RJn"/>
+                            <constraint firstItem="3ZP-FC-iYw" firstAttribute="centerY" secondItem="aJc-En-wCc" secondAttribute="centerY" id="ZG2-Oh-dLd"/>
+                            <constraint firstAttribute="trailing" secondItem="eq4-En-0lh" secondAttribute="trailing" constant="20" id="Zc2-6Y-y5h"/>
+                            <constraint firstItem="Zin-Sc-2rJ" firstAttribute="leading" secondItem="cKj-7r-1OT" secondAttribute="leading" constant="20" id="d6A-Ng-KmV"/>
+                            <constraint firstItem="Byn-22-hqI" firstAttribute="centerY" secondItem="G9W-5I-COI" secondAttribute="centerY" id="fFw-pz-88D"/>
+                            <constraint firstItem="G9W-5I-COI" firstAttribute="leading" secondItem="cKj-7r-1OT" secondAttribute="leading" constant="20" id="hhf-pm-Kcn"/>
+                            <constraint firstItem="aJc-En-wCc" firstAttribute="leading" secondItem="Zin-Sc-2rJ" secondAttribute="trailing" constant="8" id="hzO-Tt-IbJ"/>
+                            <constraint firstItem="Efp-bv-5AL" firstAttribute="leading" secondItem="cKj-7r-1OT" secondAttribute="leading" constant="20" id="iYe-Jj-UDo"/>
+                            <constraint firstItem="c4R-Te-954" firstAttribute="centerY" secondItem="Byn-22-hqI" secondAttribute="centerY" id="ik9-eD-eRi"/>
+                            <constraint firstItem="c4R-Te-954" firstAttribute="height" secondItem="3ZP-FC-iYw" secondAttribute="height" id="k2t-CM-cCx"/>
+                            <constraint firstItem="71o-eh-Ap4" firstAttribute="centerY" secondItem="c9J-Qi-T2t" secondAttribute="centerY" id="lJF-fd-0at"/>
+                            <constraint firstItem="uE4-HJ-d42" firstAttribute="leading" secondItem="cKj-7r-1OT" secondAttribute="leading" constant="20" id="lkx-Va-6u5"/>
+                            <constraint firstItem="WBM-ga-H77" firstAttribute="centerY" secondItem="3qi-xs-X70" secondAttribute="centerY" id="mGw-sm-2JV"/>
+                            <constraint firstItem="eq4-En-0lh" firstAttribute="leading" secondItem="FbW-G1-zBY" secondAttribute="trailing" constant="8" id="oao-G0-uvD"/>
+                            <constraint firstItem="WBM-ga-H77" firstAttribute="height" secondItem="3ZP-FC-iYw" secondAttribute="height" id="okJ-WA-YvF"/>
+                            <constraint firstItem="aJc-En-wCc" firstAttribute="centerY" secondItem="Zin-Sc-2rJ" secondAttribute="centerY" id="pe3-gx-RxV"/>
+                            <constraint firstAttribute="trailing" secondItem="WBM-ga-H77" secondAttribute="trailing" constant="20" id="qUv-VI-jsx"/>
+                            <constraint firstItem="3ZP-FC-iYw" firstAttribute="leading" secondItem="aJc-En-wCc" secondAttribute="trailing" constant="8" id="ukK-jC-fka"/>
+                            <constraint firstItem="c9J-Qi-T2t" firstAttribute="top" secondItem="G9W-5I-COI" secondAttribute="bottom" constant="10" id="vA3-gc-kWd"/>
+                            <constraint firstItem="ZVx-5X-6gG" firstAttribute="height" secondItem="3ZP-FC-iYw" secondAttribute="height" id="wS7-Bn-yu2"/>
+                            <constraint firstItem="uE4-HJ-d42" firstAttribute="top" secondItem="c9J-Qi-T2t" secondAttribute="bottom" constant="10" id="ynz-Zh-bsj"/>
+                            <constraint firstItem="G9W-5I-COI" firstAttribute="top" secondItem="Zin-Sc-2rJ" secondAttribute="bottom" constant="10" id="zE4-Wr-I6w"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="425-8j-4JB"/>
+                        <constraint firstAttribute="width" constant="450" id="sbw-gL-Oio"/>
+                    </constraints>
+                    <color key="borderColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                </box>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="47E-EJ-GCk">
+                    <rect key="frame" x="178" y="422" width="208" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="bm6-F8-f0U"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="西安交大捷普网络科技有限公司" id="JNL-gj-8Na">
+                        <font key="font" metaFont="system" size="14"/>
+                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="47E-EJ-GCk" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="4Kh-Ss-Kbq"/>
+                <constraint firstItem="mNZ-N4-AMY" firstAttribute="top" secondItem="47E-EJ-GCk" secondAttribute="bottom" constant="40" id="9Eu-rV-7DJ"/>
+                <constraint firstItem="Mt1-DQ-nVk" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="EHx-Zd-0Ns"/>
+                <constraint firstItem="mNZ-N4-AMY" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="WRJ-8p-Hwr"/>
+                <constraint firstAttribute="trailing" secondItem="Mt1-DQ-nVk" secondAttribute="trailing" id="ee8-Vf-GLv"/>
+                <constraint firstItem="mNZ-N4-AMY" firstAttribute="top" secondItem="Mt1-DQ-nVk" secondAttribute="bottom" constant="20" id="pbK-VM-M6u"/>
+                <constraint firstItem="mNZ-N4-AMY" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="ru7-1D-xz8"/>
+            </constraints>
+            <point key="canvasLocation" x="108.5" y="131"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="address_icon" width="20" height="20"/>
+        <image name="mail_icon" width="20" height="20"/>
+        <image name="phone_icon" width="20" height="20"/>
+        <image name="postal_code_icon" width="20" height="20"/>
+        <image name="tit_bg" width="310" height="75.5"/>
+        <image name="web_icon" width="20" height="20"/>
+    </resources>
+</document>

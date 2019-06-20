@@ -7,8 +7,15 @@
 //
 
 #import "UserViewController.h"
+#import "IntroduceViewController.h"
+#import "AboutUsViewController.h"
 
 @interface UserViewController ()
+
+@property (weak) IBOutlet NSView *customerView;
+
+@property (strong,nonatomic) IntroduceViewController *introduceVc;
+@property (strong,nonatomic) AboutUsViewController *aboutUsVc;
 
 @end
 
@@ -16,7 +23,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    
+    self.introduceVc = [[IntroduceViewController alloc]initWithNibName:@"IntroduceViewController" bundle:nil];
+    self.aboutUsVc = [[AboutUsViewController alloc]initWithNibName:@"AboutUsViewController" bundle:nil];
+   
+    self.introduceVc.view.frame  = [self returnvcFrame];
+    self.aboutUsVc.view.frame  = [self returnvcFrame];
+
+    [self.customerView addSubview:self.introduceVc.view];
+
+}
+
+#pragma mark --- 功能介绍
+
+- (IBAction)introduce:(NSButton *)sender {
+    
+    [self.introduceVc.view removeFromSuperview];
+    [self.aboutUsVc.view removeFromSuperview];
+
+    [self.customerView addSubview:self.introduceVc.view];
+}
+
+#pragma mark --- 关于我们
+
+- (IBAction)about:(NSButton *)sender {
+    
+    [self.introduceVc.view removeFromSuperview];
+    [self.aboutUsVc.view removeFromSuperview];
+    
+    [self.customerView addSubview:self.aboutUsVc.view];
+}
+
+
+-(NSRect)returnvcFrame{
+    
+    NSRect rect = CGRectMake(0, 0, self.customerView.frame.size.width, self.customerView.frame.size.height);
+    
+    return rect;
 }
 
 @end
