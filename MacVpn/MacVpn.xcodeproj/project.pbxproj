@@ -19,6 +19,7 @@
 		3900F1C522B745D100600020 /* SecurityNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1BD22B745D100600020 /* SecurityNSString.m */; };
 		3900F1C622B745D100600020 /* JumpKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1C122B745D100600020 /* JumpKeyChain.m */; };
 		3900F1C722B745D100600020 /* AFNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1C222B745D100600020 /* AFNHelper.m */; };
+		3934217E22BCC0800054CB20 /* MessageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3934217D22BCC0800054CB20 /* MessageViewCell.m */; };
 		398AE9E922B37B6B00684BD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 398AE9E822B37B6B00684BD0 /* AppDelegate.m */; };
 		398AE9EC22B37B6B00684BD0 /* MacVpn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 398AE9EA22B37B6B00684BD0 /* MacVpn.xcdatamodeld */; };
 		398AE9EE22B37B6D00684BD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 398AE9ED22B37B6D00684BD0 /* Assets.xcassets */; };
@@ -65,6 +66,8 @@
 		3900F1C122B745D100600020 /* JumpKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpKeyChain.m; sourceTree = "<group>"; };
 		3900F1C222B745D100600020 /* AFNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNHelper.m; sourceTree = "<group>"; };
 		3900F1C322B745D100600020 /* SecurityNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityNSString.h; sourceTree = "<group>"; };
+		3934217C22BCC0800054CB20 /* MessageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewCell.h; sourceTree = "<group>"; };
+		3934217D22BCC0800054CB20 /* MessageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewCell.m; sourceTree = "<group>"; };
 		398AE9E422B37B6B00684BD0 /* MacVpn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacVpn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		398AE9E722B37B6B00684BD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		398AE9E822B37B6B00684BD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				3900F1A922B743EC00600020 /* MessageViewController.h */,
 				3900F1AA22B743EC00600020 /* MessageViewController.m */,
 				3900F1AB22B743EC00600020 /* MessageViewController.xib */,
+				3934217C22BCC0800054CB20 /* MessageViewCell.h */,
+				3934217D22BCC0800054CB20 /* MessageViewCell.m */,
 			);
 			path = "Message(消息中心)";
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				3900F1AC22B743EC00600020 /* MessageViewController.m in Sources */,
 				3900F1A722B743DA00600020 /* InternetViewController.m in Sources */,
 				39EDBC0A22BB672F00F21299 /* JumpMorealertViewController.m in Sources */,
+				3934217E22BCC0800054CB20 /* MessageViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

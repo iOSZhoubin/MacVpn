@@ -7,16 +7,57 @@
 //
 
 #import "MessageViewController.h"
+#import "MessageViewCell.h"
 
-@interface MessageViewController ()
+@interface MessageViewController ()<NSTableViewDelegate,NSTableViewDataSource>
+
+@property (weak) IBOutlet NSTableView *tableView;
+//数据源
+@property (strong,nonatomic) NSMutableArray *dataArray;
 
 @end
 
+
 @implementation MessageViewController
+
+
+-(NSMutableArray *)dataArray{
+    
+    if(!_dataArray){
+        
+        _dataArray = [NSMutableArray array];
+    }
+    
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    
+    self.tableView.delegate = self;
+    
+    self.tableView.dataSource = self;
 }
+
+
+#pragma mark ---  NSTableViewDelegate,NSTableViewDataSource
+
+//返回行数
+-(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView{
+    
+    return 10;
+}
+
+
+-(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    
+    MessageViewCell *cell = [tableView makeViewWithIdentifier:@"MessageCell" owner:self];
+    
+    return cell;
+}
+
+
+
+
 
 @end
