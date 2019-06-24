@@ -16,11 +16,19 @@
 //GET请求
 +(void)macGet:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success andFailed:(FailedBlock)failed{
     
+    NSDictionary *ipInfo = [JumpKeyChain getKeychainDataForKey:@"ipInfo"];
+    
+    NSString *ipAddress = SafeString(ipInfo[@"ipAddress"]);
+    
+    NSString *port = SafeString(ipInfo[@"port"]);
+    
+    NSString *str1 = [NSString stringWithFormat:@"http://%@:%@%@",ipAddress,port,url];
+
     NSString *str = [self parameterStringByDict:parameters];
     
-    url = [url stringByAppendingFormat:@"?%@",str];
+    str1 = [str1 stringByAppendingFormat:@"?%@",str];
     
-    NSURL *urlStr = [NSURL URLWithString:url];
+    NSURL *urlStr = [NSURL URLWithString:str1];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:urlStr cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
     
@@ -32,11 +40,26 @@
                 
                 NSString *str = [data mj_JSONString];
                 
-                NSDictionary *dict = [str mj_JSONObject];
+                NSArray *array = [str mj_JSONObject];
                 
-                JumpLog(@"%@",dict);
+                NSDictionary *dict;
+                
+                if([str isEqualToString:@"error,no login"]){
+                    
+                    dict = @{@"message":@"error"};
+                    
+                }else if(array.count > 0){
+                    
+                    dict = @{@"result":array};
+                    
+                }else{
+                    
+                    dict = @{@"result":str};
+                }
                 
                 success(dict);
+                
+                JumpLog(@"%@",dict);
                 
             }else{
                 
@@ -54,7 +77,15 @@
 //POST请求
 +(void)macPost:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success andFailed:(FailedBlock)failed{
     
-    NSURL *urlStr = [NSURL URLWithString:url];
+    NSDictionary *ipInfo = [JumpKeyChain getKeychainDataForKey:@"ipInfo"];
+    
+    NSString *ipAddress = SafeString(ipInfo[@"ipAddress"]);
+    
+    NSString *port = SafeString(ipInfo[@"port"]);
+    
+    NSString *str = [NSString stringWithFormat:@"http://%@:%@%@",ipAddress,port,url];
+    
+    NSURL *urlStr = [NSURL URLWithString:str];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:urlStr cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
     
@@ -64,8 +95,8 @@
     
     request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
     
-    JumpLog(@"%@",url);
-    JumpLog(@"%@",parameters);
+    JumpLog(@"url == %@",url);
+    JumpLog(@"parameters == %@",parameters);
     
     NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
@@ -75,11 +106,26 @@
                 
                 NSString *str = [data mj_JSONString];
                 
-                NSDictionary *dict = [str mj_JSONObject];
+                NSArray *array = [str mj_JSONObject];
                 
-                JumpLog(@"%@",dict);
+                NSDictionary *dict;
+                
+                if([str isEqualToString:@"error,no login"]){
+                    
+                    dict = @{@"message":@"error"};
+                    
+                }else if(array.count > 0){
+                    
+                    dict = @{@"result":array};
+                    
+                }else{
+                    
+                    dict = @{@"result":str};
+                }
                 
                 success(dict);
+                
+                JumpLog(@"%@",dict);
                 
             }else{
                 

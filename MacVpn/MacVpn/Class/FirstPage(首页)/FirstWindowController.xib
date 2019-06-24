@@ -142,7 +142,7 @@
                                     </constraints>
                                 </view>
                                 <color key="borderColor" red="0.71343315972222221" green="0.84313725490196079" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="fillColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <color key="fillColor" red="0.15686274509803921" green="0.60392156862745094" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
                         </subviews>
                         <constraints>
