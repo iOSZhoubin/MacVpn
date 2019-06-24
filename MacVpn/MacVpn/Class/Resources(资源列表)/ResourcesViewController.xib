@@ -71,7 +71,7 @@
                     <rect key="frame" x="85" y="0.0" width="694" height="617"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AMx-Xq-M4r">
-                            <rect key="frame" x="305" y="570" width="84" height="17"/>
+                            <rect key="frame" x="305" y="560" width="84" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="17" id="h4p-Ge-Qfj"/>
                                 <constraint firstAttribute="width" constant="80" id="lDq-4Y-xh3"/>
@@ -85,7 +85,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="AMx-Xq-M4r" firstAttribute="centerX" secondItem="Mzd-az-hiq" secondAttribute="centerX" id="OCK-Th-cai"/>
-                        <constraint firstItem="AMx-Xq-M4r" firstAttribute="top" secondItem="Mzd-az-hiq" secondAttribute="top" constant="30" id="fgL-IK-Ti5"/>
+                        <constraint firstItem="AMx-Xq-M4r" firstAttribute="top" secondItem="Mzd-az-hiq" secondAttribute="top" constant="40" id="fgL-IK-Ti5"/>
                     </constraints>
                 </customView>
             </subviews>

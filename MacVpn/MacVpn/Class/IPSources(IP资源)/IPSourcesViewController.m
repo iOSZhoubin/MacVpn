@@ -64,4 +64,21 @@
     
     return cellView;
 }
+
+//单击某一行
+- (void)tableViewSelectionDidChange:(NSNotification *)notification{
+    
+    NSTableView *tableView = notification.object;
+    
+    NSInteger selectRow = tableView.selectedRow;
+    
+    if(selectRow >= 0){
+        
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.baidu.com"]];
+    }
+
+    JumpLog(@"点击了第%ld行",selectRow);
+}
+
+
 @end

@@ -19,19 +19,19 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="74" horizontalPageScroll="10" verticalLineScroll="74" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsW-Or-yLH">
-                    <rect key="frame" x="20" y="40" width="440" height="212"/>
+                    <rect key="frame" x="10" y="10" width="460" height="252"/>
                     <clipView key="contentView" id="HBo-Ln-eRO">
-                        <rect key="frame" x="0.0" y="0.0" width="440" height="212"/>
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="252"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="72" usesAutomaticRowHeights="YES" viewBased="YES" id="kO1-TK-8If">
-                                <rect key="frame" x="0.0" y="0.0" width="440" height="212"/>
+                                <rect key="frame" x="0.0" y="0.0" width="460" height="252"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="437" minWidth="40" maxWidth="1000" id="PXc-5y-18E">
+                                    <tableColumn width="457" minWidth="40" maxWidth="1000" id="PXc-5y-18E">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -45,7 +45,7 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="AFY-bV-Szc">
-                                                <rect key="frame" x="1" y="1" width="437" height="72"/>
+                                                <rect key="frame" x="1" y="1" width="457" height="72"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </tableCellView>
                                         </prototypeCellViews>
@@ -65,10 +65,10 @@
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstItem="zsW-Or-yLH" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="YSs-as-fTw"/>
-                <constraint firstItem="zsW-Or-yLH" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="buY-7j-ZBa"/>
-                <constraint firstAttribute="bottom" secondItem="zsW-Or-yLH" secondAttribute="bottom" constant="40" id="ewU-ms-2AX"/>
-                <constraint firstAttribute="trailing" secondItem="zsW-Or-yLH" secondAttribute="trailing" constant="20" id="ow7-Sz-8he"/>
+                <constraint firstItem="zsW-Or-yLH" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="YSs-as-fTw"/>
+                <constraint firstItem="zsW-Or-yLH" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="buY-7j-ZBa"/>
+                <constraint firstAttribute="bottom" secondItem="zsW-Or-yLH" secondAttribute="bottom" constant="10" id="ewU-ms-2AX"/>
+                <constraint firstAttribute="trailing" secondItem="zsW-Or-yLH" secondAttribute="trailing" constant="10" id="ow7-Sz-8he"/>
             </constraints>
             <point key="canvasLocation" x="140" y="102"/>
         </customView>

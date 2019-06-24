@@ -27,6 +27,7 @@
 		3964FCC422C07B6000E03A73 /* WebSourcesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3964FCC222C07B6000E03A73 /* WebSourcesViewController.xib */; };
 		3964FCC822C07D5300E03A73 /* ResourcesCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3964FCC522C07D5300E03A73 /* ResourcesCellView.m */; };
 		3964FCC922C07D5300E03A73 /* ResourcesCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3964FCC722C07D5300E03A73 /* ResourcesCellView.xib */; };
+		3964FCCB22C09D5100E03A73 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3964FCCA22C09D5100E03A73 /* WebKit.framework */; };
 		398AE9E922B37B6B00684BD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 398AE9E822B37B6B00684BD0 /* AppDelegate.m */; };
 		398AE9EC22B37B6B00684BD0 /* MacVpn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 398AE9EA22B37B6B00684BD0 /* MacVpn.xcdatamodeld */; };
 		398AE9EE22B37B6D00684BD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 398AE9ED22B37B6D00684BD0 /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		3964FCC522C07D5300E03A73 /* ResourcesCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourcesCellView.m; sourceTree = "<group>"; };
 		3964FCC622C07D5300E03A73 /* ResourcesCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourcesCellView.h; sourceTree = "<group>"; };
 		3964FCC722C07D5300E03A73 /* ResourcesCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResourcesCellView.xib; sourceTree = "<group>"; };
+		3964FCCA22C09D5100E03A73 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		398AE9E422B37B6B00684BD0 /* MacVpn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacVpn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		398AE9E722B37B6B00684BD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		398AE9E822B37B6B00684BD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3964FCCB22C09D5100E03A73 /* WebKit.framework in Frameworks */,
 				C70C26C212BB0323C88AFC37 /* libPods-MacVpn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +338,7 @@
 		D0E8719111B1019B777091F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3964FCCA22C09D5100E03A73 /* WebKit.framework */,
 				2A560913B593120A3A7661B9 /* libPods-MacVpn.a */,
 			);
 			name = Frameworks;
