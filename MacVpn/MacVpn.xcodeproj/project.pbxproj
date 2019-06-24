@@ -19,7 +19,10 @@
 		3900F1C522B745D100600020 /* SecurityNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1BD22B745D100600020 /* SecurityNSString.m */; };
 		3900F1C622B745D100600020 /* JumpKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1C122B745D100600020 /* JumpKeyChain.m */; };
 		3900F1C722B745D100600020 /* AFNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1C222B745D100600020 /* AFNHelper.m */; };
-		3934217E22BCC0800054CB20 /* MessageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3934217D22BCC0800054CB20 /* MessageViewCell.m */; };
+		3938C16822C066CB009E5B8C /* CustomMessageCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3938C16722C066CB009E5B8C /* CustomMessageCellView.xib */; };
+		3938C16B22C06760009E5B8C /* CustomMessageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3938C16A22C06760009E5B8C /* CustomMessageCellView.m */; };
+		3964FCB622C06C9E00E03A73 /* ResourcesCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3964FCB522C06C9E00E03A73 /* ResourcesCellView.m */; };
+		3964FCB822C06CA600E03A73 /* ResourcesCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3964FCB722C06CA600E03A73 /* ResourcesCellView.xib */; };
 		398AE9E922B37B6B00684BD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 398AE9E822B37B6B00684BD0 /* AppDelegate.m */; };
 		398AE9EC22B37B6B00684BD0 /* MacVpn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 398AE9EA22B37B6B00684BD0 /* MacVpn.xcdatamodeld */; };
 		398AE9EE22B37B6D00684BD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 398AE9ED22B37B6D00684BD0 /* Assets.xcassets */; };
@@ -66,8 +69,12 @@
 		3900F1C122B745D100600020 /* JumpKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpKeyChain.m; sourceTree = "<group>"; };
 		3900F1C222B745D100600020 /* AFNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNHelper.m; sourceTree = "<group>"; };
 		3900F1C322B745D100600020 /* SecurityNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityNSString.h; sourceTree = "<group>"; };
-		3934217C22BCC0800054CB20 /* MessageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewCell.h; sourceTree = "<group>"; };
-		3934217D22BCC0800054CB20 /* MessageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewCell.m; sourceTree = "<group>"; };
+		3938C16722C066CB009E5B8C /* CustomMessageCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMessageCellView.xib; sourceTree = "<group>"; };
+		3938C16922C06760009E5B8C /* CustomMessageCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomMessageCellView.h; sourceTree = "<group>"; };
+		3938C16A22C06760009E5B8C /* CustomMessageCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomMessageCellView.m; sourceTree = "<group>"; };
+		3964FCB422C06C9E00E03A73 /* ResourcesCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourcesCellView.h; sourceTree = "<group>"; };
+		3964FCB522C06C9E00E03A73 /* ResourcesCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResourcesCellView.m; sourceTree = "<group>"; };
+		3964FCB722C06CA600E03A73 /* ResourcesCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResourcesCellView.xib; sourceTree = "<group>"; };
 		398AE9E422B37B6B00684BD0 /* MacVpn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacVpn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		398AE9E722B37B6B00684BD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		398AE9E822B37B6B00684BD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,8 +127,9 @@
 				3900F1A922B743EC00600020 /* MessageViewController.h */,
 				3900F1AA22B743EC00600020 /* MessageViewController.m */,
 				3900F1AB22B743EC00600020 /* MessageViewController.xib */,
-				3934217C22BCC0800054CB20 /* MessageViewCell.h */,
-				3934217D22BCC0800054CB20 /* MessageViewCell.m */,
+				3938C16922C06760009E5B8C /* CustomMessageCellView.h */,
+				3938C16A22C06760009E5B8C /* CustomMessageCellView.m */,
+				3938C16722C066CB009E5B8C /* CustomMessageCellView.xib */,
 			);
 			path = "Message(消息中心)";
 			sourceTree = "<group>";
@@ -132,6 +140,9 @@
 				3900F1AE22B743FE00600020 /* ResourcesViewController.h */,
 				3900F1AF22B743FE00600020 /* ResourcesViewController.m */,
 				3900F1B022B743FE00600020 /* ResourcesViewController.xib */,
+				3964FCB422C06C9E00E03A73 /* ResourcesCellView.h */,
+				3964FCB522C06C9E00E03A73 /* ResourcesCellView.m */,
+				3964FCB722C06CA600E03A73 /* ResourcesCellView.xib */,
 			);
 			path = "Resources(资源列表)";
 			sourceTree = "<group>";
@@ -361,12 +372,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				39EDBC1922BB6D2000F21299 /* IntroduceViewController.xib in Resources */,
+				3938C16822C066CB009E5B8C /* CustomMessageCellView.xib in Resources */,
 				398AEA1922B37F6700684BD0 /* loginViewController.xib in Resources */,
 				3900F1B722B7440C00600020 /* UserViewController.xib in Resources */,
 				39EDBC0B22BB672F00F21299 /* JumpMorealertViewController.xib in Resources */,
 				39EDBC2322BB6D6400F21299 /* ChangePwordWindowController.xib in Resources */,
 				3900F1A822B743DA00600020 /* InternetViewController.xib in Resources */,
 				398AE9EE22B37B6D00684BD0 /* Assets.xcassets in Resources */,
+				3964FCB822C06CA600E03A73 /* ResourcesCellView.xib in Resources */,
 				3900F1AD22B743EC00600020 /* MessageViewController.xib in Resources */,
 				398AE9F122B37B6D00684BD0 /* MainMenu.xib in Resources */,
 				39EDBC1E22BB6D3500F21299 /* AboutUsViewController.xib in Resources */,
@@ -416,6 +429,7 @@
 				398AEA1822B37F6700684BD0 /* loginViewController.m in Sources */,
 				3900F1C622B745D100600020 /* JumpKeyChain.m in Sources */,
 				3900F1C422B745D100600020 /* JumpPublicAction.m in Sources */,
+				3964FCB622C06C9E00E03A73 /* ResourcesCellView.m in Sources */,
 				39EDBC2222BB6D6400F21299 /* ChangePwordWindowController.m in Sources */,
 				39EDBC1D22BB6D3500F21299 /* AboutUsViewController.m in Sources */,
 				398AE9F422B37B6D00684BD0 /* main.m in Sources */,
@@ -424,9 +438,9 @@
 				39EDBC1822BB6D2000F21299 /* IntroduceViewController.m in Sources */,
 				3900F1B122B743FE00600020 /* ResourcesViewController.m in Sources */,
 				3900F1AC22B743EC00600020 /* MessageViewController.m in Sources */,
+				3938C16B22C06760009E5B8C /* CustomMessageCellView.m in Sources */,
 				3900F1A722B743DA00600020 /* InternetViewController.m in Sources */,
 				39EDBC0A22BB672F00F21299 /* JumpMorealertViewController.m in Sources */,
-				3934217E22BCC0800054CB20 /* MessageViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

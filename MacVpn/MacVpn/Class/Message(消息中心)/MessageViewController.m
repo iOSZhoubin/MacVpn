@@ -7,7 +7,7 @@
 //
 
 #import "MessageViewController.h"
-#import "MessageViewCell.h"
+#import "CustomMessageCellView.h"
 
 @interface MessageViewController ()<NSTableViewDelegate,NSTableViewDataSource>
 
@@ -34,6 +34,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"CustomMessageCellView" bundle:nil] forIdentifier:@"CustomMessageCellView"];
+
     self.tableView.delegate = self;
     
     self.tableView.dataSource = self;
@@ -48,12 +50,13 @@
     return 10;
 }
 
-
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     
-    MessageViewCell *cell = [tableView makeViewWithIdentifier:@"MessageCell" owner:self];
+    CustomMessageCellView *cellView = [tableView makeViewWithIdentifier:@"CustomMessageCellView" owner:self];
     
-    return cell;
+    cellView.content.stringValue = @"这是一测试的消息123";
+
+    return cellView;
 }
 
 

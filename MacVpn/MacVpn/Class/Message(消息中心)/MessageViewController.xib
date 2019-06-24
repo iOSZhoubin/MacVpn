@@ -8,7 +8,6 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MessageViewController">
             <connections>
-                <outlet property="content" destination="AvL-sJ-gMp" id="Mha-bU-R1a"/>
                 <outlet property="tableView" destination="kO1-TK-8If" id="hBx-Vk-7hc"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -25,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="440" height="212"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="72" rowSizeStyle="automatic" viewBased="YES" id="kO1-TK-8If">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="72" usesAutomaticRowHeights="YES" viewBased="YES" id="kO1-TK-8If">
                                 <rect key="frame" x="0.0" y="0.0" width="440" height="212"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
@@ -45,26 +44,9 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView identifier="MessageCell" misplaced="YES" id="AFY-bV-Szc">
+                                            <tableCellView id="AFY-bV-Szc">
                                                 <rect key="frame" x="1" y="1" width="437" height="72"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="AvL-sJ-gMp">
-                                                        <rect key="frame" x="3" y="5" width="431" height="119"/>
-                                                        <textFieldCell key="cell" selectable="YES" id="zM9-db-mdY">
-                                                            <font key="font" usesAppearanceFont="YES"/>
-                                                            <string key="title">这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息这是一条测试消息</string>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="AvL-sJ-gMp" firstAttribute="top" secondItem="AFY-bV-Szc" secondAttribute="top" constant="5" id="9yr-6J-AQA"/>
-                                                    <constraint firstAttribute="trailing" secondItem="AvL-sJ-gMp" secondAttribute="trailing" constant="5" id="HhV-UN-FCt"/>
-                                                    <constraint firstAttribute="bottom" secondItem="AvL-sJ-gMp" secondAttribute="bottom" constant="5" id="Wbl-jW-nE0"/>
-                                                    <constraint firstItem="AvL-sJ-gMp" firstAttribute="leading" secondItem="AFY-bV-Szc" secondAttribute="leading" constant="5" id="gZQ-r2-FVO"/>
-                                                </constraints>
                                             </tableCellView>
                                         </prototypeCellViews>
                                     </tableColumn>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView id="ZBJ-kl-Gib" customClass="CustomMessageCellView">
+            <rect key="frame" x="0.0" y="0.0" width="439" height="38"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="W3R-YX-yRc">
+                    <rect key="frame" x="18" y="12" width="403" height="16"/>
+                    <textFieldCell key="cell" selectable="YES" enabled="NO" title="Multiline Label" id="lOL-hx-xDb">
+                        <font key="font" metaFont="cellTitle"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="v5i-Hj-2tb">
+                    <rect key="frame" x="20" y="1" width="399" height="1"/>
+                    <view key="contentView" id="Mqe-Yp-6Ex">
+                        <rect key="frame" x="1" y="1" width="397" height="0.0"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="btD-4S-VWY"/>
+                    </constraints>
+                    <color key="borderColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="fillColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="v5i-Hj-2tb" firstAttribute="leading" secondItem="ZBJ-kl-Gib" secondAttribute="leading" constant="20" id="1tr-7V-GfA"/>
+                <constraint firstItem="W3R-YX-yRc" firstAttribute="leading" secondItem="ZBJ-kl-Gib" secondAttribute="leading" constant="20" id="1vv-Rj-pI7"/>
+                <constraint firstAttribute="trailing" secondItem="W3R-YX-yRc" secondAttribute="trailing" constant="20" id="9Fu-PU-5oI"/>
+                <constraint firstItem="v5i-Hj-2tb" firstAttribute="top" secondItem="W3R-YX-yRc" secondAttribute="bottom" constant="10" id="M6c-wD-jwJ"/>
+                <constraint firstItem="W3R-YX-yRc" firstAttribute="top" secondItem="ZBJ-kl-Gib" secondAttribute="top" constant="10" id="X7M-WA-CEV"/>
+                <constraint firstAttribute="bottom" secondItem="v5i-Hj-2tb" secondAttribute="bottom" constant="1" id="e8z-oQ-Coh"/>
+                <constraint firstAttribute="trailing" secondItem="v5i-Hj-2tb" secondAttribute="trailing" constant="20" id="xbm-vt-SHb"/>
+            </constraints>
+            <connections>
+                <outlet property="content" destination="W3R-YX-yRc" id="DeS-yV-zpJ"/>
+            </connections>
+            <point key="canvasLocation" x="59.5" y="133.5"/>
+        </tableCellView>
+    </objects>
+</document>
