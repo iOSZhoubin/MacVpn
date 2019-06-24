@@ -10,6 +10,17 @@
 
 @interface InternetViewController ()
 
+//显示名称
+@property (weak) IBOutlet NSTextField *name;
+//ip地址
+@property (weak) IBOutlet NSTextField *ip;
+//帐户
+@property (weak) IBOutlet NSTextField *account;
+//密码
+@property (weak) IBOutlet NSTextField *password;
+//秘钥
+@property (weak) IBOutlet NSTextField *passKey;
+
 @end
 
 @implementation InternetViewController
@@ -21,5 +32,12 @@
 
 }
 
+
+#pragma mark --- 生成配置文件
+
+- (IBAction)setFile:(NSButton *)sender {
+    
+    JumpLog(@"生成文件");
+}
 
 @end

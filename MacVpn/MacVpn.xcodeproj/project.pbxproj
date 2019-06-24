@@ -21,8 +21,12 @@
 		3900F1C722B745D100600020 /* AFNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1C222B745D100600020 /* AFNHelper.m */; };
 		3938C16822C066CB009E5B8C /* CustomMessageCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3938C16722C066CB009E5B8C /* CustomMessageCellView.xib */; };
 		3938C16B22C06760009E5B8C /* CustomMessageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3938C16A22C06760009E5B8C /* CustomMessageCellView.m */; };
-		3964FCB622C06C9E00E03A73 /* ResourcesCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3964FCB522C06C9E00E03A73 /* ResourcesCellView.m */; };
-		3964FCB822C06CA600E03A73 /* ResourcesCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3964FCB722C06CA600E03A73 /* ResourcesCellView.xib */; };
+		3964FCBE22C07B5100E03A73 /* IPSourcesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3964FCBC22C07B5100E03A73 /* IPSourcesViewController.m */; };
+		3964FCBF22C07B5100E03A73 /* IPSourcesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3964FCBD22C07B5100E03A73 /* IPSourcesViewController.xib */; };
+		3964FCC322C07B6000E03A73 /* WebSourcesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3964FCC122C07B6000E03A73 /* WebSourcesViewController.m */; };
+		3964FCC422C07B6000E03A73 /* WebSourcesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3964FCC222C07B6000E03A73 /* WebSourcesViewController.xib */; };
+		3964FCC822C07D5300E03A73 /* ResourcesCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3964FCC522C07D5300E03A73 /* ResourcesCellView.m */; };
+		3964FCC922C07D5300E03A73 /* ResourcesCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3964FCC722C07D5300E03A73 /* ResourcesCellView.xib */; };
 		398AE9E922B37B6B00684BD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 398AE9E822B37B6B00684BD0 /* AppDelegate.m */; };
 		398AE9EC22B37B6B00684BD0 /* MacVpn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 398AE9EA22B37B6B00684BD0 /* MacVpn.xcdatamodeld */; };
 		398AE9EE22B37B6D00684BD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 398AE9ED22B37B6D00684BD0 /* Assets.xcassets */; };
@@ -72,9 +76,15 @@
 		3938C16722C066CB009E5B8C /* CustomMessageCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMessageCellView.xib; sourceTree = "<group>"; };
 		3938C16922C06760009E5B8C /* CustomMessageCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomMessageCellView.h; sourceTree = "<group>"; };
 		3938C16A22C06760009E5B8C /* CustomMessageCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomMessageCellView.m; sourceTree = "<group>"; };
-		3964FCB422C06C9E00E03A73 /* ResourcesCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourcesCellView.h; sourceTree = "<group>"; };
-		3964FCB522C06C9E00E03A73 /* ResourcesCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResourcesCellView.m; sourceTree = "<group>"; };
-		3964FCB722C06CA600E03A73 /* ResourcesCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResourcesCellView.xib; sourceTree = "<group>"; };
+		3964FCBB22C07B5100E03A73 /* IPSourcesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPSourcesViewController.h; sourceTree = "<group>"; };
+		3964FCBC22C07B5100E03A73 /* IPSourcesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPSourcesViewController.m; sourceTree = "<group>"; };
+		3964FCBD22C07B5100E03A73 /* IPSourcesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IPSourcesViewController.xib; sourceTree = "<group>"; };
+		3964FCC022C07B6000E03A73 /* WebSourcesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSourcesViewController.h; sourceTree = "<group>"; };
+		3964FCC122C07B6000E03A73 /* WebSourcesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSourcesViewController.m; sourceTree = "<group>"; };
+		3964FCC222C07B6000E03A73 /* WebSourcesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebSourcesViewController.xib; sourceTree = "<group>"; };
+		3964FCC522C07D5300E03A73 /* ResourcesCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourcesCellView.m; sourceTree = "<group>"; };
+		3964FCC622C07D5300E03A73 /* ResourcesCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourcesCellView.h; sourceTree = "<group>"; };
+		3964FCC722C07D5300E03A73 /* ResourcesCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResourcesCellView.xib; sourceTree = "<group>"; };
 		398AE9E422B37B6B00684BD0 /* MacVpn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacVpn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		398AE9E722B37B6B00684BD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		398AE9E822B37B6B00684BD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,9 +150,6 @@
 				3900F1AE22B743FE00600020 /* ResourcesViewController.h */,
 				3900F1AF22B743FE00600020 /* ResourcesViewController.m */,
 				3900F1B022B743FE00600020 /* ResourcesViewController.xib */,
-				3964FCB422C06C9E00E03A73 /* ResourcesCellView.h */,
-				3964FCB522C06C9E00E03A73 /* ResourcesCellView.m */,
-				3964FCB722C06CA600E03A73 /* ResourcesCellView.xib */,
 			);
 			path = "Resources(资源列表)";
 			sourceTree = "<group>";
@@ -180,6 +187,29 @@
 				3900F1BD22B745D100600020 /* SecurityNSString.m */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		3964FCB922C079F200E03A73 /* WebSources(Web资源) */ = {
+			isa = PBXGroup;
+			children = (
+				3964FCC022C07B6000E03A73 /* WebSourcesViewController.h */,
+				3964FCC122C07B6000E03A73 /* WebSourcesViewController.m */,
+				3964FCC222C07B6000E03A73 /* WebSourcesViewController.xib */,
+			);
+			path = "WebSources(Web资源)";
+			sourceTree = "<group>";
+		};
+		3964FCBA22C079F900E03A73 /* IPSources(IP资源) */ = {
+			isa = PBXGroup;
+			children = (
+				3964FCBB22C07B5100E03A73 /* IPSourcesViewController.h */,
+				3964FCBC22C07B5100E03A73 /* IPSourcesViewController.m */,
+				3964FCBD22C07B5100E03A73 /* IPSourcesViewController.xib */,
+				3964FCC622C07D5300E03A73 /* ResourcesCellView.h */,
+				3964FCC522C07D5300E03A73 /* ResourcesCellView.m */,
+				3964FCC722C07D5300E03A73 /* ResourcesCellView.xib */,
+			);
+			path = "IPSources(IP资源)";
 			sourceTree = "<group>";
 		};
 		398AE9DB22B37B6A00684BD0 = {
@@ -231,6 +261,8 @@
 				39EDBC0E22BB6C8E00F21299 /* introduce(功能介绍) */,
 				39EDBC0D22BB6C8700F21299 /* AboutUs(关于我们) */,
 				39EDBC0C22BB6C8600F21299 /* ChangePassword(修改密码) */,
+				3964FCBA22C079F900E03A73 /* IPSources(IP资源) */,
+				3964FCB922C079F200E03A73 /* WebSources(Web资源) */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -375,15 +407,17 @@
 				3938C16822C066CB009E5B8C /* CustomMessageCellView.xib in Resources */,
 				398AEA1922B37F6700684BD0 /* loginViewController.xib in Resources */,
 				3900F1B722B7440C00600020 /* UserViewController.xib in Resources */,
+				3964FCC422C07B6000E03A73 /* WebSourcesViewController.xib in Resources */,
 				39EDBC0B22BB672F00F21299 /* JumpMorealertViewController.xib in Resources */,
 				39EDBC2322BB6D6400F21299 /* ChangePwordWindowController.xib in Resources */,
 				3900F1A822B743DA00600020 /* InternetViewController.xib in Resources */,
 				398AE9EE22B37B6D00684BD0 /* Assets.xcassets in Resources */,
-				3964FCB822C06CA600E03A73 /* ResourcesCellView.xib in Resources */,
+				3964FCBF22C07B5100E03A73 /* IPSourcesViewController.xib in Resources */,
 				3900F1AD22B743EC00600020 /* MessageViewController.xib in Resources */,
 				398AE9F122B37B6D00684BD0 /* MainMenu.xib in Resources */,
 				39EDBC1E22BB6D3500F21299 /* AboutUsViewController.xib in Resources */,
 				398AEA1722B37F6700684BD0 /* FirstWindowController.xib in Resources */,
+				3964FCC922C07D5300E03A73 /* ResourcesCellView.xib in Resources */,
 				3900F1B222B743FE00600020 /* ResourcesViewController.xib in Resources */,
 				398AEA1B22B37F6700684BD0 /* MainWindowController.xib in Resources */,
 			);
@@ -423,13 +457,15 @@
 			files = (
 				398AEA1A22B37F6700684BD0 /* MainWindowController.m in Sources */,
 				3900F1C522B745D100600020 /* SecurityNSString.m in Sources */,
+				3964FCC322C07B6000E03A73 /* WebSourcesViewController.m in Sources */,
 				3900F1B622B7440C00600020 /* UserViewController.m in Sources */,
 				3900F1C722B745D100600020 /* AFNHelper.m in Sources */,
+				3964FCBE22C07B5100E03A73 /* IPSourcesViewController.m in Sources */,
+				3964FCC822C07D5300E03A73 /* ResourcesCellView.m in Sources */,
 				398AE9EC22B37B6B00684BD0 /* MacVpn.xcdatamodeld in Sources */,
 				398AEA1822B37F6700684BD0 /* loginViewController.m in Sources */,
 				3900F1C622B745D100600020 /* JumpKeyChain.m in Sources */,
 				3900F1C422B745D100600020 /* JumpPublicAction.m in Sources */,
-				3964FCB622C06C9E00E03A73 /* ResourcesCellView.m in Sources */,
 				39EDBC2222BB6D6400F21299 /* ChangePwordWindowController.m in Sources */,
 				39EDBC1D22BB6D3500F21299 /* AboutUsViewController.m in Sources */,
 				398AE9F422B37B6D00684BD0 /* main.m in Sources */,

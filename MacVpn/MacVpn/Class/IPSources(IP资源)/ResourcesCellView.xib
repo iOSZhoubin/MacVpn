@@ -28,7 +28,7 @@
                         <constraint firstAttribute="width" constant="62" id="EIS-I8-mxa"/>
                     </constraints>
                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="访问地址：" id="8I5-wV-aMC">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -36,7 +36,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Je-bn-7Ow">
                     <rect key="frame" x="53" y="66" width="66" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="资源名称：" id="adi-hY-801">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -44,7 +44,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NRa-VA-xqT">
                     <rect key="frame" x="53" y="14" width="66" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="访问端口：" id="T6X-6e-VhY">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -52,7 +52,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wCJ-QG-NMA">
                     <rect key="frame" x="123" y="66" width="263" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="Label" id="gJc-oh-npa">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -63,7 +63,7 @@
                         <constraint firstAttribute="height" constant="16" id="O3Y-rL-SEg"/>
                     </constraints>
                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="Label" id="W3g-ie-RaF">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -71,7 +71,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gNu-h1-xA7">
                     <rect key="frame" x="123" y="14" width="263" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="Label" id="Nl9-HR-csN">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -133,7 +133,7 @@
                 <outlet property="port" destination="gNu-h1-xA7" id="RLR-Mm-okc"/>
                 <outlet property="pushView" destination="BLi-dv-wPA" id="N0W-dq-uX4"/>
             </connections>
-            <point key="canvasLocation" x="363.5" y="68"/>
+            <point key="canvasLocation" x="72" y="169"/>
         </tableCellView>
     </objects>
     <resources>

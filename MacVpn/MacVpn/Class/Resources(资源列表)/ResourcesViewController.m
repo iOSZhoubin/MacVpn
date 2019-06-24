@@ -7,62 +7,70 @@
 //
 
 #import "ResourcesViewController.h"
-#import "ResourcesCellView.h"
+#import "IPSourcesViewController.h"
+#import "WebSourcesViewController.h"
 
-@interface ResourcesViewController ()<NSTableViewDelegate,NSTableViewDataSource>
+@interface ResourcesViewController ()
 
-@property (weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet NSView *customerView;
 
-//数据源
-@property (strong,nonatomic) NSMutableArray *dataArray;
+@property (weak) IBOutlet NSTextField *webTitle;
+
+
+@property (strong,nonatomic) IPSourcesViewController *ipVc;
+@property (strong,nonatomic) WebSourcesViewController *webVc;
 
 @end
 
 @implementation ResourcesViewController
 
--(NSMutableArray *)dataArray{
-    
-    if(!_dataArray){
-        
-        _dataArray = [NSMutableArray array];
-    }
-    
-    return _dataArray;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"ResourcesCellView" bundle:nil] forIdentifier:@"ResourcesCellView"];
+    self.ipVc = [[IPSourcesViewController alloc]initWithNibName:@"IPSourcesViewController" bundle:nil];
+    self.webVc = [[WebSourcesViewController alloc]initWithNibName:@"WebSourcesViewController" bundle:nil];
     
-    self.tableView.delegate = self;
+    self.ipVc.view.frame  = [self returnvcFrame];
+    self.webVc.view.frame  = [self returnvcFrame];
     
-    self.tableView.dataSource = self;
+    self.webTitle.hidden = YES;
+    
+    [self.customerView addSubview:self.ipVc.view];
+
 }
 
 
-#pragma mark ---  NSTableViewDelegate,NSTableViewDataSource
 
-//返回行数
--(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView{
+#pragma mark --- ip点击方法
+
+- (IBAction)ipAction:(NSButton *)sender {
     
-    return 10;
+    self.webTitle.hidden = YES;
+    
+    [self.ipVc.view removeFromSuperview];
+    [self.webVc.view removeFromSuperview];
+    
+    [self.customerView addSubview:self.ipVc.view];
 }
 
--(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row{
+#pragma mark --- web点击方法
 
-    return 95;
+- (IBAction)webAction:(NSButton *)sender {
+    
+    self.webTitle.hidden = NO;
+    
+    [self.ipVc.view removeFromSuperview];
+    [self.webVc.view removeFromSuperview];
+    
+    [self.customerView addSubview:self.webVc.view];
 }
 
--(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
-    
-    ResourcesCellView *cellView = [tableView makeViewWithIdentifier:@"ResourcesCellView" owner:self];
-    
-    NSDictionary *dict;
-    
-    [cellView refreshWithDict:dict];
-    
-    return cellView;
-}
 
+-(NSRect)returnvcFrame{
+    
+    NSRect rect = CGRectMake(0, 0, self.customerView.frame.size.width, self.customerView.frame.size.height);
+    
+    return rect;
+}
 @end
