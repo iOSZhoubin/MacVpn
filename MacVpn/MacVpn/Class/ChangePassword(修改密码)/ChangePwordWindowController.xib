@@ -95,6 +95,9 @@
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
+                                    <connections>
+                                        <action selector="sureAction:" target="-2" id="z1z-jL-t4d"/>
+                                    </connections>
                                 </button>
                                 <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WvI-rw-E5N">
                                     <rect key="frame" x="38" y="236" width="74" height="18"/>

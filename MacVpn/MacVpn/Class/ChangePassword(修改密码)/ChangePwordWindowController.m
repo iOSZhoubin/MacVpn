@@ -7,8 +7,15 @@
 //
 
 #import "ChangePwordWindowController.h"
+#import "MainWindowController.h"
 
 @interface ChangePwordWindowController ()
+
+//登录界面
+@property (strong,nonatomic) MainWindowController *loginWc;
+
+//0-失败 1-成功
+@property (copy,nonatomic) NSString *isSuccess;
 
 @end
 
@@ -17,7 +24,46 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    self.loginWc = [[MainWindowController alloc]initWithWindowNibName:@"MainWindowController"];
+
+}
+
+#pragma mark --- 确定
+
+- (IBAction)sureAction:(NSButton *)sender {
+    
+    [self show:@"提示" andMessage:@"修改密码成功,即将重新登录"];
+    
+    self.isSuccess = @"0";
+}
+
+#pragma mark --- 提示框
+
+-(void)show:(NSString *)title andMessage:(NSString *)message{
+    
+    NSAlert *alert = [[NSAlert alloc]init];
+    
+    alert.messageText = title;
+    
+    alert.informativeText = message;
+    
+    //设置提示框的样式
+    alert.alertStyle = NSAlertStyleWarning;
+    
+    [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+        
+        if([self.isSuccess isEqualToString:@"1"]){
+            
+            [self.loginWc.window orderFront:nil];//显示要跳转的窗口
+            [[self.loginWc window] center];//显示在屏幕中间
+            [self.window orderOut:nil];//关闭修改密码窗口
+            [self.mainWc orderOut:nil];//关闭主页面窗口
+            
+        }else{
+            
+            //修改失败
+        }
+    }];
 }
 
 @end

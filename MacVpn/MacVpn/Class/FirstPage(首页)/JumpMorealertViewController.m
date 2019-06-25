@@ -35,6 +35,8 @@
     
     [self.changepWc.window orderFront:nil];//显示要跳转的窗口
     
+    self.changepWc.mainWc = self.mainWc;
+    
     [[self.changepWc window] center];//显示在屏幕中间
     
 }
