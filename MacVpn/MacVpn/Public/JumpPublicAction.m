@@ -18,13 +18,7 @@
 #import <net/if_dl.h>
 
 
-
 @implementation JumpPublicAction
-
-
-
-
-
 
 
 #pragma mark -- 获取本机IP地址和Mac地址
@@ -132,6 +126,35 @@
         [ret appendFormat:@"%02x",result[i]];
     }
     return ret;
+}
+
+
+//初始化菊花并添加至window上
++(void)initshowView:(NSView *)view indicator:(NSProgressIndicator *)indicator{
+
+    indicator.style = NSProgressIndicatorSpinningStyle;
+    
+    //这种方式只是给背景rect添加了背景色。
+//    indicator.wantsLayer = YES;
+//    indicator.layer.backgroundColor = ColorA(0, 0, 0, 0.5).CGColor;
+    
+    indicator.controlSize = NSControlSizeRegular;
+    
+    [indicator sizeToFit];
+}
+
+
+//开始
++(void)startShowindicator:(NSProgressIndicator *)indicator{
+    
+    [indicator startAnimation:nil];
+}
+
+//结束
++(void)endShowindicator:(NSProgressIndicator *)indicator{
+ 
+    [indicator stopAnimation:nil];
+
 }
 
 

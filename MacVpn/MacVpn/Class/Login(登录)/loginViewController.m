@@ -27,9 +27,9 @@
 - (IBAction)loginAction:(NSButton *)sender {
     
     [self.firstWc.window orderFront:nil];//显示要跳转的窗口
-    
-    [[self.firstWc window] center];//显示在屏幕中间 
-    
+
+    [[self.firstWc window] center];//显示在屏幕中间
+
     [self.mainWC orderOut:nil];//关闭当前窗口
     
 }

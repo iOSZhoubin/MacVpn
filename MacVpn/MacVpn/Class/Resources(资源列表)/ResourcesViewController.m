@@ -53,6 +53,7 @@
     [self.ipVc.view removeFromSuperview];
     [self.webVc.view removeFromSuperview];
     
+    
     [self.customerView addSubview:self.ipVc.view];
 }
 
@@ -65,6 +66,7 @@
     [self.ipVc.view removeFromSuperview];
     [self.webVc.view removeFromSuperview];
     
+
     [self.customerView addSubview:self.webVc.view];
 }
 

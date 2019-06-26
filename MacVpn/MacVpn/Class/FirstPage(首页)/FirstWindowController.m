@@ -14,9 +14,14 @@
 #import "JumpMorealertViewController.h"
 
 @interface FirstWindowController ()
+
+//网络连接
 @property (weak) IBOutlet NSButton *interBtn;
+//资源列表
 @property (weak) IBOutlet NSButton *resourceBtn;
+//消息中心
 @property (weak) IBOutlet NSButton *messageBtn;
+//个人中心
 @property (weak) IBOutlet NSButton *userBtn;
 
 /** 网络连接 */
@@ -77,7 +82,7 @@
     self.internetVc = [[InternetViewController alloc]initWithNibName:@"InternetViewController" bundle:nil];
     
     self.resourcesVc = [[ResourcesViewController alloc]initWithNibName:@"ResourcesViewController" bundle:nil];
-
+    
     self.messageVc = [[MessageViewController alloc]initWithNibName:@"MessageViewController" bundle:nil];
 
     self.userVc = [[UserViewController alloc]initWithNibName:@"UserViewController" bundle:nil];
@@ -109,7 +114,7 @@
     [self.resourcesVc.view removeFromSuperview];
     [self.messageVc.view removeFromSuperview];
     [self.userVc.view removeFromSuperview];
-
+    
     [self.window.contentView addSubview:self.internetVc.view];
     
 }
@@ -145,7 +150,7 @@
     [self.resourcesVc.view removeFromSuperview];
     [self.messageVc.view removeFromSuperview];
     [self.userVc.view removeFromSuperview];
-    
+
 
     [self.window.contentView addSubview:self.messageVc.view];
 }

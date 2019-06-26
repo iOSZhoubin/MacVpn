@@ -15,6 +15,8 @@
 //数据源
 @property (strong,nonatomic) NSMutableArray *dataArray;
 
+@property (strong,nonatomic) NSProgressIndicator *indicator;
+
 @end
 
 
@@ -39,7 +41,10 @@
     self.tableView.delegate = self;
     
     self.tableView.dataSource = self;
+    
+    [self initShow];
 }
+
 
 
 #pragma mark ---  NSTableViewDelegate,NSTableViewDataSource
@@ -60,10 +65,34 @@
 }
 
 
+//初始化加载动画
+
+-(void)initShow{
+    
+    self.indicator = [[NSProgressIndicator alloc]initWithFrame:CGRectMake(300, 400, 40, 40)];
+    
+    self.indicator.style = NSProgressIndicatorSpinningStyle;
+    
+    self.indicator.controlSize = NSControlSizeRegular;
+    
+    [self.indicator sizeToFit];
+    
+    [self.view addSubview:self.indicator];
+    
+    self.indicator.hidden = YES;
+}
+
+
+#pragma mark -- 刷新
 
 - (IBAction)refreshMessage:(NSButton *)sender {
     
     JumpLog(@"获取消息数据");
+    
+    self.indicator.hidden = NO;
+    
+    [self.indicator startAnimation:nil];
+
 }
 
 

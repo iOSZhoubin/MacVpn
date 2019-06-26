@@ -15,6 +15,8 @@
 //数据源
 @property (strong,nonatomic) NSMutableArray *dataArray;
 
+@property (strong,nonatomic) NSProgressIndicator *indicator;
+
 @end
 
 @implementation IPSourcesViewController
@@ -38,6 +40,8 @@
     self.tableView.delegate = self;
     
     self.tableView.dataSource = self;
+    
+    [self initShow];
 }
 
 
@@ -87,11 +91,34 @@
     JumpLog(@"请求数据");
 }
 
+
 #pragma mark --- 刷新
 
 - (IBAction)refreshIpSource:(NSButton *)sender {
     
+    self.indicator.hidden = NO;
+    
+    [self.indicator startAnimation:nil];
+    
     [self loadIpsourceList];
+}
+
+
+//初始化加载动画
+
+-(void)initShow{
+    
+    self.indicator = [[NSProgressIndicator alloc]initWithFrame:CGRectMake(300, 400, 40, 40)];
+    
+    self.indicator.style = NSProgressIndicatorSpinningStyle;
+    
+    self.indicator.controlSize = NSControlSizeRegular;
+    
+    [self.indicator sizeToFit];
+    
+    [self.view addSubview:self.indicator];
+    
+    self.indicator.hidden = YES;
 }
 
 @end

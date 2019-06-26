@@ -13,6 +13,8 @@
 
 @property (weak) IBOutlet WKWebView *webView;
 
+@property (strong,nonatomic) NSProgressIndicator *indicator;
+
 @end
 
 @implementation WebSourcesViewController
@@ -22,6 +24,8 @@
     
     self.webView.UIDelegate = self;
     self.webView.navigationDelegate = self;
+    
+    [self initShow];
     
     [self loadHtml];
 }
@@ -63,6 +67,10 @@
     
     JumpLog(@"加载完成");
     
+    self.indicator.hidden = YES;
+    
+    [self.indicator stopAnimation:nil];
+    
 }
 
 //加载失败时调用
@@ -78,7 +86,32 @@
 
 - (IBAction)refreshWebSource:(NSButton *)sender {
     
+    self.indicator.hidden = NO;
+    
+    [self.indicator startAnimation:nil];
+    
     [self loadHtml];
 }
+
+
+//初始化加载动画
+
+-(void)initShow{
+    
+    self.indicator = [[NSProgressIndicator alloc]initWithFrame:CGRectMake(300, 400, 40, 40)];
+    
+    self.indicator.style = NSProgressIndicatorSpinningStyle;
+    
+    self.indicator.controlSize = NSControlSizeRegular;
+    
+    [self.indicator sizeToFit];
+    
+    [self.view addSubview:self.indicator];
+    
+    self.indicator.hidden = YES;
+}
+
+
+
 
 @end
