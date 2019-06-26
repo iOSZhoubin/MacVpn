@@ -61,6 +61,10 @@
 
 
 
+- (IBAction)refreshMessage:(NSButton *)sender {
+    
+    JumpLog(@"获取消息数据");
+}
 
 
 @end

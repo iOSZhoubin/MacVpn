@@ -16,7 +16,6 @@
 
 @property (weak) IBOutlet NSTextField *webTitle;
 
-
 @property (strong,nonatomic) IPSourcesViewController *ipVc;
 @property (strong,nonatomic) WebSourcesViewController *webVc;
 
@@ -31,10 +30,13 @@
     self.ipVc = [[IPSourcesViewController alloc]initWithNibName:@"IPSourcesViewController" bundle:nil];
     self.webVc = [[WebSourcesViewController alloc]initWithNibName:@"WebSourcesViewController" bundle:nil];
     
-    self.ipVc.view.frame  = [self returnvcFrame];
-    self.webVc.view.frame  = [self returnvcFrame];
+    NSRect rect1 = CGRectMake(0, 0, self.customerView.frame.size.width, self.customerView.frame.size.height);
+    NSRect rect2 = CGRectMake(0, 60, self.customerView.frame.size.width, self.customerView.frame.size.height);
+
+    self.ipVc.view.frame  = rect1;
+    self.webVc.view.frame  = rect2;
     
-    self.webTitle.hidden = YES;
+    self.webTitle.stringValue = @"IP资源";
     
     [self.customerView addSubview:self.ipVc.view];
 
@@ -46,8 +48,8 @@
 
 - (IBAction)ipAction:(NSButton *)sender {
     
-    self.webTitle.hidden = YES;
-    
+    self.webTitle.stringValue = @"IP 资源";
+
     [self.ipVc.view removeFromSuperview];
     [self.webVc.view removeFromSuperview];
     
@@ -58,19 +60,12 @@
 
 - (IBAction)webAction:(NSButton *)sender {
     
-    self.webTitle.hidden = NO;
-    
+    self.webTitle.stringValue = @"Web 资源";
+
     [self.ipVc.view removeFromSuperview];
     [self.webVc.view removeFromSuperview];
     
     [self.customerView addSubview:self.webVc.view];
 }
 
-
--(NSRect)returnvcFrame{
-    
-    NSRect rect = CGRectMake(0, 0, self.customerView.frame.size.width, self.customerView.frame.size.height);
-    
-    return rect;
-}
 @end

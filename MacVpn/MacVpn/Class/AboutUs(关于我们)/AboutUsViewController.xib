@@ -222,7 +222,8 @@
                         <constraint firstAttribute="height" constant="300" id="425-8j-4JB"/>
                         <constraint firstAttribute="width" constant="450" id="sbw-gL-Oio"/>
                     </constraints>
-                    <color key="borderColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="borderColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="fillColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </box>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="47E-EJ-GCk">
                     <rect key="frame" x="178" y="422" width="208" height="17"/>

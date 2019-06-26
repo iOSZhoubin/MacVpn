@@ -19,13 +19,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="74" horizontalPageScroll="10" verticalLineScroll="74" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsW-Or-yLH">
-                    <rect key="frame" x="10" y="10" width="460" height="252"/>
+                    <rect key="frame" x="10" y="40" width="460" height="222"/>
                     <clipView key="contentView" id="HBo-Ln-eRO">
-                        <rect key="frame" x="0.0" y="0.0" width="460" height="252"/>
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="222"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="72" usesAutomaticRowHeights="YES" viewBased="YES" id="kO1-TK-8If">
-                                <rect key="frame" x="0.0" y="0.0" width="460" height="252"/>
+                                <rect key="frame" x="0.0" y="0.0" width="460" height="222"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -63,11 +63,27 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qjg-fU-4IW">
+                    <rect key="frame" x="4" y="2" width="72" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="1bs-lu-6AD"/>
+                        <constraint firstAttribute="height" constant="21" id="M0D-jx-HtD"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="刷 新" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hja-7c-Ae2">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="refreshMessage:" target="-2" id="Kxr-jN-wR2"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstItem="qjg-fU-4IW" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="HSs-nC-iJU"/>
+                <constraint firstItem="qjg-fU-4IW" firstAttribute="top" secondItem="zsW-Or-yLH" secondAttribute="bottom" constant="10" id="K5L-Sb-h8b"/>
                 <constraint firstItem="zsW-Or-yLH" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="YSs-as-fTw"/>
                 <constraint firstItem="zsW-Or-yLH" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="buY-7j-ZBa"/>
-                <constraint firstAttribute="bottom" secondItem="zsW-Or-yLH" secondAttribute="bottom" constant="10" id="ewU-ms-2AX"/>
+                <constraint firstAttribute="bottom" secondItem="zsW-Or-yLH" secondAttribute="bottom" constant="40" id="ewU-ms-2AX"/>
                 <constraint firstAttribute="trailing" secondItem="zsW-Or-yLH" secondAttribute="trailing" constant="10" id="ow7-Sz-8he"/>
             </constraints>
             <point key="canvasLocation" x="140" y="102"/>

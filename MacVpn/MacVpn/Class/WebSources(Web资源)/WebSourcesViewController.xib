@@ -3,14 +3,14 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="WebSourcesViewController">
             <connections>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
-                <outlet property="webView" destination="OFa-n3-fCW" id="zqj-rF-PgL"/>
+                <outlet property="webView" destination="Rz9-hA-rPD" id="Nll-rI-6MN"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -19,25 +19,35 @@
             <rect key="frame" x="0.0" y="0.0" width="800" height="659"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <webView translatesAutoresizingMaskIntoConstraints="NO" id="OFa-n3-fCW">
-                    <rect key="frame" x="10" y="10" width="780" height="639"/>
-                    <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
-                        <nil key="identifier"/>
-                    </webPreferences>
+                <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rz9-hA-rPD">
+                    <rect key="frame" x="10" y="40" width="780" height="609"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u1e-2n-qgx">
+                    <rect key="frame" x="14" y="3" width="82" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="W2J-k1-UBI"/>
+                        <constraint firstAttribute="height" constant="21" id="nrj-uI-Plh"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="刷 新" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LEZ-Vb-pG9">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
                     <connections>
-                        <outlet property="UIDelegate" destination="-2" id="1Wr-gh-bku"/>
-                        <outlet property="downloadDelegate" destination="-2" id="5CB-3G-2Rk"/>
-                        <outlet property="frameLoadDelegate" destination="-2" id="qo8-kS-g2E"/>
-                        <outlet property="policyDelegate" destination="-2" id="b5z-1b-9sx"/>
-                        <outlet property="resourceLoadDelegate" destination="-2" id="MBQ-8G-Nrq"/>
+                        <action selector="refreshWebSource:" target="-2" id="kFf-1a-tnC"/>
                     </connections>
-                </webView>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="OFa-n3-fCW" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="Q48-bu-0Ai"/>
-                <constraint firstItem="OFa-n3-fCW" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="jIJ-yB-iC4"/>
-                <constraint firstAttribute="bottom" secondItem="OFa-n3-fCW" secondAttribute="bottom" constant="10" id="r1x-YD-1lH"/>
-                <constraint firstAttribute="trailing" secondItem="OFa-n3-fCW" secondAttribute="trailing" constant="10" id="xjb-np-Fph"/>
+                <constraint firstItem="Rz9-hA-rPD" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="2KG-7E-y0x"/>
+                <constraint firstItem="Rz9-hA-rPD" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="3yS-O5-O9g"/>
+                <constraint firstItem="u1e-2n-qgx" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Dji-Ho-luL"/>
+                <constraint firstAttribute="bottom" secondItem="u1e-2n-qgx" secondAttribute="bottom" constant="10" id="f1k-jc-ck0"/>
+                <constraint firstAttribute="bottom" secondItem="Rz9-hA-rPD" secondAttribute="bottom" constant="40" id="lQ7-oA-zYn"/>
+                <constraint firstAttribute="trailing" secondItem="Rz9-hA-rPD" secondAttribute="trailing" constant="10" id="zQx-eE-FSP"/>
             </constraints>
             <point key="canvasLocation" x="147" y="48.5"/>
         </customView>

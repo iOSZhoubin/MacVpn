@@ -80,5 +80,18 @@
     JumpLog(@"点击了第%ld行",selectRow);
 }
 
+#pragma mark --- 请求列表数据
+
+-(void)loadIpsourceList{
+    
+    JumpLog(@"请求数据");
+}
+
+#pragma mark --- 刷新
+
+- (IBAction)refreshIpSource:(NSButton *)sender {
+    
+    [self loadIpsourceList];
+}
 
 @end
