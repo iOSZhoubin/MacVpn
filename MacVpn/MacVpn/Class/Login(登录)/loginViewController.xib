@@ -8,6 +8,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="loginViewController">
             <connections>
+                <outlet property="accountL" destination="wTL-NA-aHY" id="srZ-CZ-kmr"/>
+                <outlet property="ipaddress" destination="UjS-Ul-8yh" id="DRV-OT-DX5"/>
+                <outlet property="passwordL" destination="N0M-d7-rL5" id="WIg-am-qFE"/>
+                <outlet property="portL" destination="4bV-mI-ZmW" id="2X2-jB-XWm"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -200,7 +204,7 @@
                 <constraint firstItem="t0U-36-pe9" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="oIO-26-0Er"/>
                 <constraint firstItem="t0U-36-pe9" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="q8n-Ey-qIt"/>
             </constraints>
-            <point key="canvasLocation" x="134" y="78"/>
+            <point key="canvasLocation" x="203" y="79"/>
         </customView>
     </objects>
     <resources>

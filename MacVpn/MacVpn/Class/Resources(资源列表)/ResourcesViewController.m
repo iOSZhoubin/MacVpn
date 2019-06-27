@@ -36,7 +36,7 @@
     self.ipVc.view.frame  = rect1;
     self.webVc.view.frame  = rect2;
     
-    self.webTitle.stringValue = @"IP资源";
+    self.webTitle.stringValue = @"IP 资源";
     
     [self.customerView addSubview:self.ipVc.view];
 

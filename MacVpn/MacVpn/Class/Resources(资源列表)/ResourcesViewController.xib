@@ -77,7 +77,7 @@
                                 <constraint firstAttribute="height" constant="17" id="h4p-Ge-Qfj"/>
                                 <constraint firstAttribute="width" constant="80" id="lDq-4Y-xh3"/>
                             </constraints>
-                            <textFieldCell key="cell" lineBreakMode="clipping" title="Web   资 源" id="UD7-pi-QZE">
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="IP  资源" id="UD7-pi-QZE">
                                 <font key="font" usesAppearanceFont="YES"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

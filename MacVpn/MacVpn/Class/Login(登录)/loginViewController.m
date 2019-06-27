@@ -11,7 +11,16 @@
 
 @interface loginViewController ()
 
+//登录成功后显示的窗口
 @property (strong,nonatomic) FirstWindowController *firstWc;
+//帐户名
+@property (weak) IBOutlet NSTextField *accountL;
+//密码
+@property (weak) IBOutlet NSSecureTextField *passwordL;
+//ip地址
+@property (weak) IBOutlet NSTextField *ipaddress;
+//端口号
+@property (weak) IBOutlet NSTextField *portL;
 
 @end
 
