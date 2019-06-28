@@ -78,7 +78,9 @@
 -(void)webView:(WKWebView *)webView didFailLoadWithError:(nonnull NSError *)error{
     
     JumpLog(@"加载失败 error : %@",error.description);
-    
+
+    [JumpPublicAction showAlert:@"提示" andMessage:@"加载失败" window:self.view.window];
+
 }
 
 

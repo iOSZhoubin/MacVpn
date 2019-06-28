@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 //密码转为MD5
 +(NSString *)md5:(NSString *)string;
 
+//提示框
++(void)showAlert:(NSString *)title andMessage:(NSString *)message window:(NSWindow *)window;
+
 
 @end
 

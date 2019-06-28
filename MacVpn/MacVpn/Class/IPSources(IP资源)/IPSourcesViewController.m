@@ -89,7 +89,10 @@
 -(void)loadIpsourceList{
     
     JumpLog(@"请求数据");
+    //    [JumpPublicAction showAlert:@"提示" andMessage:@"请输入描述" window:self.view.window];
+
 }
+
 
 
 #pragma mark --- 刷新

@@ -93,6 +93,16 @@
     
     [self.indicator startAnimation:nil];
 
+    [self loadMessageList];
+}
+
+
+#pragma mark --- 获取列表数据
+
+-(void)loadMessageList{
+    
+//    [JumpPublicAction showAlert:@"提示" andMessage:@"请输入描述" window:self.view.window];
+
 }
 
 

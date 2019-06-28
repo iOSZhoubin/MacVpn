@@ -33,15 +33,51 @@
 
 }
 
+
+#pragma mark --- 登录
+
 - (IBAction)loginAction:(NSButton *)sender {
     
-    [self.firstWc.window orderFront:nil];//显示要跳转的窗口
+    if(SafeString(self.accountL.stringValue).length < 1){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入用户名" window:self.mainWC];
 
-    [[self.firstWc window] center];//显示在屏幕中间
+        return;
 
-    [self.mainWC orderOut:nil];//关闭当前窗口
+    }else if (SafeString(self.passwordL.stringValue).length < 1){
+
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入密码" window:self.mainWC];
+
+        return;
+
+    }else if (SafeString(self.ipaddress.stringValue).length < 1){
+
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入服务器域名" window:self.mainWC];
+
+        return;
+
+    }else if (SafeString(self.portL.stringValue).length < 1){
+
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入端口号" window:self.mainWC];
+
+        return;
+
+    }
     
+    [self loadAction];
 }
+
+-(void)loadAction{
+    
+    [self.firstWc.window orderFront:nil];//显示要跳转的窗口
+    
+    [[self.firstWc window] center];//显示在屏幕中间
+    
+    [self.mainWC orderOut:nil];//关闭当前窗口
+}
+
+
+
 
 
 @end

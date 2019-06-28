@@ -27,7 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
 
 
 }
@@ -37,7 +36,41 @@
 
 - (IBAction)setFile:(NSButton *)sender {
     
+    if(SafeString(self.name.stringValue).length < 1){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入描述" window:self.view.window];
+
+        return;
+    
+    }else if (SafeString(self.ip.stringValue).length < 1){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入服务器" window:self.view.window];
+        
+        return;
+        
+    }else if (SafeString(self.account.stringValue).length < 1){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入帐户" window:self.view.window];
+        
+        return;
+        
+    }else if (SafeString(self.password.stringValue).length < 1){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入密码" window:self.view.window];
+        
+        return;
+        
+    }
+    
+    [self addFile];
+    
+}
+
+
+-(void)addFile{
+    
     JumpLog(@"生成文件");
+
 }
 
 @end

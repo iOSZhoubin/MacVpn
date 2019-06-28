@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="UserViewController">
             <connections>
                 <outlet property="customerView" destination="71U-iS-tEB" id="Zlc-q4-03G"/>
+                <outlet property="titleName" destination="MOe-CA-0FY" id="rFK-W6-OAI"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -68,6 +69,24 @@
                 </box>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="71U-iS-tEB">
                     <rect key="frame" x="90" y="0.0" width="711" height="611"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MOe-CA-0FY">
+                            <rect key="frame" x="303" y="586" width="104" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="17" id="2Wh-AN-41i"/>
+                                <constraint firstAttribute="width" constant="100" id="YMH-VY-50w"/>
+                            </constraints>
+                            <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" alignment="center" title="功能介绍" id="W3e-9T-j3S">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="MOe-CA-0FY" firstAttribute="top" secondItem="71U-iS-tEB" secondAttribute="top" constant="8" id="wy8-in-f0M"/>
+                        <constraint firstItem="MOe-CA-0FY" firstAttribute="centerX" secondItem="71U-iS-tEB" secondAttribute="centerX" id="ya9-fZ-S6d"/>
+                    </constraints>
                 </customView>
             </subviews>
             <constraints>

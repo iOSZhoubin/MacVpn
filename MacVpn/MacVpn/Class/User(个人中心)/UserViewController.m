@@ -12,6 +12,9 @@
 
 @interface UserViewController ()
 
+//标题
+@property (weak) IBOutlet NSTextField *titleName;
+
 @property (weak) IBOutlet NSView *customerView;
 
 @property (strong,nonatomic) IntroduceViewController *introduceVc;
@@ -29,6 +32,8 @@
    
     self.introduceVc.view.frame  = [self returnvcFrame];
     self.aboutUsVc.view.frame  = [self returnvcFrame];
+    
+    self.titleName.stringValue = @"功能介绍";
 
     [self.customerView addSubview:self.introduceVc.view];
 
@@ -41,6 +46,8 @@
     [self.introduceVc.view removeFromSuperview];
     [self.aboutUsVc.view removeFromSuperview];
 
+    self.titleName.stringValue = @"功能介绍";
+
     [self.customerView addSubview:self.introduceVc.view];
 }
 
@@ -51,6 +58,8 @@
     [self.introduceVc.view removeFromSuperview];
     [self.aboutUsVc.view removeFromSuperview];
     
+    self.titleName.stringValue = @"关于我们";
+
     [self.customerView addSubview:self.aboutUsVc.view];
 }
 

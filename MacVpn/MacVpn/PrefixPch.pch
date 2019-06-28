@@ -13,7 +13,6 @@
 #import "AFNHelper.h"
 #import "JumpKeyChain.h"
 #import "JumpPublicAction.h"
-#import "DJProgressHUD.h"
 
 #ifndef PrefixPch_pch
 #define PrefixPch_pch
