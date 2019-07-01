@@ -17,7 +17,6 @@
 		3900F1B722B7440C00600020 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3900F1B522B7440C00600020 /* UserViewController.xib */; };
 		3900F1C422B745D100600020 /* JumpPublicAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1BC22B745D100600020 /* JumpPublicAction.m */; };
 		3900F1C522B745D100600020 /* SecurityNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1BD22B745D100600020 /* SecurityNSString.m */; };
-		3900F1C622B745D100600020 /* JumpKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1C122B745D100600020 /* JumpKeyChain.m */; };
 		3900F1C722B745D100600020 /* AFNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3900F1C222B745D100600020 /* AFNHelper.m */; };
 		3938C16822C066CB009E5B8C /* CustomMessageCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3938C16722C066CB009E5B8C /* CustomMessageCellView.xib */; };
 		3938C16B22C06760009E5B8C /* CustomMessageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3938C16A22C06760009E5B8C /* CustomMessageCellView.m */; };
@@ -39,6 +38,8 @@
 		398AEA1922B37F6700684BD0 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398AEA1222B37F6700684BD0 /* loginViewController.xib */; };
 		398AEA1A22B37F6700684BD0 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 398AEA1422B37F6700684BD0 /* MainWindowController.m */; };
 		398AEA1B22B37F6700684BD0 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398AEA1522B37F6700684BD0 /* MainWindowController.xib */; };
+		39AADA6222C9EF2600838F13 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AADA6022C9EF2600838F13 /* RegisterViewController.m */; };
+		39AADA6322C9EF2600838F13 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39AADA6122C9EF2600838F13 /* RegisterViewController.xib */; };
 		39EDBC0A22BB672F00F21299 /* JumpMorealertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EDBC0822BB672F00F21299 /* JumpMorealertViewController.m */; };
 		39EDBC0B22BB672F00F21299 /* JumpMorealertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39EDBC0922BB672F00F21299 /* JumpMorealertViewController.xib */; };
 		39EDBC1822BB6D2000F21299 /* IntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EDBC1622BB6D2000F21299 /* IntroduceViewController.m */; };
@@ -70,8 +71,6 @@
 		3900F1BD22B745D100600020 /* SecurityNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityNSString.m; sourceTree = "<group>"; };
 		3900F1BE22B745D100600020 /* AFNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNHelper.h; sourceTree = "<group>"; };
 		3900F1BF22B745D100600020 /* JumpPublicAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpPublicAction.h; sourceTree = "<group>"; };
-		3900F1C022B745D100600020 /* JumpKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpKeyChain.h; sourceTree = "<group>"; };
-		3900F1C122B745D100600020 /* JumpKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpKeyChain.m; sourceTree = "<group>"; };
 		3900F1C222B745D100600020 /* AFNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNHelper.m; sourceTree = "<group>"; };
 		3900F1C322B745D100600020 /* SecurityNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityNSString.h; sourceTree = "<group>"; };
 		3938C16722C066CB009E5B8C /* CustomMessageCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMessageCellView.xib; sourceTree = "<group>"; };
@@ -105,6 +104,9 @@
 		398AEA1322B37F6700684BD0 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		398AEA1422B37F6700684BD0 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		398AEA1522B37F6700684BD0 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		39AADA5F22C9EF2600838F13 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		39AADA6022C9EF2600838F13 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		39AADA6122C9EF2600838F13 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		39EDBC0722BB672F00F21299 /* JumpMorealertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpMorealertViewController.h; sourceTree = "<group>"; };
 		39EDBC0822BB672F00F21299 /* JumpMorealertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpMorealertViewController.m; sourceTree = "<group>"; };
 		39EDBC0922BB672F00F21299 /* JumpMorealertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JumpMorealertViewController.xib; sourceTree = "<group>"; };
@@ -182,8 +184,6 @@
 			children = (
 				3900F1BE22B745D100600020 /* AFNHelper.h */,
 				3900F1C222B745D100600020 /* AFNHelper.m */,
-				3900F1C022B745D100600020 /* JumpKeyChain.h */,
-				3900F1C122B745D100600020 /* JumpKeyChain.m */,
 				3900F1BF22B745D100600020 /* JumpPublicAction.h */,
 				3900F1BC22B745D100600020 /* JumpPublicAction.m */,
 				3900F1C322B745D100600020 /* SecurityNSString.h */,
@@ -255,6 +255,7 @@
 		398AEA0A22B37F6700684BD0 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				39AADA5E22C9EF0000838F13 /* Register(注册) */,
 				398AEA0B22B37F6700684BD0 /* FirstPage(首页) */,
 				3900F1A322B743B800600020 /* Internet(网络连接) */,
 				3900F1A022B743B300600020 /* Message(消息中心) */,
@@ -294,6 +295,16 @@
 				398AEA1522B37F6700684BD0 /* MainWindowController.xib */,
 			);
 			path = "Login(登录)";
+			sourceTree = "<group>";
+		};
+		39AADA5E22C9EF0000838F13 /* Register(注册) */ = {
+			isa = PBXGroup;
+			children = (
+				39AADA5F22C9EF2600838F13 /* RegisterViewController.h */,
+				39AADA6022C9EF2600838F13 /* RegisterViewController.m */,
+				39AADA6122C9EF2600838F13 /* RegisterViewController.xib */,
+			);
+			path = "Register(注册)";
 			sourceTree = "<group>";
 		};
 		39EDBC0C22BB6C8600F21299 /* ChangePassword(修改密码) */ = {
@@ -412,6 +423,7 @@
 				398AEA1922B37F6700684BD0 /* loginViewController.xib in Resources */,
 				3900F1B722B7440C00600020 /* UserViewController.xib in Resources */,
 				3964FCC422C07B6000E03A73 /* WebSourcesViewController.xib in Resources */,
+				39AADA6322C9EF2600838F13 /* RegisterViewController.xib in Resources */,
 				39EDBC0B22BB672F00F21299 /* JumpMorealertViewController.xib in Resources */,
 				39EDBC2322BB6D6400F21299 /* ChangePwordWindowController.xib in Resources */,
 				3900F1A822B743DA00600020 /* InternetViewController.xib in Resources */,
@@ -468,9 +480,9 @@
 				3964FCC822C07D5300E03A73 /* ResourcesCellView.m in Sources */,
 				398AE9EC22B37B6B00684BD0 /* MacVpn.xcdatamodeld in Sources */,
 				398AEA1822B37F6700684BD0 /* loginViewController.m in Sources */,
-				3900F1C622B745D100600020 /* JumpKeyChain.m in Sources */,
 				3900F1C422B745D100600020 /* JumpPublicAction.m in Sources */,
 				39EDBC2222BB6D6400F21299 /* ChangePwordWindowController.m in Sources */,
+				39AADA6222C9EF2600838F13 /* RegisterViewController.m in Sources */,
 				39EDBC1D22BB6D3500F21299 /* AboutUsViewController.m in Sources */,
 				398AE9F422B37B6D00684BD0 /* main.m in Sources */,
 				398AEA1622B37F6700684BD0 /* FirstWindowController.m in Sources */,

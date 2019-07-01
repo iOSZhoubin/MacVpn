@@ -12,11 +12,13 @@
 
 @interface ResourcesViewController ()
 
+/** 视图view */
 @property (weak) IBOutlet NSView *customerView;
-
+/** 标题 */
 @property (weak) IBOutlet NSTextField *webTitle;
-
+/** ip资源 */
 @property (strong,nonatomic) IPSourcesViewController *ipVc;
+/** web资源 */
 @property (strong,nonatomic) WebSourcesViewController *webVc;
 
 @end

@@ -10,21 +10,20 @@
 #define InterfaceHeader_h
 
 //注销登录
-#define Macvpn_LoginOut "/jumpvpn/logoff.php"
+#define Macvpn_LoginOut @"/jumpvpn/logoff.php"
 //修改密码
-#define Macvpn_ChangePword "/jumpvpn/user_setting.php"
+#define Macvpn_ChangePword @"/jumpvpn/user_setting.php"
 //消息中心
-#define Macvpn_MessageCenter "/service/?service=getMeassages"
+#define Macvpn_MessageCenter @"/service/?service=getMeassages"
 //IP资源
-#define Macvpn_IPresource "/service/?service=loadIpSource"
+#define Macvpn_IPresource @"/service/?service=loadIpSource"
 //Web资源
-#define Macvpn_Webresource "/jumpvpn/pda_resource_list.php"
+#define Macvpn_Webresource @"/jumpvpn/pda_resource_list.php"
 //登录
-#define Macvpn_LoginIn "/mobile_login.php?login"
+#define Macvpn_LoginIn @"/mobile_login.php?login"
 //心跳连接
-#define Macvpn_heartJump "/jumpvpn/pda_conn_hold.php?android_client=ture"
-//登录
-#define Macvpn_Register "/mobile_ios_register.php"
-
+#define Macvpn_heartJump @"/jumpvpn/pda_conn_hold.php?android_client=ture"
+//注册
+#define Macvpn_Register @"/mobile_ios_register.php"
 
 #endif /* InterfaceHeader_h */

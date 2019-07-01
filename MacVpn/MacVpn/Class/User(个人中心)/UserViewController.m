@@ -14,10 +14,11 @@
 
 //标题
 @property (weak) IBOutlet NSTextField *titleName;
-
+//视图view
 @property (weak) IBOutlet NSView *customerView;
-
+//功能介绍
 @property (strong,nonatomic) IntroduceViewController *introduceVc;
+//关于我们
 @property (strong,nonatomic) AboutUsViewController *aboutUsVc;
 
 @end

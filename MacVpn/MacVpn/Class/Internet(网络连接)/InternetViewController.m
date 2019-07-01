@@ -62,15 +62,31 @@
         
     }
     
-    [self addFile];
+    BOOL isright = [self checkmobileconfigField:self.name.stringValue];
+    
+    if(!isright){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"描述名称只能由10位汉字、字母、数字组成" window:self.view.window];
+
+        return;
+    }
+    
+//    NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@/createXml.php?p1=%@&p2=%@&p3=%@&p4=%@&p5=%@",SafeString(self.ip.stringValue),SafeString(self.ip.stringValue),SafeString(self.account.stringValue),SafeString(self.password.stringValue),SafeString(self.ip.stringValue),SafeString(self.name.stringValue),SafeString(self.passKey.stringValue)];
+//
+//    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlStr]];
+    
     
 }
 
-
--(void)addFile{
+-(BOOL)checkmobileconfigField:(NSString *)mobileconfigField{
     
-    JumpLog(@"生成文件");
-
+    NSString *regular = @"^[\u4e00-\u9fa5_a-zA-Z0-9]{1,10}";
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regular];
+    
+    BOOL isMatch = [predicate evaluateWithObject:mobileconfigField];
+    
+    return isMatch;
 }
 
 @end

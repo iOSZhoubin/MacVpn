@@ -16,6 +16,10 @@
 @property (strong,nonatomic) MainWindowController *loginWc;
 //修改密码
 @property (strong,nonatomic) ChangePwordWindowController *changepWc;
+//用户名
+@property (weak) IBOutlet NSTextField *accountL;
+//服务器
+@property (weak) IBOutlet NSTextField *serverL;
 
 @end
 
@@ -27,6 +31,14 @@
     self.loginWc = [[MainWindowController alloc]initWithWindowNibName:@"MainWindowController"];
     self.changepWc = [[ChangePwordWindowController alloc]initWithWindowNibName:@"ChangePwordWindowController"];
 
+    //如果有保存用户名，IP地址和端口号，那么就直接赋值
+    NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
+    
+    if(userInfo){
+        
+        self.accountL.stringValue = [NSString stringWithFormat:@"用户名：%@",SafeString(userInfo[@"account"])];
+        self.serverL.stringValue = [NSString stringWithFormat:@"服务器：%@",SafeString(userInfo[@"ipAddress"])];
+    }
 }
 
 #pragma mark --- 修改密码

@@ -8,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="JumpMorealertViewController">
             <connections>
+                <outlet property="accountL" destination="p81-jQ-7JQ" id="Gix-Ff-7Ib"/>
+                <outlet property="serverL" destination="70i-aK-KCw" id="wtO-pq-fAt"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -23,7 +25,7 @@
                         <constraint firstAttribute="width" constant="82" id="EZO-OT-5yZ"/>
                         <constraint firstAttribute="height" constant="21" id="FEa-7G-Zhk"/>
                     </constraints>
-                    <buttonCell key="cell" type="push" title="修改密码" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="Hph-Bl-71U">
+                    <buttonCell key="cell" type="push" title="修改密码" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hph-Bl-71U">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -36,7 +38,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="hfi-Pm-b24"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" alignment="center" title="用户名：leimy" id="3t8-Zo-d9H">
+                    <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" alignment="center" title="用户名：" id="3t8-Zo-d9H">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -47,7 +49,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="IDE-S5-Oxu"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="服务器：10.0.7.200" id="AMt-Vi-6h3">
+                    <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" alignment="center" title="服务器：" id="AMt-Vi-6h3">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

@@ -24,6 +24,10 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
+    [self.window setContentSize:NSMakeSize(500, 400)];
+    
+    self.window.restorable = NO;
+    
     self.loginWc = [[MainWindowController alloc]initWithWindowNibName:@"MainWindowController"];
 
 }
@@ -34,7 +38,7 @@
     
     [self show:@"提示" andMessage:@"修改密码成功,即将重新登录"];
     
-    self.isSuccess = @"0";
+    self.isSuccess = @"1";
 }
 
 #pragma mark --- 提示框
@@ -55,14 +59,10 @@
         if([self.isSuccess isEqualToString:@"1"]){
             
             [self.loginWc.window orderFront:nil];//显示要跳转的窗口
-            [[self.loginWc window] center];//显示在屏幕中间
+            [self.loginWc.window center];//显示在屏幕中间
             [self.window orderOut:nil];//关闭修改密码窗口
             [self.mainWc orderOut:nil];//关闭主页面窗口
             
-        }else{
-            
-            //修改失败
-
         }
     }];
 }

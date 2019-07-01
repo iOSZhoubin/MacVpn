@@ -11,7 +11,6 @@
 #import <MJExtension/MJExtension.h>
 #import "SecurityNSString.h"
 #import "AFNHelper.h"
-#import "JumpKeyChain.h"
 #import "JumpPublicAction.h"
 
 #ifndef PrefixPch_pch

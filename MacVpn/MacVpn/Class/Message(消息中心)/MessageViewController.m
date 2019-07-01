@@ -69,7 +69,7 @@
 
 -(void)initShow{
     
-    self.indicator = [[NSProgressIndicator alloc]initWithFrame:CGRectMake(300, 400, 40, 40)];
+    self.indicator = [[NSProgressIndicator alloc]initWithFrame:CGRectMake(280, 400, 40, 40)];
     
     self.indicator.style = NSProgressIndicatorSpinningStyle;
     

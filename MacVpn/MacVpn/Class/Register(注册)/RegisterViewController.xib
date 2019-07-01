@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="RegisterViewController">
+            <connections>
+                <outlet property="account" destination="FWm-AC-4H5" id="PuR-vD-XAf"/>
+                <outlet property="againPsw" destination="XxK-Pb-p5l" id="bi4-lz-7hj"/>
+                <outlet property="password" destination="nMs-7r-T4V" id="EbY-uy-OpM"/>
+                <outlet property="registerBtn" destination="jtz-Xs-1hg" id="Edv-Oz-Wm7"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="注册用户" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="500" height="400"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="400"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="g6q-YG-dv3">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="400"/>
+                        <view key="contentView" id="f5g-mz-reT">
+                            <rect key="frame" x="1" y="1" width="498" height="398"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kKS-fG-6cK">
+                                    <rect key="frame" x="18" y="328" width="79" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="ZsH-h3-bgH"/>
+                                        <constraint firstAttribute="width" constant="75" id="xaF-3x-jNL"/>
+                                    </constraints>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="用户名：" id="u9S-xU-sOE">
+                                        <font key="font" metaFont="system" size="14"/>
+                                        <color key="textColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Y5X-Te-Rhb">
+                                    <rect key="frame" x="18" y="278" width="79" height="30"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="密码：" id="hLU-9u-cJ3">
+                                        <font key="font" metaFont="system" size="14"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nHz-IV-ZCY">
+                                    <rect key="frame" x="18" y="228" width="79" height="30"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="确认密码：" id="JUN-Ph-wPj">
+                                        <font key="font" metaFont="system" size="14"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FWm-AC-4H5">
+                                    <rect key="frame" x="110" y="333" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="2uh-uR-fEx"/>
+                                        <constraint firstAttribute="width" constant="200" id="3bu-hr-HEv"/>
+                                    </constraints>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" placeholderString="请输入用户名" drawsBackground="YES" id="tIF-3d-VaE">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <secureTextField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-7r-T4V">
+                                    <rect key="frame" x="110" y="283" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="scZ-Q2-UpS"/>
+                                        <constraint firstAttribute="width" constant="200" id="wKF-Za-6cK"/>
+                                    </constraints>
+                                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" placeholderString="请设置密码" drawsBackground="YES" usesSingleLineMode="YES" id="b2e-er-j5s">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <allowedInputSourceLocales>
+                                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                        </allowedInputSourceLocales>
+                                    </secureTextFieldCell>
+                                </secureTextField>
+                                <secureTextField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XxK-Pb-p5l">
+                                    <rect key="frame" x="110" y="233" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="5VT-sa-B11"/>
+                                        <constraint firstAttribute="width" constant="200" id="DTZ-VS-JRN"/>
+                                    </constraints>
+                                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" placeholderString="请再次输入密码" drawsBackground="YES" usesSingleLineMode="YES" id="hLd-Gf-2hy">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <allowedInputSourceLocales>
+                                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                        </allowedInputSourceLocales>
+                                    </secureTextFieldCell>
+                                </secureTextField>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jtz-Xs-1hg">
+                                    <rect key="frame" x="212" y="13" width="74" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="62" id="KvP-OK-NPi"/>
+                                        <constraint firstAttribute="height" constant="21" id="pzr-6t-6vL"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="push" title="注  册" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kJf-PK-rDq">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="registerAction:" target="-2" id="LNb-0y-tJA"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="XxK-Pb-p5l" firstAttribute="top" secondItem="nMs-7r-T4V" secondAttribute="bottom" constant="20" id="0io-xq-bfB"/>
+                                <constraint firstItem="nMs-7r-T4V" firstAttribute="leading" secondItem="Y5X-Te-Rhb" secondAttribute="trailing" constant="15" id="5TU-dh-XhN"/>
+                                <constraint firstItem="nHz-IV-ZCY" firstAttribute="top" secondItem="Y5X-Te-Rhb" secondAttribute="bottom" constant="20" id="D6l-lU-b3R"/>
+                                <constraint firstItem="Y5X-Te-Rhb" firstAttribute="height" secondItem="kKS-fG-6cK" secondAttribute="height" id="Fxk-AK-OEy"/>
+                                <constraint firstItem="jtz-Xs-1hg" firstAttribute="centerX" secondItem="f5g-mz-reT" secondAttribute="centerX" id="GlM-A9-VRk"/>
+                                <constraint firstItem="kKS-fG-6cK" firstAttribute="top" secondItem="f5g-mz-reT" secondAttribute="top" constant="40" id="K1a-jF-TNe"/>
+                                <constraint firstItem="XxK-Pb-p5l" firstAttribute="leading" secondItem="nHz-IV-ZCY" secondAttribute="trailing" constant="15" id="Ko0-WU-UJi"/>
+                                <constraint firstItem="nMs-7r-T4V" firstAttribute="height" secondItem="FWm-AC-4H5" secondAttribute="height" id="L1R-ba-E5a"/>
+                                <constraint firstItem="nHz-IV-ZCY" firstAttribute="width" secondItem="kKS-fG-6cK" secondAttribute="width" id="NRd-1P-pJk"/>
+                                <constraint firstAttribute="bottom" secondItem="jtz-Xs-1hg" secondAttribute="bottom" constant="20" id="OsE-dA-v5T"/>
+                                <constraint firstItem="nHz-IV-ZCY" firstAttribute="height" secondItem="kKS-fG-6cK" secondAttribute="height" id="Ovf-p6-8se"/>
+                                <constraint firstItem="XxK-Pb-p5l" firstAttribute="width" secondItem="FWm-AC-4H5" secondAttribute="width" id="Sbo-qj-0rL"/>
+                                <constraint firstItem="Y5X-Te-Rhb" firstAttribute="width" secondItem="kKS-fG-6cK" secondAttribute="width" id="VFm-36-S7H"/>
+                                <constraint firstItem="Y5X-Te-Rhb" firstAttribute="top" secondItem="kKS-fG-6cK" secondAttribute="bottom" constant="20" id="bCj-Oa-t7c"/>
+                                <constraint firstItem="FWm-AC-4H5" firstAttribute="top" secondItem="f5g-mz-reT" secondAttribute="top" constant="35" id="fUW-Oq-Rm2"/>
+                                <constraint firstItem="FWm-AC-4H5" firstAttribute="leading" secondItem="kKS-fG-6cK" secondAttribute="trailing" constant="15" id="gGE-Th-Em6"/>
+                                <constraint firstItem="nMs-7r-T4V" firstAttribute="top" secondItem="FWm-AC-4H5" secondAttribute="bottom" constant="20" id="jDW-hE-hEa"/>
+                                <constraint firstItem="nMs-7r-T4V" firstAttribute="width" secondItem="FWm-AC-4H5" secondAttribute="width" id="rOI-E0-bq9"/>
+                                <constraint firstItem="XxK-Pb-p5l" firstAttribute="height" secondItem="FWm-AC-4H5" secondAttribute="height" id="tcV-T7-dIG"/>
+                                <constraint firstItem="Y5X-Te-Rhb" firstAttribute="leading" secondItem="f5g-mz-reT" secondAttribute="leading" constant="20" id="tqj-iT-U1S"/>
+                                <constraint firstItem="nHz-IV-ZCY" firstAttribute="leading" secondItem="f5g-mz-reT" secondAttribute="leading" constant="20" id="vWr-jh-U1x"/>
+                                <constraint firstItem="kKS-fG-6cK" firstAttribute="leading" secondItem="f5g-mz-reT" secondAttribute="leading" constant="20" id="wJd-Mq-2VL"/>
+                            </constraints>
+                        </view>
+                        <color key="borderColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="fillColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </box>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="g6q-YG-dv3" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="1lN-D7-ugb"/>
+                    <constraint firstAttribute="bottom" secondItem="g6q-YG-dv3" secondAttribute="bottom" id="22p-uI-inq"/>
+                    <constraint firstItem="g6q-YG-dv3" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="2Zg-rg-GSQ"/>
+                    <constraint firstAttribute="trailing" secondItem="g6q-YG-dv3" secondAttribute="trailing" id="lnR-JS-QxO"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="-16" y="127"/>
+        </window>
+    </objects>
+</document>

@@ -16,8 +16,8 @@
 //GET请求
 +(void)macGet:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success andFailed:(FailedBlock)failed{
     
-    NSDictionary *ipInfo = [JumpKeyChain getKeychainDataForKey:@"ipInfo"];
-    
+    NSDictionary *ipInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
+
     NSString *ipAddress = SafeString(ipInfo[@"ipAddress"]);
     
     NSString *port = SafeString(ipInfo[@"port"]);
@@ -77,13 +77,13 @@
 //POST请求
 +(void)macPost:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success andFailed:(FailedBlock)failed{
     
-    NSDictionary *ipInfo = [JumpKeyChain getKeychainDataForKey:@"ipInfo"];
-    
+    NSDictionary *ipInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
+
     NSString *ipAddress = SafeString(ipInfo[@"ipAddress"]);
     
     NSString *port = SafeString(ipInfo[@"port"]);
     
-    NSString *str = [NSString stringWithFormat:@"http://%@:%@%@",ipAddress,port,url];
+    NSString *str = [NSString stringWithFormat:@"https://%@:%@%@",ipAddress,port,url];
     
     NSURL *urlStr = [NSURL URLWithString:str];
     
@@ -95,7 +95,7 @@
     
     request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
     
-    JumpLog(@"url == %@",url);
+    JumpLog(@"url == %@",urlStr);
     JumpLog(@"parameters == %@",parameters);
     
     NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {

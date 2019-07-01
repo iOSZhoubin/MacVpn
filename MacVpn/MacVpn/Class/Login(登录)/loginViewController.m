@@ -8,6 +8,7 @@
 
 #import "loginViewController.h"
 #import "FirstWindowController.h"
+#import "RegisterViewController.h"
 
 @interface loginViewController ()
 
@@ -21,6 +22,12 @@
 @property (weak) IBOutlet NSTextField *ipaddress;
 //端口号
 @property (weak) IBOutlet NSTextField *portL;
+//加载
+@property (strong,nonatomic) NSProgressIndicator *indicator;
+//登录按钮
+@property (weak) IBOutlet NSButton *loginBtn;
+
+@property (strong,nonatomic) RegisterViewController *registerVc;
 
 @end
 
@@ -30,7 +37,20 @@
     [super viewDidLoad];
    
     self.firstWc = [[FirstWindowController alloc]initWithWindowNibName:@"FirstWindowController"];
+    
+    self.registerVc = [[RegisterViewController alloc]initWithWindowNibName:@"RegisterViewController"];
 
+    //如果有保存用户名，IP地址和端口号，那么就直接赋值
+    NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
+
+    if(userInfo){
+        
+        self.accountL.stringValue = SafeString(userInfo[@"account"]);
+        self.ipaddress.stringValue = SafeString(userInfo[@"ipAddress"]);
+        self.portL.stringValue = SafeString(userInfo[@"port"]);
+    }
+
+    [self initShow];
 }
 
 
@@ -61,23 +81,149 @@
         [JumpPublicAction showAlert:@"提示" andMessage:@"请输入端口号" window:self.mainWC];
 
         return;
-
     }
+    
+    NSDictionary *mudict = @{
+                             @"account":SafeString(self.accountL.stringValue),
+                             @"ipAddress":SafeString(self.ipaddress.stringValue),
+                             @"port":SafeString(self.portL.stringValue)
+                             };
+    
+    //存入数组并同步
+    [[NSUserDefaults standardUserDefaults] setObject:mudict forKey:@"mac_userInfo"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self loadAction];
 }
 
 -(void)loadAction{
     
+//    self.indicator.hidden = NO;
+//
+//    self.loginBtn.enabled = NO;
+//
+//    [self.indicator startAnimation:nil];
+//
+//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+//
+//    parameters[@"inputname"] = SafeString(self.accountL.stringValue);
+//    parameters[@"inputpsw"] = SafeString(self.passwordL.stringValue);
+//    parameters[@"login"] = @"1";
+//    parameters[@"enevs"] = @"login";
+//    parameters[@"ios"] = @"ios";
+//
+//    [AFNHelper macPost:Macvpn_LoginIn parameters:parameters success:^(id responseObject) {
+//
+//        NSDictionary *dict = responseObject;
+//
+//        if([dict[@"result"][@"result"] isEqualToString:@"success"]){
+//
+//            [self.firstWc.window orderFront:nil];//显示要跳转的窗口
+//
+//            [[self.firstWc window] center];//显示在屏幕中间
+//
+//            [self.mainWC orderOut:nil];//关闭当前窗口
+//
+//            [self.registerVc.window orderOut:nil];//关闭注册窗口
+//
+//        }else{
+//
+//            [self show:@"提示" andMessage:@"登录失败，请检查IP地址端口号以及账号密码是否正确"];
+//        }
+//
+//        self.indicator.hidden = YES;
+//
+//        self.loginBtn.enabled = YES;
+//
+//        [self.indicator stopAnimation:nil];
+//
+//    } andFailed:^(id error) {
+//
+//        self.loginBtn.enabled = YES;
+//
+//        self.indicator.hidden = YES;
+//
+//        [self.indicator stopAnimation:nil];
+//
+//        [self show:@"提示" andMessage:@"请求服务器失败"];
+//    }];
+    
+    
     [self.firstWc.window orderFront:nil];//显示要跳转的窗口
     
     [[self.firstWc window] center];//显示在屏幕中间
     
     [self.mainWC orderOut:nil];//关闭当前窗口
+    
+    [self.registerVc.window orderOut:nil];//关闭注册窗口
+    
+    self.indicator.hidden = YES;
+    
+    self.loginBtn.enabled = YES;
+    
+    [self.indicator stopAnimation:nil];
+    
 }
 
 
 
+/**
+ 提示
 
+ @param title 名称
+ @param message 提示内容
+ */
+-(void)show:(NSString *)title andMessage:(NSString *)message{
+    
+    NSAlert *alert = [[NSAlert alloc]init];
+    
+    alert.messageText = title;
+    
+    alert.informativeText = message;
+    
+    //设置提示框的样式
+    alert.alertStyle = NSAlertStyleWarning;
+    
+    [alert beginSheetModalForWindow:self.mainWC completionHandler:nil];
+    
+}
+
+
+//初始化加载动画
+
+-(void)initShow{
+    
+    self.indicator = [[NSProgressIndicator alloc]initWithFrame:CGRectMake(280, 400, 40, 40)];
+    
+    self.indicator.style = NSProgressIndicatorSpinningStyle;
+    
+    self.indicator.controlSize = NSControlSizeRegular;
+    
+    [self.indicator sizeToFit];
+    
+    [self.view addSubview:self.indicator];
+    
+    self.indicator.hidden = YES;
+}
+
+
+
+#pragma mark --- 忘记密码
+
+- (IBAction)forgetPassw:(NSButton *)sender {
+    
+    [self show:@"提示" andMessage:@"请您与管理员联系"];
+}
+
+
+#pragma mark --- 注册
+
+- (IBAction)registerAction:(NSButton *)sender {
+    
+    [self.registerVc.window orderFront:nil];//显示要跳转的窗口
+    
+    [[self.registerVc window] center];//显示在屏幕中间
+    
+}
 
 @end
