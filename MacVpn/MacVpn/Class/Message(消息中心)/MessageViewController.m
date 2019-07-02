@@ -11,27 +11,23 @@
 
 @interface MessageViewController ()<NSTableViewDelegate,NSTableViewDataSource>
 
+//刷新按钮
+@property (weak) IBOutlet NSButton *refreshBtn;
+//tableview
 @property (weak) IBOutlet NSTableView *tableView;
 //数据源
 @property (strong,nonatomic) NSMutableArray *dataArray;
 
 @property (strong,nonatomic) NSProgressIndicator *indicator;
 
+//是否显示提示信息
+@property (assign,nonatomic) BOOL showAlert;
+
 @end
 
 
 @implementation MessageViewController
 
-
--(NSMutableArray *)dataArray{
-    
-    if(!_dataArray){
-        
-        _dataArray = [NSMutableArray array];
-    }
-    
-    return _dataArray;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,7 +38,11 @@
     
     self.tableView.dataSource = self;
     
+    self.showAlert = NO;
+    
     [self initShow];
+    
+    [self loadMessageList];
 }
 
 
@@ -52,6 +52,7 @@
 //返回行数
 -(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView{
     
+//    return self.dataArray.count;
     return 10;
 }
 
@@ -59,7 +60,15 @@
     
     CustomMessageCellView *cellView = [tableView makeViewWithIdentifier:@"CustomMessageCellView" owner:self];
     
-    cellView.content.stringValue = @"这是一测试的消息123";
+//    NSDictionary *dict = self.dataArray[row];
+//
+//    cellView.content.stringValue = SafeString(dict[@"content"]);
+//    cellView.timeL.stringValue = SafeString(dict[@"issue"]);
+//    cellView.titleName.stringValue = SafeString(dict[@"title"]);
+    
+    cellView.content.stringValue = @"这是一条测试信息123";
+    cellView.timeL.stringValue = @"2019-07-03 14:25";
+    cellView.titleName.stringValue = @"测试";
 
     return cellView;
 }
@@ -91,6 +100,10 @@
     
     self.indicator.hidden = NO;
     
+    self.refreshBtn.enabled = NO;
+    
+    self.showAlert = YES;
+    
     [self.indicator startAnimation:nil];
 
     [self loadMessageList];
@@ -101,8 +114,52 @@
 
 -(void)loadMessageList{
     
-//    [JumpPublicAction showAlert:@"提示" andMessage:@"请输入描述" window:self.view.window];
+    L2CWeakSelf(self);
+    
+    [AFNHelper macPost:Macvpn_MessageCenter parameters:nil success:^(id responseObject) {
+        
+        NSDictionary *dict = responseObject;
+        
+        NSArray *array = dict[@"result"];
+        
+        weakself.dataArray = [NSMutableArray array];
+        
+        [weakself.dataArray addObjectsFromArray:array];
+        
+        if(weakself.showAlert == YES){
+            
+            if(weakself.dataArray.count > 0){
+                
+                [JumpPublicAction showAlert:@"提示" andMessage:@"加载数据成功" window:weakself.view.window];
+                
+            }else{
+                
+                [JumpPublicAction showAlert:@"提示" andMessage:@"暂未查询到数据" window:weakself.view.window];
+            }
+        }
+        
+        [weakself.tableView reloadData];
 
+        weakself.indicator.hidden = YES;
+        
+        weakself.refreshBtn.enabled = YES;
+        
+        [weakself.indicator stopAnimation:nil];
+        
+    } andFailed:^(id error) {
+        
+        weakself.indicator.hidden = YES;
+        
+        weakself.refreshBtn.enabled = YES;
+        
+        [weakself.indicator stopAnimation:nil];
+        
+        if(weakself.showAlert == YES){
+        
+            [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:weakself.view.window];
+
+        }
+    }];
 }
 
 

@@ -12,8 +12,12 @@
 @interface WebSourcesViewController ()<WKNavigationDelegate,WKUIDelegate>
 
 @property (weak) IBOutlet WKWebView *webView;
+//刷新按钮
+@property (weak) IBOutlet NSButton *refreshBtn;
 
 @property (strong,nonatomic) NSProgressIndicator *indicator;
+
+@property (assign,nonatomic) BOOL showAlert;
 
 @end
 
@@ -25,12 +29,16 @@
     self.webView.UIDelegate = self;
     self.webView.navigationDelegate = self;
     
+    self.showAlert = NO;
+    
     [self initShow];
     
-    [self loadHtml];
+//    [self getwebSource];
+    
+    [self loadHtml:nil];
 }
 
--(void)loadHtml{
+-(void)loadHtml:(NSString *)htmlStr{
     
     NSString *CSS= @"<style type=\"text/css\">img{ width:100%;}</style>";
     
@@ -66,11 +74,7 @@
 -(void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
     
     JumpLog(@"加载完成");
-    
-    self.indicator.hidden = YES;
-    
-    [self.indicator stopAnimation:nil];
-    
+
 }
 
 //加载失败时调用
@@ -78,8 +82,6 @@
 -(void)webView:(WKWebView *)webView didFailLoadWithError:(nonnull NSError *)error{
     
     JumpLog(@"加载失败 error : %@",error.description);
-
-    [JumpPublicAction showAlert:@"提示" andMessage:@"加载失败" window:self.view.window];
 
 }
 
@@ -90,9 +92,13 @@
     
     self.indicator.hidden = NO;
     
+    self.refreshBtn.enabled = NO;
+    
+    self.showAlert = YES;
+    
     [self.indicator startAnimation:nil];
     
-    [self loadHtml];
+    [self getwebSource];
 }
 
 
@@ -114,6 +120,53 @@
 }
 
 
+#pragma mark --- 获取WebSource
+
+-(void)getwebSource{
+    
+    L2CWeakSelf(self);
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    //如果有保存用户名，IP地址和端口号，那么就直接赋值
+    NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
+    
+    parameters[@"ip"] =  SafeString(userInfo[@"ipAddress"]);
+    parameters[@"port"] =  SafeString(userInfo[@"port"]);
+    
+    [AFNHelper macGet:Macvpn_Webresource parameters:parameters success:^(id responseObject) {
+        
+        NSDictionary *dict = responseObject;
+        
+        NSString *str = dict[@"result"];
+        
+        if(str.length > 0){
+            
+            if(weakself.showAlert == YES){
+                
+                [JumpPublicAction showAlert:@"提示" andMessage:@"数据加载成功" window:self.view.window];
+            }
+            
+            [weakself loadHtml:str];
+        }
+        
+        weakself.indicator.hidden = YES;
+        
+        weakself.refreshBtn.enabled = YES;
+        
+        [weakself.indicator stopAnimation:nil];
+        
+    } andFailed:^(id error) {
+        
+        weakself.indicator.hidden = YES;
+        
+        weakself.refreshBtn.enabled = YES;
+        
+        [weakself.indicator stopAnimation:nil];
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:self.view.window];
+    }];
+}
 
 
 @end

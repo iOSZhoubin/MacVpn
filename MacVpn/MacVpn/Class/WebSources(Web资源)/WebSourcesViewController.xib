@@ -9,6 +9,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="WebSourcesViewController">
             <connections>
+                <outlet property="refreshBtn" destination="u1e-2n-qgx" id="15x-oV-hfc"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="webView" destination="Rz9-hA-rPD" id="Nll-rI-6MN"/>
             </connections>

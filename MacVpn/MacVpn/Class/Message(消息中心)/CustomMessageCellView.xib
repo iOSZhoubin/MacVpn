@@ -10,11 +10,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <tableCellView id="ZBJ-kl-Gib" customClass="CustomMessageCellView">
-            <rect key="frame" x="0.0" y="0.0" width="439" height="38"/>
+            <rect key="frame" x="0.0" y="0.0" width="449" height="91"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="W3R-YX-yRc">
-                    <rect key="frame" x="18" y="12" width="403" height="16"/>
+                    <rect key="frame" x="18" y="12" width="413" height="16"/>
                     <textFieldCell key="cell" selectable="YES" enabled="NO" title="Multiline Label" id="lOL-hx-xDb">
                         <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
@@ -22,9 +22,9 @@
                     </textFieldCell>
                 </textField>
                 <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="v5i-Hj-2tb">
-                    <rect key="frame" x="20" y="1" width="399" height="1"/>
+                    <rect key="frame" x="20" y="1" width="409" height="1"/>
                     <view key="contentView" id="Mqe-Yp-6Ex">
-                        <rect key="frame" x="1" y="1" width="397" height="0.0"/>
+                        <rect key="frame" x="1" y="1" width="407" height="0.0"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <constraints>
@@ -33,20 +33,64 @@
                     <color key="borderColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="fillColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </box>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQd-18-Zq4">
+                    <rect key="frame" x="18" y="61" width="34" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Fwn-gO-H4d"/>
+                        <constraint firstAttribute="width" constant="30" id="VRN-q6-eYP"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="标题:" id="NId-zk-Dhn">
+                        <font key="font" metaFont="system" size="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Qd-0j-VGA">
+                    <rect key="frame" x="58" y="61" width="373" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="ag9-u9-a2o"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="123" id="mVI-Lb-zjb">
+                        <font key="font" metaFont="system" size="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fv9-W0-ffc">
+                    <rect key="frame" x="18" y="33" width="413" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="AaV-b5-SE2"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="2019年7月2日" id="0Cn-Ff-gSz">
+                        <font key="font" metaFont="system" size="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="v5i-Hj-2tb" firstAttribute="leading" secondItem="ZBJ-kl-Gib" secondAttribute="leading" constant="20" id="1tr-7V-GfA"/>
                 <constraint firstItem="W3R-YX-yRc" firstAttribute="leading" secondItem="ZBJ-kl-Gib" secondAttribute="leading" constant="20" id="1vv-Rj-pI7"/>
+                <constraint firstAttribute="trailing" secondItem="fv9-W0-ffc" secondAttribute="trailing" constant="20" id="4DO-KX-apc"/>
                 <constraint firstAttribute="trailing" secondItem="W3R-YX-yRc" secondAttribute="trailing" constant="20" id="9Fu-PU-5oI"/>
+                <constraint firstAttribute="trailing" secondItem="5Qd-0j-VGA" secondAttribute="trailing" constant="20" id="LiF-Px-bfL"/>
                 <constraint firstItem="v5i-Hj-2tb" firstAttribute="top" secondItem="W3R-YX-yRc" secondAttribute="bottom" constant="10" id="M6c-wD-jwJ"/>
-                <constraint firstItem="W3R-YX-yRc" firstAttribute="top" secondItem="ZBJ-kl-Gib" secondAttribute="top" constant="10" id="X7M-WA-CEV"/>
+                <constraint firstItem="5Qd-0j-VGA" firstAttribute="leading" secondItem="fQd-18-Zq4" secondAttribute="trailing" constant="10" id="R40-18-26k"/>
+                <constraint firstItem="W3R-YX-yRc" firstAttribute="top" secondItem="fv9-W0-ffc" secondAttribute="bottom" constant="5" id="UUs-9l-UUN"/>
+                <constraint firstItem="5Qd-0j-VGA" firstAttribute="top" secondItem="ZBJ-kl-Gib" secondAttribute="top" constant="10" id="d6c-yA-w9z"/>
                 <constraint firstAttribute="bottom" secondItem="v5i-Hj-2tb" secondAttribute="bottom" constant="1" id="e8z-oQ-Coh"/>
+                <constraint firstItem="fv9-W0-ffc" firstAttribute="leading" secondItem="ZBJ-kl-Gib" secondAttribute="leading" constant="20" id="hqW-i5-6FY"/>
+                <constraint firstItem="fv9-W0-ffc" firstAttribute="top" secondItem="fQd-18-Zq4" secondAttribute="bottom" constant="8" id="lR0-4O-9Eq"/>
+                <constraint firstItem="fQd-18-Zq4" firstAttribute="leading" secondItem="ZBJ-kl-Gib" secondAttribute="leading" constant="20" id="rPK-wY-ajR"/>
+                <constraint firstItem="fQd-18-Zq4" firstAttribute="top" secondItem="ZBJ-kl-Gib" secondAttribute="top" constant="10" id="xTu-fB-vGH"/>
                 <constraint firstAttribute="trailing" secondItem="v5i-Hj-2tb" secondAttribute="trailing" constant="20" id="xbm-vt-SHb"/>
             </constraints>
             <connections>
                 <outlet property="content" destination="W3R-YX-yRc" id="DeS-yV-zpJ"/>
+                <outlet property="timeL" destination="fv9-W0-ffc" id="74d-AI-UHE"/>
+                <outlet property="titleName" destination="5Qd-0j-VGA" id="NYS-sN-W04"/>
             </connections>
-            <point key="canvasLocation" x="59.5" y="133.5"/>
+            <point key="canvasLocation" x="64.5" y="174"/>
         </tableCellView>
     </objects>
 </document>

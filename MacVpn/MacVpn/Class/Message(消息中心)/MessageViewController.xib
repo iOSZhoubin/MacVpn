@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MessageViewController">
             <connections>
+                <outlet property="refreshBtn" destination="qjg-fU-4IW" id="p7R-2o-qf6"/>
                 <outlet property="tableView" destination="kO1-TK-8If" id="hBx-Vk-7hc"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>

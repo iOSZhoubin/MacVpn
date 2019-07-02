@@ -8,6 +8,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ChangePwordWindowController">
             <connections>
+                <outlet property="againpassword" destination="wxF-70-Q4l" id="M1P-yd-C06"/>
+                <outlet property="newsPassword" destination="c9Z-bi-1Em" id="Fgb-QE-c71"/>
+                <outlet property="oldPassword" destination="Akx-HW-Vpq" id="dmU-JV-9Fv"/>
+                <outlet property="sureBtn" destination="K7i-OE-qe7" id="Wtb-zl-G9T"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>

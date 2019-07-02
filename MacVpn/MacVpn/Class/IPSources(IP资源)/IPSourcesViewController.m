@@ -11,11 +11,16 @@
 
 @interface IPSourcesViewController ()<NSTableViewDelegate,NSTableViewDataSource>
 
+//刷新按钮
+@property (weak) IBOutlet NSButton *refreshBtn;
+//tableview
 @property (weak) IBOutlet NSTableView *tableView;
 //数据源
 @property (strong,nonatomic) NSMutableArray *dataArray;
-
+//加载动画
 @property (strong,nonatomic) NSProgressIndicator *indicator;
+//只在点击刷新时展示提示信息
+@property (assign,nonatomic) BOOL showAlert;
 
 @end
 
@@ -41,7 +46,11 @@
     
     self.tableView.dataSource = self;
     
+    self.showAlert = NO;
+    
     [self initShow];
+    
+    [self loadIpsourceList];
 }
 
 
@@ -50,7 +59,7 @@
 //返回行数
 -(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView{
     
-    return 3;
+    return self.dataArray.count;
 }
 
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row{
@@ -62,7 +71,7 @@
     
     ResourcesCellView *cellView = [tableView makeViewWithIdentifier:@"ResourcesCellView" owner:self];
     
-    NSDictionary *dict;
+    NSDictionary *dict = self.dataArray[row];
     
     [cellView refreshWithDict:dict];
     
@@ -78,7 +87,19 @@
     
     if(selectRow >= 0){
         
-        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.baidu.com"]];
+        NSString *resourcetype = SafeString(self.dataArray[selectRow][@"ip_type"]);
+
+        if([resourcetype isEqualToString:@"http"] || [resourcetype isEqualToString:@"https"]){
+
+            NSString *ip = SafeString(self.dataArray[selectRow][@"ip"]);
+
+            NSString *port = SafeString(self.dataArray[selectRow][@"port"]);
+
+            NSString *url = [NSString stringWithFormat:@"%@://%@:%@",resourcetype,ip,port];
+
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
+
+        }
     }
 
     JumpLog(@"点击了第%ld行",selectRow);
@@ -89,8 +110,51 @@
 -(void)loadIpsourceList{
     
     JumpLog(@"请求数据");
-    //    [JumpPublicAction showAlert:@"提示" andMessage:@"请输入描述" window:self.view.window];
-
+    
+    L2CWeakSelf(self);
+    
+    [AFNHelper macPost:Macvpn_IPresource parameters:nil success:^(id responseObject) {
+        
+        NSDictionary *dict = responseObject;
+        
+        NSArray *array = dict[@"result"];
+        
+        if(array.count > 0){
+            
+            weakself.dataArray = [NSMutableArray array];
+            
+            [weakself.dataArray addObjectsFromArray:array];
+            
+            [weakself.tableView reloadData];
+        
+        }else{
+            
+            if(weakself.showAlert == YES){
+                
+                [JumpPublicAction showAlert:@"提示" andMessage:@"暂无资源" window:self.view.window];
+            }
+        }
+        
+        weakself.indicator.hidden = YES;
+        
+        weakself.refreshBtn.enabled = YES;
+        
+        [weakself.indicator stopAnimation:nil];
+   
+    } andFailed:^(id error) {
+        
+        weakself.indicator.hidden = YES;
+        
+        weakself.refreshBtn.enabled = YES;
+        
+        [weakself.indicator stopAnimation:nil];
+        
+        if(weakself.showAlert == YES){
+            
+            [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:self.view.window];
+        }
+        
+    }];
 }
 
 
@@ -100,6 +164,10 @@
 - (IBAction)refreshIpSource:(NSButton *)sender {
     
     self.indicator.hidden = NO;
+    
+    self.showAlert = YES;
+    
+    self.refreshBtn.enabled = NO;
     
     [self.indicator startAnimation:nil];
     

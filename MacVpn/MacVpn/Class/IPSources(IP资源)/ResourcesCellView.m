@@ -32,14 +32,10 @@
 
 -(void)refreshWithDict:(NSDictionary *)dict{
     
-//    self.name.stringValue = SafeString(dict[@"resource_name"]);
-//    self.ipAddress.stringValue = SafeString(dict[@"ip"]);
-//    self.port.stringValue = SafeString(dict[@"port"]);
-    
-    self.name.stringValue = @"资源123";
-    self.ipAddress.stringValue = @"10.0.7.200";
-    self.port.stringValue = @"443";
-    
+    self.name.stringValue = SafeString(dict[@"resource_name"]);
+    self.ipAddress.stringValue = SafeString(dict[@"ip"]);
+    self.port.stringValue = SafeString(dict[@"port"]);
+        
     NSString *type = SafeString(dict[@"ip_type"]);
     
     if([type isEqualToString:@"http"] || [type isEqualToString:@"https"]){

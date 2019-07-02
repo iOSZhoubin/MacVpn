@@ -42,31 +42,29 @@
     
     if(self.account.stringValue.length < 1){
         
-        [self show:@"提示" andMessage:@"请输入用户名"];
-        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入用户名" window:self.window];
+
         return;
         
     }else if (self.password.stringValue.length < 1){
         
-        [self show:@"提示" andMessage:@"请设置密码"];
-        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请设置密码" window:self.window];
+
         return;
         
     }else if (self.againPsw.stringValue.length < 1){
         
-        [self show:@"提示" andMessage:@"请再次输入密码"];
-        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请再次输入密码" window:self.window];
+
         return;
     }
     
     if(![self.password.stringValue isEqualToString:self.againPsw.stringValue]){
         
-        [self show:@"提示" andMessage:@"两次输入的密码不一致，请重新输入"];
-        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"两次输入的密码不一致，请重新输入" window:self.window];
+
         return;
     }
-    
-
     
     [self registerAccount];
     
@@ -75,103 +73,66 @@
 
 -(void)registerAccount{
     
-//    self.indicator.hidden = NO;
-//
-//    [self.indicator startAnimation:nil];
-//
-//    self.registerBtn.enabled = NO;
-//
-//    L2CWeakSelf(self);
-//
-//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-//
-//    parameters[@"inputname"] = SafeString(self.account.stringValue);
-//    parameters[@"inputpwd"] = SafeString(self.password.stringValue);
-//
-//    [AFNHelper macPost:Macvpn_Register parameters:parameters success:^(id responseObject) {
-//
-//        NSDictionary *dict = responseObject;
-//
-//        NSString *message = SafeString(dict[@"result"][@"message"]);
-//
-//        if([dict[@"result"][@"result"] isEqualToString:@"1"]){
-//
-//            NSAlert *alert = [[NSAlert alloc]init];
-//
-//            alert.messageText = @"提示";
-//
-//            alert.informativeText = @"注册信息已提交,等待管理员审批";
-//
-//            //设置提示框的样式
-//            alert.alertStyle = NSAlertStyleWarning;
-//
-//            [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
-//
-//                [weakself.window orderOut:nil];//关闭当前窗口
-//
-//            }];
-//
-//        }else{
-//
-//            [weakself show:@"提示" andMessage:message];
-//
-//        }
-//
-//        weakself.indicator.hidden = YES;
-//
-//        [weakself.indicator stopAnimation:nil];
-//
-//        weakself.registerBtn.enabled = YES;
-//
-//    } andFailed:^(id error) {
-//
-//        [weakself show:@"提示" andMessage:@"请求服务器失败"];
-//
-//        weakself.indicator.hidden = YES;
-//
-//        [weakself.indicator stopAnimation:nil];
-//
-//        weakself.registerBtn.enabled = YES;
-//    }];
-    
-    
-    NSAlert *alert = [[NSAlert alloc]init];
-    
-    alert.messageText = @"提示";
-    
-    alert.informativeText = @"注册信息已提交,等待管理员审批";
-    
-    //设置提示框的样式
-    alert.alertStyle = NSAlertStyleWarning;
-    
-    [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
-        
-        [self.window orderOut:nil];//关闭当前窗口
-        
+    self.indicator.hidden = NO;
+
+    [self.indicator startAnimation:nil];
+
+    self.registerBtn.enabled = NO;
+
+    L2CWeakSelf(self);
+
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+
+    parameters[@"inputname"] = SafeString(self.account.stringValue);
+    parameters[@"inputpwd"] = SafeString(self.password.stringValue);
+
+    [AFNHelper macPost:Macvpn_Register parameters:parameters success:^(id responseObject) {
+
+        NSDictionary *dict = responseObject;
+
+        NSString *message = SafeString(dict[@"result"][@"message"]);
+
+        if([dict[@"result"][@"result"] isEqualToString:@"1"]){
+
+            NSAlert *alert = [[NSAlert alloc]init];
+
+            alert.messageText = @"提示";
+
+            alert.informativeText = @"注册信息已提交,等待管理员审批";
+
+            //设置提示框的样式
+            alert.alertStyle = NSAlertStyleWarning;
+
+            [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+
+                [weakself.window orderOut:nil];//关闭当前窗口
+
+            }];
+
+        }else{
+
+            [JumpPublicAction showAlert:@"提示" andMessage:message window:weakself.window];
+
+        }
+
+        weakself.indicator.hidden = YES;
+
+        [weakself.indicator stopAnimation:nil];
+
+        weakself.registerBtn.enabled = YES;
+
+    } andFailed:^(id error) {
+
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:weakself.window];
+
+        weakself.indicator.hidden = YES;
+
+        [weakself.indicator stopAnimation:nil];
+
+        weakself.registerBtn.enabled = YES;
     }];
 }
 
-
-/**
- 提示
- 
- @param title 名称
- @param message 提示内容
- */
--(void)show:(NSString *)title andMessage:(NSString *)message{
-    
-    NSAlert *alert = [[NSAlert alloc]init];
-    
-    alert.messageText = title;
-    
-    alert.informativeText = message;
-    
-    //设置提示框的样式
-    alert.alertStyle = NSAlertStyleWarning;
-    
-    [alert beginSheetModalForWindow:self.window completionHandler:nil];
-    
-}
 
 
 //初始化加载动画

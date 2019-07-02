@@ -27,7 +27,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
+    
+    if(userInfo){
+        
+        self.ip.stringValue = SafeString(userInfo[@"ipAddress"]);
 
+    }
 
 }
 
@@ -71,12 +78,17 @@
         return;
     }
     
-//    NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@/createXml.php?p1=%@&p2=%@&p3=%@&p4=%@&p5=%@",SafeString(self.ip.stringValue),SafeString(self.ip.stringValue),SafeString(self.account.stringValue),SafeString(self.password.stringValue),SafeString(self.ip.stringValue),SafeString(self.name.stringValue),SafeString(self.passKey.stringValue)];
-//
-//    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlStr]];
+    NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
     
+    NSString *port = SafeString(userInfo[@"port"]);
+    
+    NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@/createXml.php?p1=%@&p2=%@&p3=%@&p4=%@&p5=%@",SafeString(self.ip.stringValue),port,SafeString(self.account.stringValue),SafeString(self.password.stringValue),SafeString(self.ip.stringValue),SafeString(self.name.stringValue),SafeString(self.passKey.stringValue)];
+
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlStr]];
     
 }
+
+
 
 -(BOOL)checkmobileconfigField:(NSString *)mobileconfigField{
     

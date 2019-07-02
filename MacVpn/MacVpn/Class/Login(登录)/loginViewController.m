@@ -86,7 +86,8 @@
     NSDictionary *mudict = @{
                              @"account":SafeString(self.accountL.stringValue),
                              @"ipAddress":SafeString(self.ipaddress.stringValue),
-                             @"port":SafeString(self.portL.stringValue)
+                             @"port":SafeString(self.portL.stringValue),
+                             @"password":SafeString(self.passwordL.stringValue)
                              };
     
     //存入数组并同步
@@ -98,96 +99,57 @@
 
 -(void)loadAction{
     
-//    self.indicator.hidden = NO;
-//
-//    self.loginBtn.enabled = NO;
-//
-//    [self.indicator startAnimation:nil];
-//
-//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-//
-//    parameters[@"inputname"] = SafeString(self.accountL.stringValue);
-//    parameters[@"inputpsw"] = SafeString(self.passwordL.stringValue);
-//    parameters[@"login"] = @"1";
-//    parameters[@"enevs"] = @"login";
-//    parameters[@"ios"] = @"ios";
-//
-//    [AFNHelper macPost:Macvpn_LoginIn parameters:parameters success:^(id responseObject) {
-//
-//        NSDictionary *dict = responseObject;
-//
-//        if([dict[@"result"][@"result"] isEqualToString:@"success"]){
-//
-//            [self.firstWc.window orderFront:nil];//显示要跳转的窗口
-//
-//            [[self.firstWc window] center];//显示在屏幕中间
-//
-//            [self.mainWC orderOut:nil];//关闭当前窗口
-//
-//            [self.registerVc.window orderOut:nil];//关闭注册窗口
-//
-//        }else{
-//
-//            [self show:@"提示" andMessage:@"登录失败，请检查IP地址端口号以及账号密码是否正确"];
-//        }
-//
-//        self.indicator.hidden = YES;
-//
-//        self.loginBtn.enabled = YES;
-//
-//        [self.indicator stopAnimation:nil];
-//
-//    } andFailed:^(id error) {
-//
-//        self.loginBtn.enabled = YES;
-//
-//        self.indicator.hidden = YES;
-//
-//        [self.indicator stopAnimation:nil];
-//
-//        [self show:@"提示" andMessage:@"请求服务器失败"];
-//    }];
-    
-    
-    [self.firstWc.window orderFront:nil];//显示要跳转的窗口
-    
-    [[self.firstWc window] center];//显示在屏幕中间
-    
-    [self.mainWC orderOut:nil];//关闭当前窗口
-    
-    [self.registerVc.window orderOut:nil];//关闭注册窗口
-    
-    self.indicator.hidden = YES;
-    
-    self.loginBtn.enabled = YES;
-    
-    [self.indicator stopAnimation:nil];
-    
+    self.indicator.hidden = NO;
+
+    self.loginBtn.enabled = NO;
+
+    [self.indicator startAnimation:nil];
+
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+
+    parameters[@"inputname"] = SafeString(self.accountL.stringValue);
+    parameters[@"inputpsw"] = SafeString(self.passwordL.stringValue);
+    parameters[@"login"] = @"1";
+    parameters[@"enevs"] = @"login";
+    parameters[@"ios"] = @"ios";
+
+    [AFNHelper macPost:Macvpn_LoginIn parameters:parameters success:^(id responseObject) {
+
+        NSDictionary *dict = responseObject;
+
+        if([dict[@"result"][@"result"] isEqualToString:@"success"]){
+
+            [self.firstWc.window orderFront:nil];//显示要跳转的窗口
+
+            [[self.firstWc window] center];//显示在屏幕中间
+
+            [self.mainWC orderOut:nil];//关闭当前窗口
+
+            [self.registerVc.window orderOut:nil];//关闭注册窗口
+
+        }else{
+
+              [JumpPublicAction showAlert:@"提示" andMessage:@"登录失败，请检查IP地址端口号以及账号密码是否正确" window:self.view.window];
+        }
+
+        self.indicator.hidden = YES;
+
+        self.loginBtn.enabled = YES;
+
+        [self.indicator stopAnimation:nil];
+
+    } andFailed:^(id error) {
+
+        self.loginBtn.enabled = YES;
+
+        self.indicator.hidden = YES;
+
+        [self.indicator stopAnimation:nil];
+
+    [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:self.view.window];
+
+    }];
 }
-
-
-
-/**
- 提示
-
- @param title 名称
- @param message 提示内容
- */
--(void)show:(NSString *)title andMessage:(NSString *)message{
-    
-    NSAlert *alert = [[NSAlert alloc]init];
-    
-    alert.messageText = title;
-    
-    alert.informativeText = message;
-    
-    //设置提示框的样式
-    alert.alertStyle = NSAlertStyleWarning;
-    
-    [alert beginSheetModalForWindow:self.mainWC completionHandler:nil];
-    
-}
-
 
 //初始化加载动画
 
@@ -211,8 +173,8 @@
 #pragma mark --- 忘记密码
 
 - (IBAction)forgetPassw:(NSButton *)sender {
-    
-    [self show:@"提示" andMessage:@"请您与管理员联系"];
+        
+    [JumpPublicAction showAlert:@"提示" andMessage:@"请您与管理员联系" window:self.view.window];
 }
 
 

@@ -44,7 +44,7 @@
                 
                 NSDictionary *dict;
                 
-                if([str isEqualToString:@"error,no login"]){
+                if([str isEqualToString:@"{\"sessionTimeout\":\"true\"}"]){
                     
                     dict = @{@"message":@"error"};
                     
@@ -110,7 +110,7 @@
                 
                 NSDictionary *dict;
                 
-                if([str isEqualToString:@"error,no login"]){
+                if([str isEqualToString:@"{\"sessionTimeout\":\"true\"}"]){
                     
                     dict = @{@"message":@"error"};
                     
