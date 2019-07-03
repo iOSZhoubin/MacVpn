@@ -12,65 +12,67 @@
 
 #pragma mark ---- Mac 封装网络请求
 
-
 //GET请求
 +(void)macGet:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success andFailed:(FailedBlock)failed{
-    
-    NSDictionary *ipInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
 
+   
+    NSDictionary *ipInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
+    
     NSString *ipAddress = SafeString(ipInfo[@"ipAddress"]);
     
     NSString *port = SafeString(ipInfo[@"port"]);
     
-    NSString *str1 = [NSString stringWithFormat:@"http://%@:%@%@",ipAddress,port,url];
+    NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@%@",ipAddress,port,url];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
 
-    NSString *str = [self parameterStringByDict:parameters];
+    JumpLog(@"url == %@",urlStr);
     
-    str1 = [str1 stringByAppendingFormat:@"?%@",str];
+    JumpLog(@"parameters == %@",parameters);
     
-    NSURL *urlStr = [NSURL URLWithString:str1];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:urlStr cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
-    
-    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
-
-            if(!error){
+            
+            NSData *data = responseObject;
+            
+            NSString *str = [data mj_JSONString];
+            
+            NSArray *array = [str mj_JSONObject];
+            
+            NSDictionary *dict;
+            
+            if([str isEqualToString:@"{\"sessionTimeout\":\"true\"}"]){
                 
-                NSString *str = [data mj_JSONString];
+                dict = @{@"message":@"error"};
                 
-                NSArray *array = [str mj_JSONObject];
+            }else if(array.count > 0){
                 
-                NSDictionary *dict;
-                
-                if([str isEqualToString:@"{\"sessionTimeout\":\"true\"}"]){
-                    
-                    dict = @{@"message":@"error"};
-                    
-                }else if(array.count > 0){
-                    
-                    dict = @{@"result":array};
-                    
-                }else{
-                    
-                    dict = @{@"result":str};
-                }
-                
-                success(dict);
-                
-                JumpLog(@"%@",dict);
+                dict = @{@"result":array};
                 
             }else{
                 
-                failed(error);
+                dict = @{@"result":str};
             }
             
+            success(dict);
+            
+            JumpLog(@"%@",dict);
+            
         });
-  
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        JumpLog(@"%@",error);
+
+        failed(error);
+
     }];
-    
-    [dataTask resume];
+   
 }
 
 
@@ -78,88 +80,68 @@
 +(void)macPost:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success andFailed:(FailedBlock)failed{
     
     NSDictionary *ipInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
-
+    
     NSString *ipAddress = SafeString(ipInfo[@"ipAddress"]);
     
     NSString *port = SafeString(ipInfo[@"port"]);
     
-    NSString *str = [NSString stringWithFormat:@"https://%@:%@%@",ipAddress,port,url];
+    NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@%@",ipAddress,port,url];
+
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    NSURL *urlStr = [NSURL URLWithString:str];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:urlStr cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
+    manager.requestSerializer.timeoutInterval = 10.f;
     
-    request.HTTPMethod = @"POST";
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     
-    NSString *body = [self parameterStringByDict:parameters];
-    
-    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+    [manager.securityPolicy setAllowInvalidCertificates:YES];
     
     JumpLog(@"url == %@",urlStr);
     JumpLog(@"parameters == %@",parameters);
     
-    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{ 
+        dispatch_async(dispatch_get_main_queue(), ^{
             
-            if(!error){
+            NSData *data = responseObject;
+            
+            NSString *str = [data mj_JSONString];
+            
+            NSArray *array = [str mj_JSONObject];
+            
+            NSDictionary *dict;
+            
+            if([str isEqualToString:@"{\"sessionTimeout\":\"true\"}"]){
                 
-                NSString *str = [data mj_JSONString];
+                dict = @{@"message":@"error"};
                 
-                NSArray *array = [str mj_JSONObject];
+            }else if(array.count > 0){
                 
-                NSDictionary *dict;
-                
-                if([str isEqualToString:@"{\"sessionTimeout\":\"true\"}"]){
-                    
-                    dict = @{@"message":@"error"};
-                    
-                }else if(array.count > 0){
-                    
-                    dict = @{@"result":array};
-                    
-                }else{
-                    
-                    dict = @{@"result":str};
-                }
-                
-                success(dict);
-                
-                JumpLog(@"%@",dict);
+                dict = @{@"result":array};
                 
             }else{
                 
-                failed(error);
+                dict = @{@"result":str};
             }
             
+            success(dict);
+            
+            JumpLog(@"%@",dict);
+            
         });
+    
+    
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        failed(error);
 
     }];
     
-    [dataTask resume];
 }
-
-
-
-+(NSString *)parameterStringByDict:(NSDictionary *)dict{
-    
-    NSMutableString *muString = [[NSMutableString alloc]init];
-    NSString *str = @"";
-    
-    if(dict){
-        
-        [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-            
-            [muString appendFormat:@"%@=%@&",key,obj];
-        }];
-        
-        str = [muString substringToIndex:muString.length-1];
-    }
-    
-    return str;
-}
-
-
 
 
 @end
+
+
+

@@ -85,7 +85,18 @@
     NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@/createXml.php?p1=%@&p2=%@&p3=%@&p4=%@&p5=%@",SafeString(self.ip.stringValue),port,SafeString(self.account.stringValue),SafeString(self.password.stringValue),SafeString(self.ip.stringValue),SafeString(self.name.stringValue),SafeString(self.passKey.stringValue)];
 
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlStr]];
+ 
+    //拷贝链接地址
+    NSPasteboard *aPasteboard = [NSPasteboard generalPasteboard]; //获取粘贴板对象
     
+    [aPasteboard clearContents]; //清空粘贴板之前的内容
+    
+    NSData *aData = [urlStr dataUsingEncoding:NSUTF8StringEncoding];
+   
+    [aPasteboard setData:aData forType:NSPasteboardTypeString];
+    
+    [JumpPublicAction showAlert:@"提示" andMessage:@"链接地址已拷贝，如下载未响应可打开浏览器粘贴进行访问" window:self.view.window];
+   
 }
 
 

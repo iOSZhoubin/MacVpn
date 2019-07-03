@@ -33,22 +33,21 @@
     
     [self initShow];
     
-//    [self getwebSource];
-    
-    [self loadHtml:nil];
+    [self getwebSource];
 }
 
 -(void)loadHtml:(NSString *)htmlStr{
     
-    NSString *CSS= @"<style type=\"text/css\">img{ width:100%;}</style>";
-    
-    NSString *body = @"<h1 style=\"text-align: center;\">关于全市展开卫生检查的通知</h1><img src=\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561527074501&di=4c9240af62757ccdd15b639885c18ead&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fa1b9a6ab35f1a8443f6c9f6e8a72955f99c858511defc-cqXL5G_fw658\" </img> <img src=\"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=687516638,2332654868&fm=26&gp=0.jpg\"></img><div><a href=\"https://www.baidu.com\">百度</a> <span>西安交大捷普网络科技有限公司</span></div>";
-    
-    
-    NSString * htmlString = [NSString stringWithFormat:@"<html><meta charset=\"UTF-8\"><header>%@</header><body>%@</body></html>",CSS,body];
-    
-    [self.webView loadHTMLString:htmlString baseURL:nil];
-    
+//    NSString *CSS= @"<style type=\"text/css\">img{ width:100%;}</style>";
+//
+//    NSString *body = @"<h1 style=\"text-align: center;\">关于全市展开卫生检查的通知</h1><img src=\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561527074501&di=4c9240af62757ccdd15b639885c18ead&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fa1b9a6ab35f1a8443f6c9f6e8a72955f99c858511defc-cqXL5G_fw658\" </img> <img src=\"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=687516638,2332654868&fm=26&gp=0.jpg\"></img><div><a href=\"https://www.baidu.com\">百度</a> <span>西安交大捷普网络科技有限公司</span></div>";
+//
+//
+//    NSString *htmlString = [NSString stringWithFormat:@"<html><meta charset=\"UTF-8\"><header>%@</header><body>%@</body></html>",CSS,body];
+//
+//    [self.webView loadHTMLString:htmlString baseURL:nil];
+    [self.webView loadHTMLString:htmlStr baseURL:nil];
+
 }
 
 

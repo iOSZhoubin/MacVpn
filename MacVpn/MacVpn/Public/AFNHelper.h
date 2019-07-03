@@ -6,12 +6,12 @@
 //  Copyright © 2018年 zb. All rights reserved.
 //
 
-#import "AFHTTPSessionManager.h"
+#import "AFHTTPRequestOperationManager.h"
 
 typedef void (^SuccessBlock)(id responseObject);
 typedef void (^FailedBlock)(id error);
 
-@interface AFNHelper : AFHTTPSessionManager
+@interface AFNHelper : AFHTTPRequestOperationManager
 
 
 /**

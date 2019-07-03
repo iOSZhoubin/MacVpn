@@ -38,9 +38,9 @@
 
 3、按提示安装描述文件
 
-4、确认安装完成
+4、安装完成后，进入设置，选择网络，选择VPN
 
-5、进入设置，选择网络，选择VPN
+5、点击鉴定设置，填写秘钥（生成时填写了秘钥，需要进行这一步）
 
 6、VPN连接成功后返回应用</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>

@@ -12,6 +12,7 @@
 #import "SecurityNSString.h"
 #import "AFNHelper.h"
 #import "JumpPublicAction.h"
+#import "AFNetworking.h"
 
 #ifndef PrefixPch_pch
 #define PrefixPch_pch

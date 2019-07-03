@@ -10,6 +10,8 @@
 #import "FirstWindowController.h"
 #import "RegisterViewController.h"
 
+
+
 @interface loginViewController ()
 
 //登录成功后显示的窗口
@@ -98,7 +100,7 @@
 }
 
 -(void)loadAction{
-    
+
     self.indicator.hidden = NO;
 
     self.loginBtn.enabled = NO;
@@ -113,40 +115,42 @@
     parameters[@"enevs"] = @"login";
     parameters[@"ios"] = @"ios";
 
+    L2CWeakSelf(self);
+
     [AFNHelper macPost:Macvpn_LoginIn parameters:parameters success:^(id responseObject) {
 
         NSDictionary *dict = responseObject;
 
         if([dict[@"result"][@"result"] isEqualToString:@"success"]){
 
-            [self.firstWc.window orderFront:nil];//显示要跳转的窗口
+            [weakself.firstWc.window orderFront:nil];//显示要跳转的窗口
 
-            [[self.firstWc window] center];//显示在屏幕中间
+            [[weakself.firstWc window] center];//显示在屏幕中间
 
-            [self.mainWC orderOut:nil];//关闭当前窗口
+            [weakself.mainWC orderOut:nil];//关闭当前窗口
 
-            [self.registerVc.window orderOut:nil];//关闭注册窗口
+            [weakself.registerVc.window orderOut:nil];//关闭注册窗口
 
         }else{
 
-              [JumpPublicAction showAlert:@"提示" andMessage:@"登录失败，请检查IP地址端口号以及账号密码是否正确" window:self.view.window];
+              [JumpPublicAction showAlert:@"提示" andMessage:@"登录失败，请检查IP地址端口号以及账号密码是否正确" window:weakself.view.window];
         }
 
-        self.indicator.hidden = YES;
+        weakself.indicator.hidden = YES;
 
-        self.loginBtn.enabled = YES;
+        weakself.loginBtn.enabled = YES;
 
-        [self.indicator stopAnimation:nil];
+        [weakself.indicator stopAnimation:nil];
 
     } andFailed:^(id error) {
 
-        self.loginBtn.enabled = YES;
+        weakself.loginBtn.enabled = YES;
 
-        self.indicator.hidden = YES;
+        weakself.indicator.hidden = YES;
 
-        [self.indicator stopAnimation:nil];
+        [weakself.indicator stopAnimation:nil];
 
-    [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:self.view.window];
+    [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:weakself.view.window];
 
     }];
 }
@@ -155,7 +159,7 @@
 
 -(void)initShow{
     
-    self.indicator = [[NSProgressIndicator alloc]initWithFrame:CGRectMake(280, 400, 40, 40)];
+    self.indicator = [[NSProgressIndicator alloc]initWithFrame:CGRectMake(400, 300, 40, 40)];
     
     self.indicator.style = NSProgressIndicatorSpinningStyle;
     
@@ -187,5 +191,60 @@
     [[self.registerVc window] center];//显示在屏幕中间
     
 }
+
+
+//-(void)loadAction{
+//
+//    self.indicator.hidden = NO;
+//
+//    self.loginBtn.enabled = NO;
+//
+//    [self.indicator startAnimation:nil];
+//
+//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+//
+//    parameters[@"inputname"] = SafeString(self.accountL.stringValue);
+//    parameters[@"inputpsw"] = SafeString(self.passwordL.stringValue);
+//    parameters[@"login"] = @"1";
+//    parameters[@"enevs"] = @"login";
+//    parameters[@"ios"] = @"ios";
+//
+//    L2CWeakSelf(self);
+//
+//    NSDictionary *ipInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
+//
+//    NSString *ipAddress = SafeString(ipInfo[@"ipAddress"]);
+//
+//    NSString *port = SafeString(ipInfo[@"port"]);
+//
+//    NSString *str = [NSString stringWithFormat:@"https://%@:%@%@",ipAddress,port,Macvpn_LoginIn];
+//
+//
+//
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    manager.requestSerializer.timeoutInterval = 10.f;
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+//    [manager.securityPolicy setAllowInvalidCertificates:YES];
+//    manager.requestSerializer.HTTPShouldHandleCookies = YES;
+//
+//    [manager POST:str parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//
+//        NSData *data = responseObject;
+//
+//        NSString *str = [data mj_JSONString];
+//
+//        NSDictionary *dict = [str mj_JSONObject];
+//
+//        JumpLog(@"%@",dict);
+//
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//
+//
+//
+//    }];
+//
+//}
 
 @end

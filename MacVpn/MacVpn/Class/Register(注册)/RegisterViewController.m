@@ -103,7 +103,7 @@
             //设置提示框的样式
             alert.alertStyle = NSAlertStyleWarning;
 
-            [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+            [alert beginSheetModalForWindow:weakself.window completionHandler:^(NSModalResponse returnCode) {
 
                 [weakself.window orderOut:nil];//关闭当前窗口
 

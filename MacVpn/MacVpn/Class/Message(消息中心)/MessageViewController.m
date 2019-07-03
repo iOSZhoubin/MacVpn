@@ -117,14 +117,16 @@
     L2CWeakSelf(self);
     
     [AFNHelper macPost:Macvpn_MessageCenter parameters:nil success:^(id responseObject) {
-        
+                
         NSDictionary *dict = responseObject;
         
         NSArray *array = dict[@"result"];
         
+        JumpLog(@"%@",dict);
+        
         weakself.dataArray = [NSMutableArray array];
         
-        [weakself.dataArray addObjectsFromArray:array];
+        weakself.dataArray = array.mutableCopy;
         
         if(weakself.showAlert == YES){
             
