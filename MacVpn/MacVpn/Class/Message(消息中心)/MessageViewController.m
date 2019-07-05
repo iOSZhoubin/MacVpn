@@ -32,6 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.dataArray = [NSMutableArray array];
+    
     [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"CustomMessageCellView" bundle:nil] forIdentifier:@"CustomMessageCellView"];
 
     self.tableView.delegate = self;
@@ -52,24 +54,19 @@
 //返回行数
 -(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView{
     
-//    return self.dataArray.count;
-    return 10;
+    return self.dataArray.count;
 }
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     
     CustomMessageCellView *cellView = [tableView makeViewWithIdentifier:@"CustomMessageCellView" owner:self];
     
-//    NSDictionary *dict = self.dataArray[row];
-//
-//    cellView.content.stringValue = SafeString(dict[@"content"]);
-//    cellView.timeL.stringValue = SafeString(dict[@"issue"]);
-//    cellView.titleName.stringValue = SafeString(dict[@"title"]);
-    
-    cellView.content.stringValue = @"这是一条测试信息123";
-    cellView.timeL.stringValue = @"2019-07-03 14:25";
-    cellView.titleName.stringValue = @"测试";
+    NSDictionary *dict = self.dataArray[row];
 
+    cellView.content.stringValue = SafeString(dict[@"content"]);
+    cellView.timeL.stringValue = SafeString(dict[@"issue"]);
+    cellView.titleName.stringValue = SafeString(dict[@"title"]);
+    
     return cellView;
 }
 
@@ -120,13 +117,15 @@
                 
         NSDictionary *dict = responseObject;
         
-        NSArray *array = dict[@"result"];
-        
-        JumpLog(@"%@",dict);
-        
-        weakself.dataArray = [NSMutableArray array];
-        
-        weakself.dataArray = array.mutableCopy;
+        if(![SafeString(dict[@"result"]) isEqualToString:@"[]"]){
+            
+            NSArray *array = dict[@"result"];
+            
+            JumpLog(@"%@",dict);
+            
+            weakself.dataArray = array.mutableCopy;
+            
+        }
         
         if(weakself.showAlert == YES){
             
@@ -139,7 +138,7 @@
                 [JumpPublicAction showAlert:@"提示" andMessage:@"暂未查询到数据" window:weakself.view.window];
             }
         }
-        
+
         [weakself.tableView reloadData];
 
         weakself.indicator.hidden = YES;

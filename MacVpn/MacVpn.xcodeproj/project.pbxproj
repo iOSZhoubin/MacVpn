@@ -318,8 +318,8 @@
 		398AEA0A22B37F6700684BD0 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				39AADA5E22C9EF0000838F13 /* Register(注册) */,
 				398AEA0B22B37F6700684BD0 /* FirstPage(首页) */,
+				39AADA5E22C9EF0000838F13 /* Register(注册) */,
 				3900F1A322B743B800600020 /* Internet(网络连接) */,
 				3900F1A022B743B300600020 /* Message(消息中心) */,
 				3900F1A122B743B300600020 /* Resources(资源列表) */,
@@ -767,6 +767,7 @@
 				CODE_SIGN_ENTITLEMENTS = MacVpn/MacVpn.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XDYY7V85NM;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MacVpn/PrefixPch.pch";
 				INFOPLIST_FILE = MacVpn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -774,7 +775,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.Macvpn;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.sslvpnforMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -787,6 +788,7 @@
 				CODE_SIGN_ENTITLEMENTS = MacVpn/MacVpn.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XDYY7V85NM;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MacVpn/PrefixPch.pch";
 				INFOPLIST_FILE = MacVpn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -794,7 +796,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.Macvpn;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.sslvpnforMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

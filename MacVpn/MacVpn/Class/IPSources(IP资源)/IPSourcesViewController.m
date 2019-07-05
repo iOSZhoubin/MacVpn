@@ -126,6 +126,11 @@
             [weakself.dataArray addObjectsFromArray:array];
             
             [weakself.tableView reloadData];
+            
+            if(weakself.showAlert == YES){
+                
+                [JumpPublicAction showAlert:@"提示" andMessage:@"加载数据成功" window:self.view.window];
+            }
         
         }else{
             

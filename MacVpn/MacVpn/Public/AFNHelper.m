@@ -12,7 +12,7 @@
 
 #pragma mark ---- Mac 封装网络请求
 
-//GET请求
+//GET请求 - XML
 +(void)macGet:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success andFailed:(FailedBlock)failed{
 
    

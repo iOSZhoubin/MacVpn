@@ -12,6 +12,7 @@
 #import "MessageViewController.h"
 #import "UserViewController.h"
 #import "JumpMorealertViewController.h"
+#import "MainWindowController.h"
 
 @interface FirstWindowController ()
 
@@ -35,11 +36,17 @@
 
 @property (weak) IBOutlet NSView *customerView;
 
+//回到主界面
+@property(nonatomic,strong) MainWindowController *loginWc;
+
 //提示框
 @property(nonatomic,strong) NSPopover *firstPopover;
 //提示框
 @property(nonatomic,strong) JumpMorealertViewController *morealertVC;
 
+@property (strong,nonatomic) NSTimer *timer;
+
+@property (assign,nonatomic) NSInteger failNum;
 
 @end
 
@@ -87,6 +94,8 @@
 
     self.userVc = [[UserViewController alloc]initWithNibName:@"UserViewController" bundle:nil];
 
+    self.loginWc = [[MainWindowController alloc]initWithWindowNibName:@"MainWindowController"];
+
     //设置大小
     self.internetVc.view.frame  = [self returnvcFrame];
     
@@ -97,6 +106,14 @@
     self.userVc.view.frame = [self returnvcFrame];
     
     [self.window.contentView addSubview:self.internetVc.view];
+    
+    self.failNum = 0;
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0f  //间隔时间
+                                                         target:self
+                                                       selector:@selector(longConnect)
+                                                       userInfo:nil
+                                                        repeats:YES];
     
 }
 
@@ -186,6 +203,106 @@
     NSRect rect = CGRectMake(self.customerView.frame.origin.x, self.customerView.frame.origin.y, self.customerView.frame.size.width, self.customerView.frame.size.height);
 
     return rect;
+}
+
+
+
+
+//心跳连接
+-(void)longConnect{
+    
+    AFHTTPRequestOperationManager *getManger = [AFHTTPRequestOperationManager manager];
+    
+    getManger.requestSerializer.timeoutInterval = 30;
+    
+    getManger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    //无条件的信任服务器上的证书
+    AFSecurityPolicy *policy =  [AFSecurityPolicy defaultPolicy];
+    // 客户端是否信任非法证书
+    policy.allowInvalidCertificates = YES;
+    // 是否在证书域字段中验证域名
+    policy.validatesDomainName = NO;
+    
+    getManger.securityPolicy = policy;
+    
+    NSDictionary *dataDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    parameters[@"inputname"] = SafeString(dataDict[@"account"]);
+    parameters[@"inputpsw"] = SafeString(dataDict[@"password"]);
+    parameters[@"login"] = @"1";
+    parameters[@"enevs"] = @"login";
+    parameters[@"ios"] = @"ios";
+    
+    L2CWeakSelf(self);
+    
+    NSDictionary *ipInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
+    
+    NSString *ipAddress = SafeString(ipInfo[@"ipAddress"]);
+    
+    NSString *port = SafeString(ipInfo[@"port"]);
+    
+    NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@%@",ipAddress,port,Macvpn_heartJump];
+    
+    [getManger GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if ([responseObject[@"hold_state"] intValue] == 1) {
+        
+            JumpLog(@"请求心跳成功");
+            
+            weakself.failNum = 0;
+            
+        }else{
+            
+            JumpLog(@"请求心跳失败");
+
+            weakself.failNum ++;
+            
+            if(weakself.failNum > 2){
+                
+                [weakself loginOutAlert];
+            }
+        }
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        JumpLog(@"请求心跳失败");
+
+        weakself.failNum ++;
+        
+        if(weakself.failNum > 2){
+            
+            [weakself loginOutAlert];
+        }
+        
+    }];
+}
+
+
+-(void)loginOutAlert{
+    
+    NSAlert *alert = [[NSAlert alloc]init];
+    
+    alert.messageText = @"强制下线";
+    
+    alert.informativeText = @"服务端强制下线,请重新登录";
+    
+    //设置提示框的样式
+    alert.alertStyle = NSAlertStyleWarning;
+    
+    [self.timer invalidate];
+    
+    self.timer = nil;
+    
+    [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+        
+        [self.loginWc.window orderFront:nil];//显示要跳转的窗口
+        [self.loginWc.window center];//显示在屏幕中间
+        [self.window orderOut:nil];//关闭当前窗口
+        
+    }];
 }
 
 

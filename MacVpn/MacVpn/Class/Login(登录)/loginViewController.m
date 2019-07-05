@@ -132,8 +132,10 @@
             [weakself.registerVc.window orderOut:nil];//关闭注册窗口
 
         }else{
+            
+            NSString *message = SafeString(dict[@"result"][@"msg"]);
 
-              [JumpPublicAction showAlert:@"提示" andMessage:@"登录失败，请检查IP地址端口号以及账号密码是否正确" window:weakself.view.window];
+            [JumpPublicAction showAlert:@"提示" andMessage:message window:weakself.view.window];
         }
 
         weakself.indicator.hidden = YES;
@@ -149,8 +151,8 @@
         weakself.indicator.hidden = YES;
 
         [weakself.indicator stopAnimation:nil];
-
-    [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:weakself.view.window];
+    
+        [JumpPublicAction showAlert:@"提示" andMessage:@"登录失败，请检查IP地址端口号以及账号密码是否正确" window:weakself.view.window];
 
     }];
 }
@@ -191,60 +193,5 @@
     [[self.registerVc window] center];//显示在屏幕中间
     
 }
-
-
-//-(void)loadAction{
-//
-//    self.indicator.hidden = NO;
-//
-//    self.loginBtn.enabled = NO;
-//
-//    [self.indicator startAnimation:nil];
-//
-//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-//
-//    parameters[@"inputname"] = SafeString(self.accountL.stringValue);
-//    parameters[@"inputpsw"] = SafeString(self.passwordL.stringValue);
-//    parameters[@"login"] = @"1";
-//    parameters[@"enevs"] = @"login";
-//    parameters[@"ios"] = @"ios";
-//
-//    L2CWeakSelf(self);
-//
-//    NSDictionary *ipInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"mac_userInfo"];
-//
-//    NSString *ipAddress = SafeString(ipInfo[@"ipAddress"]);
-//
-//    NSString *port = SafeString(ipInfo[@"port"]);
-//
-//    NSString *str = [NSString stringWithFormat:@"https://%@:%@%@",ipAddress,port,Macvpn_LoginIn];
-//
-//
-//
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-//    manager.requestSerializer.timeoutInterval = 10.f;
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-//    [manager.securityPolicy setAllowInvalidCertificates:YES];
-//    manager.requestSerializer.HTTPShouldHandleCookies = YES;
-//
-//    [manager POST:str parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//
-//        NSData *data = responseObject;
-//
-//        NSString *str = [data mj_JSONString];
-//
-//        NSDictionary *dict = [str mj_JSONObject];
-//
-//        JumpLog(@"%@",dict);
-//
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//
-//
-//
-//    }];
-//
-//}
 
 @end

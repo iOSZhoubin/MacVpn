@@ -53,29 +53,6 @@
 
 #pragma mark -- 实现WKNavigationDelegate委托协议
 
-//开始加载时调用
-
--(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation{
-
-    JumpLog(@"开始加载");
-    
-}
-
-//当内容开始返回时调用
-
--(void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation{
-    
-    JumpLog(@"内容开始返回");
-}
-
-//加载完成之后调用
-
--(void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
-    
-    JumpLog(@"加载完成");
-
-}
-
 //加载失败时调用
 
 -(void)webView:(WKWebView *)webView didFailLoadWithError:(nonnull NSError *)error{
@@ -143,7 +120,7 @@
             
             if(weakself.showAlert == YES){
                 
-                [JumpPublicAction showAlert:@"提示" andMessage:@"数据加载成功" window:self.view.window];
+                [JumpPublicAction showAlert:@"提示" andMessage:@"数据加载成功" window:weakself.view.window];
             }
             
             [weakself loadHtml:str];
@@ -163,7 +140,7 @@
         
         [weakself.indicator stopAnimation:nil];
         
-        [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:self.view.window];
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:weakself.view.window];
     }];
 }
 
