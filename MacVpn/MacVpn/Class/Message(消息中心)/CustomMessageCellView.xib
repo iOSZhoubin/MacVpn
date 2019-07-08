@@ -40,7 +40,7 @@
                         <constraint firstAttribute="width" constant="30" id="VRN-q6-eYP"/>
                     </constraints>
                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="标题:" id="NId-zk-Dhn">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -51,7 +51,7 @@
                         <constraint firstAttribute="height" constant="20" id="ag9-u9-a2o"/>
                     </constraints>
                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="123" id="mVI-Lb-zjb">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -62,7 +62,7 @@
                         <constraint firstAttribute="height" constant="20" id="AaV-b5-SE2"/>
                     </constraints>
                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="2019年7月2日" id="0Cn-Ff-gSz">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -86,11 +86,11 @@
                 <constraint firstAttribute="trailing" secondItem="v5i-Hj-2tb" secondAttribute="trailing" constant="20" id="xbm-vt-SHb"/>
             </constraints>
             <connections>
-                <outlet property="content" destination="W3R-YX-yRc" id="DeS-yV-zpJ"/>
-                <outlet property="timeL" destination="fv9-W0-ffc" id="74d-AI-UHE"/>
-                <outlet property="titleName" destination="5Qd-0j-VGA" id="NYS-sN-W04"/>
+                <outlet property="content" destination="W3R-YX-yRc" id="tCI-QI-li6"/>
+                <outlet property="timeL" destination="fv9-W0-ffc" id="HSq-6i-ZAx"/>
+                <outlet property="titleName" destination="5Qd-0j-VGA" id="rqT-tf-aNa"/>
             </connections>
-            <point key="canvasLocation" x="64.5" y="174"/>
+            <point key="canvasLocation" x="64.5" y="173.5"/>
         </tableCellView>
     </objects>
 </document>

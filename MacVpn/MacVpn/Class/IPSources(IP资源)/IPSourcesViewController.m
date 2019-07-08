@@ -8,6 +8,7 @@
 
 #import "IPSourcesViewController.h"
 #import "ResourcesCellView.h"
+#import "IPSourcesModel.h"
 
 @interface IPSourcesViewController ()<NSTableViewDelegate,NSTableViewDataSource>
 
@@ -71,9 +72,9 @@
     
     ResourcesCellView *cellView = [tableView makeViewWithIdentifier:@"ResourcesCellView" owner:self];
     
-    NSDictionary *dict = self.dataArray[row];
+    IPSourcesModel *model = self.dataArray[row];
     
-    [cellView refreshWithDict:dict];
+    [cellView refreshWithModel:model];
     
     return cellView;
 }
@@ -87,15 +88,15 @@
     
     if(selectRow >= 0){
         
-        NSString *resourcetype = SafeString(self.dataArray[selectRow][@"ip_type"]);
-
-        if([resourcetype isEqualToString:@"http"] || [resourcetype isEqualToString:@"https"]){
+        IPSourcesModel *model = self.dataArray[selectRow];
+        
+        if([model.ip_type isEqualToString:@"http"] || [model.ip_type isEqualToString:@"https"]){
 
             NSString *ip = SafeString(self.dataArray[selectRow][@"ip"]);
 
             NSString *port = SafeString(self.dataArray[selectRow][@"port"]);
 
-            NSString *url = [NSString stringWithFormat:@"%@://%@:%@",resourcetype,ip,port];
+            NSString *url = [NSString stringWithFormat:@"%@://%@:%@",model.ip_type,ip,port];
 
             [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
 
@@ -117,27 +118,29 @@
         
         NSDictionary *dict = responseObject;
         
-        NSArray *array = dict[@"result"];
-        
-        if(array.count > 0){
+        if([SafeString(dict[@"message"]) isEqualToString:@"error"]){
             
-            weakself.dataArray = [NSMutableArray array];
-            
-            [weakself.dataArray addObjectsFromArray:array];
-            
-            [weakself.tableView reloadData];
-            
-            if(weakself.showAlert == YES){
-                
-                [JumpPublicAction showAlert:@"提示" andMessage:@"加载数据成功" window:self.view.window];
-            }
-        
+            [JumpPublicAction showAlert:@"提示" andMessage:@"会话已超时，请重新登录" window:weakself.view.window];
+
         }else{
             
+            NSArray *array = dict[@"result"];
+            
+            weakself.dataArray  = [IPSourcesModel mj_objectArrayWithKeyValuesArray:array];
+            
             if(weakself.showAlert == YES){
                 
-                [JumpPublicAction showAlert:@"提示" andMessage:@"暂无资源" window:self.view.window];
+                if(weakself.dataArray.count > 0){
+                    
+                    [JumpPublicAction showAlert:@"提示" andMessage:@"加载数据成功" window:weakself.view.window];
+                    
+                }else{
+                    
+                    [JumpPublicAction showAlert:@"提示" andMessage:@"暂未查询到数据" window:weakself.view.window];
+                }
             }
+            
+            [weakself.tableView reloadData];
         }
         
         weakself.indicator.hidden = YES;
@@ -196,5 +199,7 @@
     
     self.indicator.hidden = YES;
 }
+
+
 
 @end

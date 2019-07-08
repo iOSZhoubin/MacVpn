@@ -30,15 +30,13 @@
 }
 
 
--(void)refreshWithDict:(NSDictionary *)dict{
+-(void)refreshWithModel:(IPSourcesModel *)model{
+
+    self.name.stringValue = SafeString(model.resource_name);
+    self.ipAddress.stringValue = SafeString(model.ip);
+    self.port.stringValue = SafeString(model.port);
     
-    self.name.stringValue = SafeString(dict[@"resource_name"]);
-    self.ipAddress.stringValue = SafeString(dict[@"ip"]);
-    self.port.stringValue = SafeString(dict[@"port"]);
-        
-    NSString *type = SafeString(dict[@"ip_type"]);
-    
-    if([type isEqualToString:@"http"] || [type isEqualToString:@"https"]){
+    if([model.ip_type isEqualToString:@"http"] || [model.ip_type isEqualToString:@"https"]){
         
         self.pushView.hidden = NO;
         

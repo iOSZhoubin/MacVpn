@@ -38,6 +38,8 @@
 		398AEA1922B37F6700684BD0 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398AEA1222B37F6700684BD0 /* loginViewController.xib */; };
 		398AEA1A22B37F6700684BD0 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 398AEA1422B37F6700684BD0 /* MainWindowController.m */; };
 		398AEA1B22B37F6700684BD0 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398AEA1522B37F6700684BD0 /* MainWindowController.xib */; };
+		399E821422D2DDCE0070C46E /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 399E821322D2DDCE0070C46E /* MessageModel.m */; };
+		399E821722D2E1A70070C46E /* IPSourcesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 399E821622D2E1A70070C46E /* IPSourcesModel.m */; };
 		39AADA6222C9EF2600838F13 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AADA6022C9EF2600838F13 /* RegisterViewController.m */; };
 		39AADA6322C9EF2600838F13 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39AADA6122C9EF2600838F13 /* RegisterViewController.xib */; };
 		39EAA78B22CC77E200D7DBD7 /* AFDownloadRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAA76222CC77E200D7DBD7 /* AFDownloadRequestOperation.m */; };
@@ -124,6 +126,10 @@
 		398AEA1322B37F6700684BD0 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		398AEA1422B37F6700684BD0 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		398AEA1522B37F6700684BD0 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		399E821222D2DDCE0070C46E /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		399E821322D2DDCE0070C46E /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		399E821522D2E1A70070C46E /* IPSourcesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPSourcesModel.h; sourceTree = "<group>"; };
+		399E821622D2E1A70070C46E /* IPSourcesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPSourcesModel.m; sourceTree = "<group>"; };
 		39AADA5F22C9EF2600838F13 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		39AADA6022C9EF2600838F13 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		39AADA6122C9EF2600838F13 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
@@ -206,6 +212,8 @@
 				3938C16922C06760009E5B8C /* CustomMessageCellView.h */,
 				3938C16A22C06760009E5B8C /* CustomMessageCellView.m */,
 				3938C16722C066CB009E5B8C /* CustomMessageCellView.xib */,
+				399E821222D2DDCE0070C46E /* MessageModel.h */,
+				399E821322D2DDCE0070C46E /* MessageModel.m */,
 			);
 			path = "Message(消息中心)";
 			sourceTree = "<group>";
@@ -274,6 +282,8 @@
 				3964FCC622C07D5300E03A73 /* ResourcesCellView.h */,
 				3964FCC522C07D5300E03A73 /* ResourcesCellView.m */,
 				3964FCC722C07D5300E03A73 /* ResourcesCellView.xib */,
+				399E821522D2E1A70070C46E /* IPSourcesModel.h */,
+				399E821622D2E1A70070C46E /* IPSourcesModel.m */,
 			);
 			path = "IPSources(IP资源)";
 			sourceTree = "<group>";
@@ -606,8 +616,10 @@
 				39EAA79E22CC77E200D7DBD7 /* UIWebView+AFNetworking.m in Sources */,
 				39EAA79422CC77E200D7DBD7 /* AFURLSessionManager.m in Sources */,
 				39EAA79B22CC77E200D7DBD7 /* UIImageView+AFNetworking.m in Sources */,
+				399E821722D2E1A70070C46E /* IPSourcesModel.m in Sources */,
 				398AE9EC22B37B6B00684BD0 /* MacVpn.xcdatamodeld in Sources */,
 				398AEA1822B37F6700684BD0 /* loginViewController.m in Sources */,
+				399E821422D2DDCE0070C46E /* MessageModel.m in Sources */,
 				39EAA79822CC77E200D7DBD7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3900F1C422B745D100600020 /* JumpPublicAction.m in Sources */,
 				39EDBC2222BB6D6400F21299 /* ChangePwordWindowController.m in Sources */,

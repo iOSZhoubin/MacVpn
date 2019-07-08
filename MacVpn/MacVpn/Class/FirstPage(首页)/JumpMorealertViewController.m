@@ -57,6 +57,10 @@
 
 - (IBAction)loginout:(NSButton *)sender {
     
+    [self.timer invalidate];
+    
+    self.timer = nil;
+    
     [self.loginWc.window orderFront:nil];//显示要跳转的窗口
     
     [[self.loginWc window] center];//显示在屏幕中间

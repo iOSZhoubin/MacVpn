@@ -7,12 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "IPSourcesModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ResourcesCellView : NSTableCellView
 
--(void)refreshWithDict:(NSDictionary *)dict;
+-(void)refreshWithModel:(IPSourcesModel *)model;
 
 @end
 

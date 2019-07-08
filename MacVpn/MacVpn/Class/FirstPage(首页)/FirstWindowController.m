@@ -109,7 +109,7 @@
     
     self.failNum = 0;
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0f  //间隔时间
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0f  //间隔时间
                                                          target:self
                                                        selector:@selector(longConnect)
                                                        userInfo:nil
@@ -194,6 +194,8 @@
 
 - (IBAction)setAction:(NSButton *)sender {
     
+    self.morealertVC.timer = self.timer;
+
     [self.firstPopover showRelativeToRect:sender.frame ofView:self.window.contentView preferredEdge:NSRectEdgeMaxX];
 
 }
@@ -285,9 +287,9 @@
     
     NSAlert *alert = [[NSAlert alloc]init];
     
-    alert.messageText = @"强制下线";
+    alert.messageText = @"提示";
     
-    alert.informativeText = @"服务端强制下线,请重新登录";
+    alert.informativeText = @"会话已超时，请您重新登录";
     
     //设置提示框的样式
     alert.alertStyle = NSAlertStyleWarning;

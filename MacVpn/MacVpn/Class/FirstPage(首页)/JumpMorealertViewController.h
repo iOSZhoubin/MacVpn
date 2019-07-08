@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong,nonatomic) NSWindow *mainWc;
 
+@property (strong,nonatomic) NSTimer *timer;
+
 @end
 
 NS_ASSUME_NONNULL_END

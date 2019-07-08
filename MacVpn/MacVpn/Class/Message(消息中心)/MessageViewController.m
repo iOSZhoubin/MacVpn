@@ -8,6 +8,7 @@
 
 #import "MessageViewController.h"
 #import "CustomMessageCellView.h"
+#import "MessageModel.h"
 
 @interface MessageViewController ()<NSTableViewDelegate,NSTableViewDataSource>
 
@@ -17,11 +18,10 @@
 @property (weak) IBOutlet NSTableView *tableView;
 //数据源
 @property (strong,nonatomic) NSMutableArray *dataArray;
-
+//加载动画
 @property (strong,nonatomic) NSProgressIndicator *indicator;
-
 //是否显示提示信息
-@property (assign,nonatomic) BOOL showAlert;
+@property (assign,nonatomic) BOOL showAlert;//回到主界面
 
 @end
 
@@ -61,11 +61,9 @@
     
     CustomMessageCellView *cellView = [tableView makeViewWithIdentifier:@"CustomMessageCellView" owner:self];
     
-    NSDictionary *dict = self.dataArray[row];
-
-    cellView.content.stringValue = SafeString(dict[@"content"]);
-    cellView.timeL.stringValue = SafeString(dict[@"issue"]);
-    cellView.titleName.stringValue = SafeString(dict[@"title"]);
+    MessageModel *model = self.dataArray[row];
+    
+    [cellView refreshWithModel:model];
     
     return cellView;
 }
@@ -114,54 +112,63 @@
     L2CWeakSelf(self);
     
     [AFNHelper macPost:Macvpn_MessageCenter parameters:nil success:^(id responseObject) {
-                
+
         NSDictionary *dict = responseObject;
         
-        if(![SafeString(dict[@"result"]) isEqualToString:@"[]"]){
+        if([SafeString(dict[@"message"]) isEqualToString:@"error"]){
+            
+            [JumpPublicAction showAlert:@"提示" andMessage:@"会话已超时，请重新登录" window:weakself.view.window];
+
+        }else{
             
             NSArray *array = dict[@"result"];
             
-            JumpLog(@"%@",dict);
-            
-            weakself.dataArray = array.mutableCopy;
-            
-        }
-        
-        if(weakself.showAlert == YES){
-            
-            if(weakself.dataArray.count > 0){
+            weakself.dataArray  = [MessageModel mj_objectArrayWithKeyValuesArray:array];
+
+            if(weakself.showAlert == YES){
                 
-                [JumpPublicAction showAlert:@"提示" andMessage:@"加载数据成功" window:weakself.view.window];
-                
-            }else{
-                
-                [JumpPublicAction showAlert:@"提示" andMessage:@"暂未查询到数据" window:weakself.view.window];
+                if(weakself.dataArray.count > 0){
+                    
+                    [JumpPublicAction showAlert:@"提示" andMessage:@"加载数据成功" window:weakself.view.window];
+                    
+                }else{
+                    
+                    [JumpPublicAction showAlert:@"提示" andMessage:@"暂未查询到数据" window:weakself.view.window];
+                }
             }
+            
+            [weakself.tableView reloadData];
+
         }
 
-        [weakself.tableView reloadData];
+        weakself.indicator.hidden = YES;
+
+        weakself.refreshBtn.enabled = YES;
+
+        [weakself.indicator stopAnimation:nil];
+
+    } andFailed:^(id error) {
 
         weakself.indicator.hidden = YES;
-        
+
         weakself.refreshBtn.enabled = YES;
-        
+
         [weakself.indicator stopAnimation:nil];
-        
-    } andFailed:^(id error) {
-        
-        weakself.indicator.hidden = YES;
-        
-        weakself.refreshBtn.enabled = YES;
-        
-        [weakself.indicator stopAnimation:nil];
-        
+
         if(weakself.showAlert == YES){
-        
+
             [JumpPublicAction showAlert:@"提示" andMessage:@"请求服务器失败" window:weakself.view.window];
 
         }
     }];
+    
+    
+    
+    
 }
+
+
+
 
 
 @end
