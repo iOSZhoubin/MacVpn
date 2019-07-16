@@ -40,7 +40,7 @@
                                     </constraints>
                                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="用户名：" id="u9S-xU-sOE">
                                         <font key="font" metaFont="system" size="14"/>
-                                        <color key="textColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
@@ -48,7 +48,7 @@
                                     <rect key="frame" x="18" y="278" width="79" height="30"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="密码：" id="hLU-9u-cJ3">
                                         <font key="font" metaFont="system" size="14"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
@@ -56,7 +56,7 @@
                                     <rect key="frame" x="18" y="228" width="79" height="30"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="确认密码：" id="JUN-Ph-wPj">
                                         <font key="font" metaFont="system" size="14"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
@@ -142,8 +142,8 @@
                                 <constraint firstItem="kKS-fG-6cK" firstAttribute="leading" secondItem="f5g-mz-reT" secondAttribute="leading" constant="20" id="wJd-Mq-2VL"/>
                             </constraints>
                         </view>
-                        <color key="borderColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="fillColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="borderColor" red="0.15686274510000001" green="0.60392156860000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="fillColor" red="0.15686274509803921" green="0.60392156862745094" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </box>
                 </subviews>
                 <constraints>

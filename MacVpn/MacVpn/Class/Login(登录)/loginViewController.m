@@ -188,6 +188,13 @@
 
 - (IBAction)registerAction:(NSButton *)sender {
     
+    if(self.ipaddress.stringValue.length < 1 || self.portL.stringValue.length < 1){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请填写服务器域名和端口号再进行注册" window:self.mainWC];
+
+        return;
+    }
+    
     [self.registerVc.window orderFront:nil];//显示要跳转的窗口
     
     [[self.registerVc window] center];//显示在屏幕中间

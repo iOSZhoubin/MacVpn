@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="IPSourcesViewController">
             <connections>
+                <outlet property="noSources" destination="ed9-NT-jPW" id="vfC-Q0-kwY"/>
                 <outlet property="refreshBtn" destination="4I8-uY-YAB" id="fZK-af-zHk"/>
                 <outlet property="tableView" destination="5w3-7N-Nb5" id="F7k-8F-1Bg"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -92,12 +93,26 @@
                         <action selector="refreshIpSource:" target="-2" id="u8n-zd-Ow3"/>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ed9-NT-jPW">
+                    <rect key="frame" x="338" y="10" width="124" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="HyG-Po-Hgz"/>
+                        <constraint firstAttribute="height" constant="17" id="bwl-AA-Zxm"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="暂 无 相 关 数 据 " id="nY8-Ds-Oyn">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="ed9-NT-jPW" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="5ZF-sM-P44"/>
                 <constraint firstItem="O9S-Hy-lcL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="8Kw-3P-iLp"/>
                 <constraint firstItem="4I8-uY-YAB" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="VCl-zJ-dt3"/>
                 <constraint firstAttribute="bottom" secondItem="4I8-uY-YAB" secondAttribute="bottom" constant="10" id="VUi-hd-vG5"/>
                 <constraint firstAttribute="bottom" secondItem="O9S-Hy-lcL" secondAttribute="bottom" constant="40" id="eTw-Y7-9WK"/>
+                <constraint firstAttribute="bottom" secondItem="ed9-NT-jPW" secondAttribute="bottom" constant="10" id="esk-3T-23P"/>
                 <constraint firstAttribute="trailing" secondItem="O9S-Hy-lcL" secondAttribute="trailing" constant="10" id="kcg-GH-Adn"/>
                 <constraint firstItem="O9S-Hy-lcL" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="30" id="kgz-to-s2m"/>
             </constraints>

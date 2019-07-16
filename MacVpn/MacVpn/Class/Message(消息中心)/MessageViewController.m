@@ -12,6 +12,8 @@
 
 @interface MessageViewController ()<NSTableViewDelegate,NSTableViewDataSource>
 
+//无数据
+@property (weak) IBOutlet NSTextField *noMessage;
 //刷新按钮
 @property (weak) IBOutlet NSButton *refreshBtn;
 //tableview
@@ -134,11 +136,20 @@
                 }else{
                     
                     [JumpPublicAction showAlert:@"提示" andMessage:@"暂未查询到数据" window:weakself.view.window];
+                    
                 }
             }
             
+            if(weakself.dataArray.count > 0){
+                
+                weakself.noMessage.hidden = YES;
+                
+            }else{
+                
+                weakself.noMessage.hidden = NO;
+            }
+            
             [weakself.tableView reloadData];
-
         }
 
         weakself.indicator.hidden = YES;

@@ -92,7 +92,7 @@
 
         NSString *message = SafeString(dict[@"result"][@"message"]);
 
-        if([dict[@"result"][@"result"] isEqualToString:@"1"]){
+        if([dict[@"result"] isEqualToString:@"0"]){
 
             NSAlert *alert = [[NSAlert alloc]init];
 

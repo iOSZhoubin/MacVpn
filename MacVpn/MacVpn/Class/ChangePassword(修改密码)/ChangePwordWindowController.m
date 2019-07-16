@@ -43,6 +43,33 @@
 
 - (IBAction)sureAction:(NSButton *)sender {
     
+    if(self.oldPassword.stringValue.length < 1){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入原始密码" window:self.window];
+        
+        return;
+    
+    }else if (self.newsPassword.stringValue.length < 1){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请输入新密码" window:self.window];
+        
+        return;
+
+        
+    }else if (self.againpassword.stringValue.length < 1){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"请再次输入新密码" window:self.window];
+        
+        return;
+        
+    }else if (![self.againpassword.stringValue isEqualToString:self.newsPassword.stringValue]){
+        
+        [JumpPublicAction showAlert:@"提示" andMessage:@"两次输入密码不同，请重新输入" window:self.window];
+        
+        return;
+
+    }
+
     self.sureBtn.enabled = NO;
     
     self.indicator.hidden = NO;
