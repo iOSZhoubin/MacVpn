@@ -8,12 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import "IPSourcesModel.h"
+#import "WebSourcesModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ResourcesCellView : NSTableCellView
 
--(void)refreshWithModel:(IPSourcesModel *)model;
+//刷新ip资源
+-(void)refreshWithIPModel:(IPSourcesModel *)model;
+//刷新Web资源
+-(void)refreshWithWebModel:(WebSourcesModel *)model;
 
 @end
 

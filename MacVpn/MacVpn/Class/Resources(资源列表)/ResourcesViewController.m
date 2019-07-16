@@ -9,6 +9,7 @@
 #import "ResourcesViewController.h"
 #import "IPSourcesViewController.h"
 #import "WebSourcesViewController.h"
+#import "WebSourcesListViewController.h"
 
 @interface ResourcesViewController ()
 
@@ -20,6 +21,9 @@
 @property (strong,nonatomic) IPSourcesViewController *ipVc;
 /** web资源 */
 @property (strong,nonatomic) WebSourcesViewController *webVc;
+/** 列表web资源 */
+@property (strong,nonatomic) WebSourcesListViewController *listWebVc;
+
 
 @end
 
@@ -31,13 +35,15 @@
     
     self.ipVc = [[IPSourcesViewController alloc]initWithNibName:@"IPSourcesViewController" bundle:nil];
     self.webVc = [[WebSourcesViewController alloc]initWithNibName:@"WebSourcesViewController" bundle:nil];
-    
+    self.listWebVc = [[WebSourcesListViewController alloc]initWithNibName:@"WebSourcesListViewController" bundle:nil];
+
     NSRect rect1 = CGRectMake(0, 0, self.customerView.frame.size.width, self.customerView.frame.size.height);
     NSRect rect2 = CGRectMake(0, 60, self.customerView.frame.size.width, self.customerView.frame.size.height);
 
     self.ipVc.view.frame  = rect1;
-    self.webVc.view.frame  = rect2;
-    
+    self.listWebVc.view.frame  = rect2;
+//    self.webVc.view.frame  = rect2;
+
     self.webTitle.stringValue = @"IP 资源";
     
     [self.customerView addSubview:self.ipVc.view];
@@ -53,7 +59,7 @@
     self.webTitle.stringValue = @"IP 资源";
 
     [self.ipVc.view removeFromSuperview];
-    [self.webVc.view removeFromSuperview];
+    [self.listWebVc.view removeFromSuperview];
     
     
     [self.customerView addSubview:self.ipVc.view];
@@ -66,10 +72,10 @@
     self.webTitle.stringValue = @"Web 资源";
 
     [self.ipVc.view removeFromSuperview];
-    [self.webVc.view removeFromSuperview];
-    
+    [self.listWebVc.view removeFromSuperview];
 
-    [self.customerView addSubview:self.webVc.view];
+
+    [self.customerView addSubview:self.listWebVc.view];
 }
 
 @end

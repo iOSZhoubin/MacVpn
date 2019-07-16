@@ -29,8 +29,8 @@
     // Drawing code here.
 }
 
-
--(void)refreshWithModel:(IPSourcesModel *)model{
+//刷新ip资源
+-(void)refreshWithIPModel:(IPSourcesModel *)model{
 
     self.name.stringValue = SafeString(model.resource_name);
     self.ipAddress.stringValue = SafeString(model.ip);
@@ -44,6 +44,14 @@
         
         self.pushView.hidden = YES;
     }
+}
+
+//刷新Web资源
+-(void)refreshWithWebModel:(WebSourcesModel *)model{
+
+    self.name.stringValue = SafeString(model.resource_name);
+    self.ipAddress.stringValue = SafeString(model.ip);
+    self.port.stringValue = SafeString(model.port);
 }
 
 @end

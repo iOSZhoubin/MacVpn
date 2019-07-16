@@ -1,22 +1,22 @@
 //
-//  IPSourcesViewController.m
+//  WebSourcesListViewController.m
 //  MacVpn
 //
-//  Created by jumpapp1 on 2019/6/24.
+//  Created by jumpapp1 on 2019/7/16.
 //  Copyright © 2019年 zb. All rights reserved.
 //
 
-#import "IPSourcesViewController.h"
+#import "WebSourcesListViewController.h"
 #import "ResourcesCellView.h"
-#import "IPSourcesModel.h"
+#import "WebSourcesModel.h"
 
-@interface IPSourcesViewController ()<NSTableViewDelegate,NSTableViewDataSource>
-@property (weak) IBOutlet NSTextField *noSources;
+@interface WebSourcesListViewController ()<NSTableViewDelegate,NSTableViewDataSource>
 
+@property (weak) IBOutlet NSTableView *tableView;
+//无数据显示
+@property (weak) IBOutlet NSTextField *noWebsources;
 //刷新按钮
 @property (weak) IBOutlet NSButton *refreshBtn;
-//tableview
-@property (weak) IBOutlet NSTableView *tableView;
 //数据源
 @property (strong,nonatomic) NSMutableArray *dataArray;
 //加载动画
@@ -26,8 +26,7 @@
 
 @end
 
-@implementation IPSourcesViewController
-
+@implementation WebSourcesListViewController
 
 -(NSMutableArray *)dataArray{
     
@@ -73,9 +72,9 @@
     
     ResourcesCellView *cellView = [tableView makeViewWithIdentifier:@"ResourcesCellView" owner:self];
     
-    IPSourcesModel *model = self.dataArray[row];
+    WebSourcesModel *model = self.dataArray[row];
     
-    [cellView refreshWithIPModel:model];
+    [cellView refreshWithWebModel:model];
     
     return cellView;
 }
@@ -89,16 +88,16 @@
     
     if(selectRow >= 0){
         
-        IPSourcesModel *model = self.dataArray[selectRow];
+        WebSourcesModel *model = self.dataArray[selectRow];
         
         if([model.ip_type isEqualToString:@"http"] || [model.ip_type isEqualToString:@"https"]){
-
+            
             NSString *ip = SafeString(model.ip);
-
+            
             NSString *port = SafeString(model.port);
-
+            
             NSString *url = [NSString stringWithFormat:@"%@://%@:%@",model.ip_type,ip,port];
-
+            
             [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
             
             //拷贝链接地址
@@ -113,7 +112,7 @@
             [JumpPublicAction showAlert:@"提示" andMessage:@"链接地址已拷贝，如未响应可打开浏览器粘贴进行访问" window:self.view.window];
         }
     }
-
+    
     JumpLog(@"点击了第%ld行",selectRow);
 }
 
@@ -132,12 +131,12 @@
         if([SafeString(dict[@"message"]) isEqualToString:@"error"]){
             
             [JumpPublicAction showAlert:@"提示" andMessage:@"会话已超时，请重新登录" window:weakself.view.window];
-
+            
         }else{
             
             NSArray *array = dict[@"result"];
             
-            weakself.dataArray  = [IPSourcesModel mj_objectArrayWithKeyValuesArray:array];
+            weakself.dataArray  = [WebSourcesModel mj_objectArrayWithKeyValuesArray:array];
             
             if(weakself.showAlert == YES){
                 
@@ -153,11 +152,11 @@
             
             if(weakself.dataArray.count > 0){
                 
-                weakself.noSources.hidden = YES;
+                weakself.noWebsources.hidden = YES;
                 
             }else{
                 
-                weakself.noSources.hidden = NO;
+                weakself.noWebsources.hidden = NO;
             }
             
             [weakself.tableView reloadData];
@@ -168,7 +167,7 @@
         weakself.refreshBtn.enabled = YES;
         
         [weakself.indicator stopAnimation:nil];
-   
+        
     } andFailed:^(id error) {
         
         weakself.indicator.hidden = YES;
@@ -186,10 +185,9 @@
 }
 
 
-
 #pragma mark --- 刷新
 
-- (IBAction)refreshIpSource:(NSButton *)sender {
+- (IBAction)refreshAction:(NSButton *)sender {
     
     self.indicator.hidden = NO;
     
@@ -219,7 +217,6 @@
     
     self.indicator.hidden = YES;
 }
-
 
 
 @end
