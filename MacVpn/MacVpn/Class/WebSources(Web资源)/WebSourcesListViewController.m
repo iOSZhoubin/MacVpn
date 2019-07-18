@@ -7,7 +7,7 @@
 //
 
 #import "WebSourcesListViewController.h"
-#import "ResourcesCellView.h"
+#import "WeblistSourcesViewCell.h"
 #import "WebSourcesModel.h"
 
 @interface WebSourcesListViewController ()<NSTableViewDelegate,NSTableViewDataSource>
@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"ResourcesCellView" bundle:nil] forIdentifier:@"ResourcesCellView"];
+    [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"WeblistSourcesViewCell" bundle:nil] forIdentifier:@"WeblistSourcesViewCell"];
     
     self.tableView.delegate = self;
     
@@ -65,12 +65,12 @@
 
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row{
     
-    return 95;
+    return 70;
 }
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     
-    ResourcesCellView *cellView = [tableView makeViewWithIdentifier:@"ResourcesCellView" owner:self];
+    WeblistSourcesViewCell *cellView = [tableView makeViewWithIdentifier:@"WeblistSourcesViewCell" owner:self];
     
     WebSourcesModel *model = self.dataArray[row];
     
@@ -83,36 +83,28 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     
     NSTableView *tableView = notification.object;
-    
+
     NSInteger selectRow = tableView.selectedRow;
-    
+
     if(selectRow >= 0){
         
         WebSourcesModel *model = self.dataArray[selectRow];
+
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:model.res_url]];
+
+        //拷贝链接地址
+        NSPasteboard *aPasteboard = [NSPasteboard generalPasteboard]; //获取粘贴板对象
+
+        [aPasteboard clearContents]; //清空粘贴板之前的内容
+
+        NSData *aData = [model.res_url dataUsingEncoding:NSUTF8StringEncoding];
+
+        [aPasteboard setData:aData forType:NSPasteboardTypeString];
+
+        [JumpPublicAction showAlert:@"提示" andMessage:@"链接地址已拷贝，如未响应可打开浏览器粘贴进行访问" window:self.view.window];
         
-        if([model.ip_type isEqualToString:@"http"] || [model.ip_type isEqualToString:@"https"]){
-            
-            NSString *ip = SafeString(model.ip);
-            
-            NSString *port = SafeString(model.port);
-            
-            NSString *url = [NSString stringWithFormat:@"%@://%@:%@",model.ip_type,ip,port];
-            
-            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
-            
-            //拷贝链接地址
-            NSPasteboard *aPasteboard = [NSPasteboard generalPasteboard]; //获取粘贴板对象
-            
-            [aPasteboard clearContents]; //清空粘贴板之前的内容
-            
-            NSData *aData = [url dataUsingEncoding:NSUTF8StringEncoding];
-            
-            [aPasteboard setData:aData forType:NSPasteboardTypeString];
-            
-            [JumpPublicAction showAlert:@"提示" andMessage:@"链接地址已拷贝，如未响应可打开浏览器粘贴进行访问" window:self.view.window];
-        }
     }
-    
+
     JumpLog(@"点击了第%ld行",selectRow);
 }
 
@@ -124,9 +116,11 @@
     
     L2CWeakSelf(self);
     
-    [AFNHelper macPost:Macvpn_IPresource parameters:nil success:^(id responseObject) {
+    [AFNHelper macPost:Macvpn_WebList parameters:nil success:^(id responseObject) {
         
         NSDictionary *dict = responseObject;
+        
+        JumpLog(@"%@",dict);
         
         if([SafeString(dict[@"message"]) isEqualToString:@"error"]){
             

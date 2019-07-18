@@ -13,13 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WebSourcesModel : NSObject
 
 //名称
-@property (copy,nonatomic) NSString *resource_name;
+@property (copy,nonatomic) NSString *res_name;
 //ip地址
-@property (copy,nonatomic) NSString *ip;
+@property (copy,nonatomic) NSString *res_title;
 //端口号
-@property (copy,nonatomic) NSString *port;
+@property (copy,nonatomic) NSString *res_type;
 //网络类型
-@property (copy,nonatomic) NSString *ip_type;
+@property (copy,nonatomic) NSString *res_url;
 
 
 @end

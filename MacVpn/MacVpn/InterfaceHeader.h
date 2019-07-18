@@ -25,5 +25,8 @@
 #define Macvpn_heartJump @"/jumpvpn/pda_conn_hold.php?android_client=ture"
 //注册
 #define Macvpn_Register @"/mobile_ios_register.php"
+//Web资源列表
+#define Macvpn_WebList @"/jumpvpn/json_resource_list.php"
+
 
 #endif /* InterfaceHeader_h */

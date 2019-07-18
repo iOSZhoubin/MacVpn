@@ -45,6 +45,8 @@
 		399E821722D2E1A70070C46E /* IPSourcesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 399E821622D2E1A70070C46E /* IPSourcesModel.m */; };
 		39AADA6222C9EF2600838F13 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AADA6022C9EF2600838F13 /* RegisterViewController.m */; };
 		39AADA6322C9EF2600838F13 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39AADA6122C9EF2600838F13 /* RegisterViewController.xib */; };
+		39DEC85222E0675200A87031 /* WeblistSourcesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DEC85122E0675200A87031 /* WeblistSourcesViewCell.m */; };
+		39DEC85422E0677200A87031 /* WeblistSourcesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39DEC85322E0677200A87031 /* WeblistSourcesViewCell.xib */; };
 		39EAA78B22CC77E200D7DBD7 /* AFDownloadRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAA76222CC77E200D7DBD7 /* AFDownloadRequestOperation.m */; };
 		39EAA78C22CC77E200D7DBD7 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAA76422CC77E200D7DBD7 /* AFHTTPRequestOperation.m */; };
 		39EAA78D22CC77E200D7DBD7 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAA76622CC77E200D7DBD7 /* AFHTTPRequestOperationManager.m */; };
@@ -141,6 +143,9 @@
 		39AADA5F22C9EF2600838F13 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		39AADA6022C9EF2600838F13 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		39AADA6122C9EF2600838F13 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		39DEC85022E0675200A87031 /* WeblistSourcesViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeblistSourcesViewCell.h; sourceTree = "<group>"; };
+		39DEC85122E0675200A87031 /* WeblistSourcesViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeblistSourcesViewCell.m; sourceTree = "<group>"; };
+		39DEC85322E0677200A87031 /* WeblistSourcesViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeblistSourcesViewCell.xib; sourceTree = "<group>"; };
 		39EAA76122CC77E200D7DBD7 /* AFDownloadRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadRequestOperation.h; sourceTree = "<group>"; };
 		39EAA76222CC77E200D7DBD7 /* AFDownloadRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFDownloadRequestOperation.m; sourceTree = "<group>"; };
 		39EAA76322CC77E200D7DBD7 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -282,6 +287,9 @@
 				3908A9BD22DDB987001BC368 /* WebSourcesListViewController.xib */,
 				3908A9C022DDBB85001BC368 /* WebSourcesModel.h */,
 				3908A9C122DDBB85001BC368 /* WebSourcesModel.m */,
+				39DEC85022E0675200A87031 /* WeblistSourcesViewCell.h */,
+				39DEC85122E0675200A87031 /* WeblistSourcesViewCell.m */,
+				39DEC85322E0677200A87031 /* WeblistSourcesViewCell.xib */,
 			);
 			path = "WebSources(Web资源)";
 			sourceTree = "<group>";
@@ -568,6 +576,7 @@
 				39AADA6322C9EF2600838F13 /* RegisterViewController.xib in Resources */,
 				39EDBC0B22BB672F00F21299 /* JumpMorealertViewController.xib in Resources */,
 				39EDBC2322BB6D6400F21299 /* ChangePwordWindowController.xib in Resources */,
+				39DEC85422E0677200A87031 /* WeblistSourcesViewCell.xib in Resources */,
 				3900F1A822B743DA00600020 /* InternetViewController.xib in Resources */,
 				398AE9EE22B37B6D00684BD0 /* Assets.xcassets in Resources */,
 				3964FCBF22C07B5100E03A73 /* IPSourcesViewController.xib in Resources */,
@@ -635,6 +644,7 @@
 				399E821722D2E1A70070C46E /* IPSourcesModel.m in Sources */,
 				398AE9EC22B37B6B00684BD0 /* MacVpn.xcdatamodeld in Sources */,
 				398AEA1822B37F6700684BD0 /* loginViewController.m in Sources */,
+				39DEC85222E0675200A87031 /* WeblistSourcesViewCell.m in Sources */,
 				399E821422D2DDCE0070C46E /* MessageModel.m in Sources */,
 				39EAA79822CC77E200D7DBD7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3900F1C422B745D100600020 /* JumpPublicAction.m in Sources */,

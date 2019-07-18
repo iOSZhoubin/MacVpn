@@ -17,7 +17,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    
+        
     self.mainWindowC = [[MainWindowController alloc]initWithWindowNibName:@"MainWindowController"];
     
     [[self.mainWindowC window] center];//显示在屏幕中间

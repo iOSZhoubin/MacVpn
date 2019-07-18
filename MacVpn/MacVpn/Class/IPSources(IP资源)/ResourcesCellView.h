@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import "IPSourcesModel.h"
-#import "WebSourcesModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 //刷新ip资源
 -(void)refreshWithIPModel:(IPSourcesModel *)model;
-//刷新Web资源
--(void)refreshWithWebModel:(WebSourcesModel *)model;
 
 @end
 
