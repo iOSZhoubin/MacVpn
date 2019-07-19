@@ -16,5 +16,8 @@
 
 @property (strong,nonatomic) MainWindowController *mainWindowC;
 
+@property (strong,nonatomic) NSWindowController *windowVc;
+
+
 @end
 

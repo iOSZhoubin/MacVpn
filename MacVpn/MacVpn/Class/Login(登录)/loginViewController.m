@@ -37,7 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
     self.firstWc = [[FirstWindowController alloc]initWithWindowNibName:@"FirstWindowController"];
     
     self.registerVc = [[RegisterViewController alloc]initWithWindowNibName:@"RegisterViewController"];

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="HelpVpnViewController">
+            <connections>
+                <outlet property="accouneName" destination="ViP-nI-vQZ" id="qYX-5Y-dxA"/>
+                <outlet property="againpassword" destination="I1P-dc-aFa" id="4Pe-yC-F71"/>
+                <outlet property="ipAddress" destination="03t-VK-SAJ" id="cd1-Tg-NI5"/>
+                <outlet property="newsPassword" destination="ejG-Dq-7um" id="fJJ-R9-3tI"/>
+                <outlet property="oldPassword" destination="26A-bo-b3J" id="pPj-Zi-A0b"/>
+                <outlet property="sureBtn" destination="mGv-n7-G5B" id="DaZ-If-NON"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="seh-if-zC6">
+                    <rect key="frame" x="100" y="100" width="600" height="400"/>
+                    <view key="contentView" id="ciE-WJ-yDw">
+                        <rect key="frame" x="1" y="1" width="598" height="398"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jyh-ts-JMe">
+                                <rect key="frame" x="38" y="269" width="74" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Ydy-fP-c1s"/>
+                                    <constraint firstAttribute="height" constant="18" id="vUk-5S-7QE"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" focusRingType="none" title="原 密 码 ：" id="APY-Ud-hmh">
+                                    <font key="font" metaFont="system" size="14"/>
+                                    <color key="textColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H03-Je-Ume">
+                                <rect key="frame" x="38" y="350" width="74" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="ZWH-nc-ubX"/>
+                                    <constraint firstAttribute="height" constant="18" id="qPJ-I9-wBa"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" focusRingType="none" title="账 户 名 ：" id="ySN-x2-3k5">
+                                    <font key="font" metaFont="system" size="14"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4gp-v1-NDP">
+                                <rect key="frame" x="38" y="312" width="74" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="4AG-YE-4mN"/>
+                                    <constraint firstAttribute="height" constant="18" id="WbO-F8-uRG"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" focusRingType="none" title="服 务 器 ：" id="ByR-ew-glt">
+                                    <font key="font" metaFont="system" size="14"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="26A-bo-b3J">
+                                <rect key="frame" x="125" y="263" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="gQH-Zt-hUK"/>
+                                    <constraint firstAttribute="height" constant="30" id="r9H-53-BNC"/>
+                                </constraints>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="请输入原密码" drawsBackground="YES" usesSingleLineMode="YES" id="80Q-kO-bJ5">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ejG-Dq-7um">
+                                <rect key="frame" x="125" y="215" width="200" height="30"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="请设置至少6位的密码" drawsBackground="YES" usesSingleLineMode="YES" id="5vO-pa-le8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I1P-dc-aFa">
+                                <rect key="frame" x="125" y="163" width="200" height="30"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="请再次确认密码" drawsBackground="YES" usesSingleLineMode="YES" id="1MS-ra-3vu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PIR-sr-jFY">
+                                <rect key="frame" x="38" y="221" width="74" height="18"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" focusRingType="none" title="新 密 码 ：" id="e9U-Om-reA">
+                                    <font key="font" metaFont="system" size="14"/>
+                                    <color key="textColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4S8-Qv-Vp5">
+                                <rect key="frame" x="442" y="13" width="112" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5YI-Pm-x5U"/>
+                                    <constraint firstAttribute="width" constant="100" id="Hrw-pD-jS6"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="切换用户" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cQe-3y-yHb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="loginOut:" target="-2" id="noN-Wl-TVa"/>
+                                </connections>
+                            </button>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WmS-3r-noS">
+                                <rect key="frame" x="38" y="169" width="74" height="18"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" focusRingType="none" title="确认密码：" id="gpr-4q-DE7">
+                                    <font key="font" metaFont="system" size="14"/>
+                                    <color key="textColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ViP-nI-vQZ">
+                                <rect key="frame" x="123" y="350" width="204" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="4GW-4Z-8wc"/>
+                                    <constraint firstAttribute="width" constant="200" id="C0g-C8-geU"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" id="Sw0-yS-KHe">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="03t-VK-SAJ">
+                                <rect key="frame" x="123" y="312" width="204" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="KnV-8H-oJb"/>
+                                    <constraint firstAttribute="width" constant="200" id="dj1-xG-bg4"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" id="7Of-u5-azi">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mGv-n7-G5B">
+                                <rect key="frame" x="44" y="13" width="112" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="S9P-hB-Nk3"/>
+                                    <constraint firstAttribute="width" constant="100" id="c6R-kZ-E2z"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="修改密码" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2zz-wJ-qa1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="sureAction:" target="-2" id="dzD-q0-wJ2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="26A-bo-b3J" firstAttribute="centerY" secondItem="jyh-ts-JMe" secondAttribute="centerY" id="0Xv-L5-v6l"/>
+                            <constraint firstItem="PIR-sr-jFY" firstAttribute="centerX" secondItem="jyh-ts-JMe" secondAttribute="centerX" id="3Sj-GZ-0Qd"/>
+                            <constraint firstItem="4gp-v1-NDP" firstAttribute="top" secondItem="H03-Je-Ume" secondAttribute="bottom" constant="20" id="42n-mb-KtN"/>
+                            <constraint firstItem="I1P-dc-aFa" firstAttribute="centerY" secondItem="WmS-3r-noS" secondAttribute="centerY" id="436-CQ-3wh"/>
+                            <constraint firstItem="jyh-ts-JMe" firstAttribute="leading" secondItem="ciE-WJ-yDw" secondAttribute="leading" constant="40" id="4KM-Qf-Ex4"/>
+                            <constraint firstItem="ejG-Dq-7um" firstAttribute="width" secondItem="26A-bo-b3J" secondAttribute="width" id="4eV-VG-f05"/>
+                            <constraint firstItem="I1P-dc-aFa" firstAttribute="centerX" secondItem="26A-bo-b3J" secondAttribute="centerX" id="5Zr-Wa-84F"/>
+                            <constraint firstItem="ejG-Dq-7um" firstAttribute="height" secondItem="26A-bo-b3J" secondAttribute="height" id="9Xl-aV-Ovg"/>
+                            <constraint firstItem="4gp-v1-NDP" firstAttribute="leading" secondItem="ciE-WJ-yDw" secondAttribute="leading" constant="40" id="A1R-4A-KAf"/>
+                            <constraint firstItem="H03-Je-Ume" firstAttribute="top" secondItem="ciE-WJ-yDw" secondAttribute="top" constant="30" id="BS7-8k-1P5"/>
+                            <constraint firstItem="I1P-dc-aFa" firstAttribute="leading" secondItem="WmS-3r-noS" secondAttribute="trailing" constant="15" id="BeH-95-ccO"/>
+                            <constraint firstAttribute="bottom" secondItem="mGv-n7-G5B" secondAttribute="bottom" constant="20" id="CUP-DA-ckH"/>
+                            <constraint firstItem="ejG-Dq-7um" firstAttribute="centerY" secondItem="PIR-sr-jFY" secondAttribute="centerY" id="JlT-vK-hAB"/>
+                            <constraint firstItem="WmS-3r-noS" firstAttribute="height" secondItem="jyh-ts-JMe" secondAttribute="height" id="NMj-6z-4Mg"/>
+                            <constraint firstItem="ViP-nI-vQZ" firstAttribute="leading" secondItem="H03-Je-Ume" secondAttribute="trailing" constant="15" id="NoK-gE-vIH"/>
+                            <constraint firstItem="WmS-3r-noS" firstAttribute="top" secondItem="PIR-sr-jFY" secondAttribute="bottom" constant="34" id="REu-Ny-yKy"/>
+                            <constraint firstItem="PIR-sr-jFY" firstAttribute="top" secondItem="jyh-ts-JMe" secondAttribute="bottom" constant="30" id="Teq-7s-HyJ"/>
+                            <constraint firstItem="WmS-3r-noS" firstAttribute="centerX" secondItem="jyh-ts-JMe" secondAttribute="centerX" id="TqF-sv-zBa"/>
+                            <constraint firstItem="jyh-ts-JMe" firstAttribute="top" secondItem="4gp-v1-NDP" secondAttribute="bottom" constant="25" id="WBu-sz-yTV"/>
+                            <constraint firstItem="I1P-dc-aFa" firstAttribute="height" secondItem="26A-bo-b3J" secondAttribute="height" id="XBD-vt-3TV"/>
+                            <constraint firstItem="PIR-sr-jFY" firstAttribute="height" secondItem="jyh-ts-JMe" secondAttribute="height" id="YkP-nn-B3F"/>
+                            <constraint firstAttribute="bottom" secondItem="4S8-Qv-Vp5" secondAttribute="bottom" constant="20" id="aHg-1Z-Q62"/>
+                            <constraint firstItem="ejG-Dq-7um" firstAttribute="leading" secondItem="PIR-sr-jFY" secondAttribute="trailing" constant="15" id="byC-4R-lZ2"/>
+                            <constraint firstItem="mGv-n7-G5B" firstAttribute="leading" secondItem="ciE-WJ-yDw" secondAttribute="leading" constant="50" id="g9b-SH-oBt"/>
+                            <constraint firstItem="03t-VK-SAJ" firstAttribute="centerY" secondItem="4gp-v1-NDP" secondAttribute="centerY" id="gf7-dF-jAU"/>
+                            <constraint firstItem="03t-VK-SAJ" firstAttribute="leading" secondItem="4gp-v1-NDP" secondAttribute="trailing" constant="15" id="git-30-waa"/>
+                            <constraint firstItem="I1P-dc-aFa" firstAttribute="width" secondItem="26A-bo-b3J" secondAttribute="width" id="hrC-8E-gAC"/>
+                            <constraint firstAttribute="trailing" secondItem="4S8-Qv-Vp5" secondAttribute="trailing" constant="50" id="o2c-0i-O14"/>
+                            <constraint firstItem="26A-bo-b3J" firstAttribute="leading" secondItem="jyh-ts-JMe" secondAttribute="trailing" constant="15" id="tqP-Cg-0PY"/>
+                            <constraint firstItem="ViP-nI-vQZ" firstAttribute="centerY" secondItem="H03-Je-Ume" secondAttribute="centerY" id="uLF-Mx-BUO"/>
+                            <constraint firstItem="WmS-3r-noS" firstAttribute="width" secondItem="jyh-ts-JMe" secondAttribute="width" id="wlh-aX-ksX"/>
+                            <constraint firstItem="26A-bo-b3J" firstAttribute="leading" secondItem="jyh-ts-JMe" secondAttribute="trailing" constant="15" id="wuc-ne-Ob7"/>
+                            <constraint firstItem="PIR-sr-jFY" firstAttribute="width" secondItem="jyh-ts-JMe" secondAttribute="width" id="xfK-S9-WAB"/>
+                            <constraint firstItem="ejG-Dq-7um" firstAttribute="centerX" secondItem="26A-bo-b3J" secondAttribute="centerX" id="yma-HB-Aoz"/>
+                            <constraint firstItem="H03-Je-Ume" firstAttribute="leading" secondItem="ciE-WJ-yDw" secondAttribute="leading" constant="40" id="zph-W6-Jgd"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="gYY-Mf-XHc"/>
+                        <constraint firstAttribute="width" constant="600" id="nM1-eB-0t8"/>
+                    </constraints>
+                    <color key="borderColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
+                    <color key="fillColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="seh-if-zC6" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="imP-b7-ehk"/>
+                <constraint firstItem="seh-if-zC6" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="wpK-gG-z5w"/>
+            </constraints>
+            <point key="canvasLocation" x="251" y="-50"/>
+        </customView>
+    </objects>
+</document>

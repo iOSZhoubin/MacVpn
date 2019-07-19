@@ -75,6 +75,8 @@
 		39EDBC1E22BB6D3500F21299 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39EDBC1C22BB6D3500F21299 /* AboutUsViewController.xib */; };
 		39EDBC2222BB6D6400F21299 /* ChangePwordWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EDBC2022BB6D6400F21299 /* ChangePwordWindowController.m */; };
 		39EDBC2322BB6D6400F21299 /* ChangePwordWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39EDBC2122BB6D6400F21299 /* ChangePwordWindowController.xib */; };
+		39FD661E22E1BAFE00B20F6C /* HelpVpnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FD661C22E1BAFE00B20F6C /* HelpVpnViewController.m */; };
+		39FD661F22E1BAFE00B20F6C /* HelpVpnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39FD661D22E1BAFE00B20F6C /* HelpVpnViewController.xib */; };
 		C70C26C212BB0323C88AFC37 /* libPods-MacVpn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A560913B593120A3A7661B9 /* libPods-MacVpn.a */; };
 /* End PBXBuildFile section */
 
@@ -199,6 +201,9 @@
 		39EDBC1F22BB6D6400F21299 /* ChangePwordWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePwordWindowController.h; sourceTree = "<group>"; };
 		39EDBC2022BB6D6400F21299 /* ChangePwordWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePwordWindowController.m; sourceTree = "<group>"; };
 		39EDBC2122BB6D6400F21299 /* ChangePwordWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePwordWindowController.xib; sourceTree = "<group>"; };
+		39FD661B22E1BAFE00B20F6C /* HelpVpnViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpVpnViewController.h; sourceTree = "<group>"; };
+		39FD661C22E1BAFE00B20F6C /* HelpVpnViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpVpnViewController.m; sourceTree = "<group>"; };
+		39FD661D22E1BAFE00B20F6C /* HelpVpnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVpnViewController.xib; sourceTree = "<group>"; };
 		951BFA7079D9F6BBAEF0A753 /* Pods-MacVpn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacVpn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacVpn/Pods-MacVpn.debug.xcconfig"; sourceTree = "<group>"; };
 		CA5125E3F710DA078683AD8E /* Pods-MacVpn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacVpn.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacVpn/Pods-MacVpn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -355,6 +360,7 @@
 				3900F1A022B743B300600020 /* Message(消息中心) */,
 				3900F1A122B743B300600020 /* Resources(资源列表) */,
 				3900F1A222B743B300600020 /* User(个人中心) */,
+				39FD661A22E1BAE100B20F6C /* Help(帮助) */,
 				398AEA0F22B37F6700684BD0 /* Login(登录) */,
 				39EDBC0E22BB6C8E00F21299 /* introduce(功能介绍) */,
 				39EDBC0D22BB6C8700F21299 /* AboutUs(关于我们) */,
@@ -486,6 +492,16 @@
 			path = "introduce(功能介绍)";
 			sourceTree = "<group>";
 		};
+		39FD661A22E1BAE100B20F6C /* Help(帮助) */ = {
+			isa = PBXGroup;
+			children = (
+				39FD661B22E1BAFE00B20F6C /* HelpVpnViewController.h */,
+				39FD661C22E1BAFE00B20F6C /* HelpVpnViewController.m */,
+				39FD661D22E1BAFE00B20F6C /* HelpVpnViewController.xib */,
+			);
+			path = "Help(帮助)";
+			sourceTree = "<group>";
+		};
 		AF6D314C2CE53D677F3FD8A8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +586,7 @@
 				39EDBC1922BB6D2000F21299 /* IntroduceViewController.xib in Resources */,
 				3938C16822C066CB009E5B8C /* CustomMessageCellView.xib in Resources */,
 				398AEA1922B37F6700684BD0 /* loginViewController.xib in Resources */,
+				39FD661F22E1BAFE00B20F6C /* HelpVpnViewController.xib in Resources */,
 				3900F1B722B7440C00600020 /* UserViewController.xib in Resources */,
 				3964FCC422C07B6000E03A73 /* WebSourcesViewController.xib in Resources */,
 				39EAA79622CC77E200D7DBD7 /* JumpServer.cer in Resources */,
@@ -636,6 +653,7 @@
 				3964FCBE22C07B5100E03A73 /* IPSourcesViewController.m in Sources */,
 				3964FCC822C07D5300E03A73 /* ResourcesCellView.m in Sources */,
 				39EAA79922CC77E200D7DBD7 /* UIAlertView+AFNetworking.m in Sources */,
+				39FD661E22E1BAFE00B20F6C /* HelpVpnViewController.m in Sources */,
 				39EAA79E22CC77E200D7DBD7 /* UIWebView+AFNetworking.m in Sources */,
 				39EAA79422CC77E200D7DBD7 /* AFURLSessionManager.m in Sources */,
 				39EAA79B22CC77E200D7DBD7 /* UIImageView+AFNetworking.m in Sources */,

@@ -13,6 +13,7 @@
 #import "UserViewController.h"
 #import "JumpMorealertViewController.h"
 #import "MainWindowController.h"
+#import "HelpVpnViewController.h"
 
 @interface FirstWindowController ()
 
@@ -24,6 +25,8 @@
 @property (weak) IBOutlet NSButton *messageBtn;
 //个人中心
 @property (weak) IBOutlet NSButton *userBtn;
+//帮助
+@property (weak) IBOutlet NSButton *helpBtn;
 
 /** 网络连接 */
 @property (strong) IBOutlet InternetViewController *internetVc;
@@ -33,6 +36,8 @@
 @property (strong) IBOutlet MessageViewController *messageVc;
 /** 个人中心 */
 @property (strong) IBOutlet UserViewController *userVc;
+/** 帮助 */
+@property (strong) IBOutlet HelpVpnViewController *helpVc;
 
 @property (weak) IBOutlet NSView *customerView;
 
@@ -85,6 +90,11 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    
+    AppDelegate *appdelegate = [NSApp delegate];
+    
+    appdelegate.windowVc = self;
+    
     //注册
     self.internetVc = [[InternetViewController alloc]initWithNibName:@"InternetViewController" bundle:nil];
     
@@ -96,6 +106,12 @@
 
     self.loginWc = [[MainWindowController alloc]initWithWindowNibName:@"MainWindowController"];
 
+    self.helpVc = [[HelpVpnViewController alloc]initWithNibName:@"HelpVpnViewController" bundle:nil];
+
+    self.helpVc.timer = self.timer;
+
+    self.helpVc.mainWc = self.window;
+    
     //设置大小
     self.internetVc.view.frame  = [self returnvcFrame];
     
@@ -104,6 +120,9 @@
     self.messageVc.view.frame = [self returnvcFrame];
 
     self.userVc.view.frame = [self returnvcFrame];
+    
+    self.helpVc.view.frame = [self returnvcFrame];
+
     
     [self.window.contentView addSubview:self.internetVc.view];
     
@@ -126,12 +145,14 @@
     [self.resourceBtn setImage:[NSImage imageNamed:@"sources2"]];
     [self.messageBtn setImage:[NSImage imageNamed:@"message2"]];
     [self.userBtn setImage:[NSImage imageNamed:@"me2"]];
+    [self.helpBtn setImage:[NSImage imageNamed:@"me2"]];
 
     [self.internetVc.view removeFromSuperview];
     [self.resourcesVc.view removeFromSuperview];
     [self.messageVc.view removeFromSuperview];
     [self.userVc.view removeFromSuperview];
-    
+    [self.helpVc.view removeFromSuperview];
+
     [self.window.contentView addSubview:self.internetVc.view];
     
 }
@@ -144,11 +165,13 @@
     [self.interBtn setImage:[NSImage imageNamed:@"home2"]];
     [self.messageBtn setImage:[NSImage imageNamed:@"message2"]];
     [self.userBtn setImage:[NSImage imageNamed:@"me2"]];
-    
+    [self.helpBtn setImage:[NSImage imageNamed:@"me2"]];
+
     [self.internetVc.view removeFromSuperview];
     [self.resourcesVc.view removeFromSuperview];
     [self.messageVc.view removeFromSuperview];
     [self.userVc.view removeFromSuperview];
+    [self.helpVc.view removeFromSuperview];
 
     [self.window.contentView addSubview:self.resourcesVc.view];
 
@@ -162,11 +185,13 @@
     [self.interBtn setImage:[NSImage imageNamed:@"home2"]];
     [self.resourceBtn setImage:[NSImage imageNamed:@"sources2"]];
     [self.userBtn setImage:[NSImage imageNamed:@"me2"]];
-    
+    [self.helpBtn setImage:[NSImage imageNamed:@"me2"]];
+
     [self.internetVc.view removeFromSuperview];
     [self.resourcesVc.view removeFromSuperview];
     [self.messageVc.view removeFromSuperview];
     [self.userVc.view removeFromSuperview];
+    [self.helpVc.view removeFromSuperview];
 
 
     [self.window.contentView addSubview:self.messageVc.view];
@@ -180,23 +205,43 @@
     [self.interBtn setImage:[NSImage imageNamed:@"home2"]];
     [self.resourceBtn setImage:[NSImage imageNamed:@"sources2"]];
     [self.messageBtn setImage:[NSImage imageNamed:@"message2"]];
+    [self.helpBtn setImage:[NSImage imageNamed:@"me2"]];
+
+    [self.internetVc.view removeFromSuperview];
+    [self.resourcesVc.view removeFromSuperview];
+    [self.messageVc.view removeFromSuperview];
+    [self.userVc.view removeFromSuperview];
+    [self.helpVc.view removeFromSuperview];
+
+    [self.window.contentView addSubview:self.userVc.view];
+}
+
+#pragma mark --- 帮助
+
+- (IBAction)helpAction:(NSButton *)sender {
+
+    [sender setImage:[NSImage imageNamed:@"me1"]];
+    [self.interBtn setImage:[NSImage imageNamed:@"home2"]];
+    [self.resourceBtn setImage:[NSImage imageNamed:@"sources2"]];
+    [self.messageBtn setImage:[NSImage imageNamed:@"message2"]];
+    [self.userBtn setImage:[NSImage imageNamed:@"me2"]];
     
     [self.internetVc.view removeFromSuperview];
     [self.resourcesVc.view removeFromSuperview];
     [self.messageVc.view removeFromSuperview];
     [self.userVc.view removeFromSuperview];
-
-    [self.window.contentView addSubview:self.userVc.view];
+    [self.helpVc.view removeFromSuperview];
+    
+    [self.window.contentView addSubview:self.helpVc.view];
 }
-
 
 #pragma mark --- 更多
 
 - (IBAction)setAction:(NSButton *)sender {
     
-    self.morealertVC.timer = self.timer;
-
-    [self.firstPopover showRelativeToRect:sender.frame ofView:self.window.contentView preferredEdge:NSRectEdgeMaxX];
+//    self.morealertVC.timer = self.timer;
+//
+//    [self.firstPopover showRelativeToRect:sender.frame ofView:self.window.contentView preferredEdge:NSRectEdgeMaxX];
 
 }
 
