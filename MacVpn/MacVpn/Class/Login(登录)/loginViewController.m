@@ -30,6 +30,12 @@
 @property (weak) IBOutlet NSButton *loginBtn;
 
 @property (strong,nonatomic) RegisterViewController *registerVc;
+//验证码Label
+@property (weak) IBOutlet NSTextField *codeL;
+//验证码图片
+@property (weak) IBOutlet NSButton *codeImageBtn;
+//忘记密码距上高度
+@property (weak) IBOutlet NSLayoutConstraint *topH1;
 
 @end
 
@@ -96,10 +102,74 @@
     [[NSUserDefaults standardUserDefaults] setObject:mudict forKey:@"mac_userInfo"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [self loadAction];
+    [self getCode];
 }
 
--(void)loadAction{
+-(void)getCode{
+    
+    self.indicator.hidden = NO;
+    
+    self.loginBtn.enabled = NO;
+    
+    [self.indicator startAnimation:nil];
+    
+    L2CWeakSelf(self);
+    
+    [AFNHelper macPost:Macvpn_GetCode parameters:nil success:^(id responseObject) {
+        
+        NSDictionary *dict = responseObject;
+        
+        NSInteger isShow = [SafeString(dict[@"result"][@"isShow"]) integerValue];
+        
+        NSString *codeStr = @"";
+        
+        if(isShow == 1){
+            
+            codeStr = SafeString(dict[@"result"][@"checkCode"]);
+            
+            NSString *codeImage = SafeString(dict[@"result"][@"imgPath"]);
+            
+            NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@%@",self.ipaddress.stringValue,self.portL.stringValue,codeImage];
+            
+            weakself.codeImageBtn.image = [[NSImage alloc]initWithContentsOfURL:[NSURL URLWithString:urlStr]];
+            
+            [weakself showCodeView:1];
+            
+            if(weakself.codeL.stringValue.length < 1){
+                
+                [JumpPublicAction showAlert:@"提示" andMessage:@"请输入验证码" window:weakself.mainWC];
+
+            }else{
+                
+                [weakself loadAction:codeStr];
+            }
+            
+        }else{
+            
+            [weakself showCodeView:0];
+        }
+        
+        weakself.indicator.hidden = YES;
+        
+        weakself.loginBtn.enabled = YES;
+        
+        [weakself.indicator stopAnimation:nil];
+        
+    } andFailed:^(id error) {
+        
+        weakself.loginBtn.enabled = YES;
+        
+        weakself.indicator.hidden = YES;
+        
+        [weakself.indicator stopAnimation:nil];
+        
+        [weakself loadAction:0];
+
+    }];
+}
+
+
+-(void)loadAction:(NSString *)code{
 
     self.indicator.hidden = NO;
 
@@ -172,6 +242,8 @@
     [self.view addSubview:self.indicator];
     
     self.indicator.hidden = YES;
+    
+    [self showCodeView:0];
 }
 
 
@@ -199,6 +271,73 @@
     
     [[self.registerVc window] center];//显示在屏幕中间
     
+}
+
+
+/**
+ 是否显示图形验证码
+ 
+ @param status 0-否   1-是
+ */
+-(void)showCodeView:(NSInteger)status{
+    
+    if(status == 1){
+        
+        self.codeImageBtn.hidden = NO;
+        self.codeL.hidden = NO;
+        self.topH1.constant = 60.0;
+        
+    }else{
+        
+        self.codeImageBtn.hidden = YES;
+        self.codeL.hidden = YES;
+        self.topH1.constant = 20.0;
+    }
+}
+
+//重新获取验证码
+- (IBAction)refreshCode:(NSButton *)sender {
+    
+    self.indicator.hidden = NO;
+    
+    self.loginBtn.enabled = NO;
+    
+    [self.indicator startAnimation:nil];
+    
+    L2CWeakSelf(self);
+    
+    [AFNHelper macPost:Macvpn_GetCode parameters:nil success:^(id responseObject) {
+        
+        NSDictionary *dict = responseObject;
+        
+        NSInteger isShow = [SafeString(dict[@"result"][@"isShow"]) integerValue];
+        
+        if(isShow == 1){
+            
+            NSString *codeImage = SafeString(dict[@"result"][@"imgPath"]);
+            
+            NSString *urlStr = [NSString stringWithFormat:@"https://%@:%@%@",self.ipaddress.stringValue,self.portL.stringValue,codeImage];
+            
+            weakself.codeImageBtn.image = [[NSImage alloc]initWithContentsOfURL:[NSURL URLWithString:urlStr]];
+            
+            [weakself showCodeView:1];
+        }
+        
+        weakself.indicator.hidden = YES;
+        
+        weakself.loginBtn.enabled = YES;
+        
+        [weakself.indicator stopAnimation:nil];
+        
+    } andFailed:^(id error) {
+        
+        weakself.loginBtn.enabled = YES;
+        
+        weakself.indicator.hidden = YES;
+        
+        [weakself.indicator stopAnimation:nil];
+        
+    }];
 }
 
 @end

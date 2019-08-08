@@ -27,6 +27,9 @@
 #define Macvpn_Register @"/mobile_ios_register.php"
 //Web资源列表
 #define Macvpn_WebList @"/jumpvpn/json_resource_list.php"
+//获取图形验证码
+#define Macvpn_GetCode @"/mobile_login.php?showCheckCode=1"
+
 
 
 #endif /* InterfaceHeader_h */

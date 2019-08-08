@@ -100,17 +100,7 @@
             NSString *url = [NSString stringWithFormat:@"%@://%@:%@",model.ip_type,ip,port];
 
             [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
-            
-            //拷贝链接地址
-            NSPasteboard *aPasteboard = [NSPasteboard generalPasteboard]; //获取粘贴板对象
-            
-            [aPasteboard clearContents]; //清空粘贴板之前的内容
-            
-            NSData *aData = [url dataUsingEncoding:NSUTF8StringEncoding];
-            
-            [aPasteboard setData:aData forType:NSPasteboardTypeString];
-            
-            [JumpPublicAction showAlert:@"提示" andMessage:@"链接地址已拷贝，如未响应可打开浏览器粘贴进行访问" window:self.view.window];
+
         }
     }
 
